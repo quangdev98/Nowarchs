@@ -302,22 +302,14 @@
 	<link rel='stylesheet' id='elementor-post-75-css'
 		href="{{ asset('User/css/post-75ab11.css?ver=1646902606') }}" media='all' />
 	<link rel='stylesheet' id='elementor-global-css'
-		href='wp-content/uploads/elementor/css/globalac43.css?ver=1646902889' media='all' />
+		href="{{ asset('User/css/globalac43.css?ver=1646902889') }}" media='all' />
 	<link rel='stylesheet' id='google-fonts-1-css'
 		href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;display=auto&amp;ver=5.9.3'
 		media='all' />
-	<script src='wp-includes/js/jquery/jquery.minaf6c.js?ver=3.6.0' id='jquery-core-js'></script>
-	<script src='wp-includes/js/jquery/jquery-migrate.mind617.js?ver=3.3.2' id='jquery-migrate-js'></script>
-	<link rel="https://api.w.org/" href="index52f0.json?rest_route=/" />
-	<link rel="alternate" type="application/json" href="index8e2a.json?rest_route=/wp/v2/pages/43" />
-	<link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.php?rsd" />
-	<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" />
+	<script src="{{ asset('User/js/jquery.minaf6c.js?ver=3.6.0') }}" id='jquery-core-js'></script>
+	<script src="{{ asset('User/js/jquery-migrate.mind617.js?ver=3.3.2') }}" id='jquery-migrate-js'></script>
 	<meta name="generator" content="WordPress 5.9.3" />
 	<link rel="canonical" href="index.html" />
 	<link rel='shortlink' href='index.html' />
-	<link rel="alternate" type="application/json+oembed"
-		href="index1ff3.json?rest_route=%2Foembed%2F1.0%2Fembed&amp;url=https%3A%2F%2Fshtheme.com%2Fdemosd%2Fnowarch%2F" />
-	<link rel="alternate" type="text/xml+oembed"
-		href="index4e98.php?rest_route=%2Foembed%2F1.0%2Fembed&amp;url=https%3A%2F%2Fshtheme.com%2Fdemosd%2Fnowarch%2F&amp;format=xml" />
 
-@yield('meta');
+@yield('meta')

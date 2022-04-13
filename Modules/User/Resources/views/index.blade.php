@@ -2,7 +2,6 @@
 
 @section('content')
 
-
 <div class="preloader-bg"></div>
 <div id="preloader">
     <div id="preloader-status">
@@ -20,7 +19,7 @@
     <div class="container">
         <!-- Logo -->
         <div class="logo-wrapper navbar-brand valign">
-            <a class="logo" href="index.html"> <img src="wp-content/uploads/2022/01/logo.png" alt=""> </a>
+            <a class="logo" href="index.html"> <img src="{{ asset('User/images/logo.png') }}" alt=""> </a>
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
             aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"> <span
@@ -75,7 +74,7 @@
                                     <header class="header slider-fade">
                                         <div class="owl-carousel owl-theme">
                                             <div class="item bg-img" data-overlay-dark="3"
-                                                data-background="https://shtheme.com/demosd/nowarch/wp-content/uploads/2022/03/1.jpg">
+                                                data-background="{{ asset('User/images/1.jpg') }}">
                                                 <div class="v-middle caption">
                                                     <div class="container">
                                                         <div class="row">
@@ -95,7 +94,7 @@
                                                 </div>
                                             </div>
                                             <div class="item bg-img" data-overlay-dark="3"
-                                                data-background="https://shtheme.com/demosd/nowarch/wp-content/uploads/2022/03/2.jpg">
+                                                data-background="{{ asset('User/images/2.jpg') }}">
                                                 <div class="v-middle caption">
                                                     <div class="container">
                                                         <div class="row">
@@ -115,7 +114,7 @@
                                                 </div>
                                             </div>
                                             <div class="item bg-img" data-overlay-dark="3"
-                                                data-background="https://shtheme.com/demosd/nowarch/wp-content/uploads/2022/03/3.jpg">
+                                                data-background="{{ asset('User/images/3.jpg') }}">
                                                 <div class="v-middle caption">
                                                     <div class="container">
                                                         <div class="row">
@@ -167,7 +166,7 @@
                                             <div class="row">
                                                 <div class="col-md-12 animate-box" data-animate-effect="fadeInUp">
                                                     <div class="about">
-                                                        <figure> <img src="wp-content/uploads/2022/03/about.jpg"
+                                                        <figure> <img src="{{ asset('User/images/about.jpg') }}"
                                                                 alt=""> </figure>
                                                         <div class="caption">
                                                             <div class="section-number">.01</div>
@@ -219,7 +218,7 @@
                                                         <div class="item bg-1">
                                                             <div class="con">
                                                                 <div class="icon-img"><img
-                                                                        src="wp-content/uploads/2022/03/1.png"
+                                                                        src="{{ asset('User/images/1.png') }}"
                                                                         alt=""></div>
                                                                 <h5>Architectural Design</h5>
                                                                 <p>Architecture bibendum eros onne vane the sutate
@@ -230,7 +229,7 @@
                                                         <div class="item bg-2">
                                                             <div class="con">
                                                                 <div class="icon-img"><img
-                                                                        src="wp-content/uploads/2022/03/2.png"
+                                                                        src="{{ asset('User/images/2.png') }}"
                                                                         alt=""></div>
                                                                 <h5>Interior Design</h5>
                                                                 <p>Architecture bibendum eros onne vane the sutate
@@ -241,7 +240,7 @@
                                                         <div class="item bg-3">
                                                             <div class="con">
                                                                 <div class="icon-img"><img
-                                                                        src="wp-content/uploads/2022/03/3.png"
+                                                                        src="{{ asset('User/images/3.png') }}"
                                                                         alt=""></div>
                                                                 <h5>Exterior Design</h5>
                                                                 <p>Architecture bibendum eros onne vane the sutate
@@ -285,7 +284,7 @@
                                             <div class="projects-carousel owl-theme owl-carousel">
                                                 <div class="projects-single">
                                                     <div class="projects-img"> <img
-                                                            src="wp-content/uploads/2022/01/5.jpg" alt=""> </div>
+                                                            src="{{ asset('User/images/5.jpg') }}" alt=""> </div>
                                                     <div class="projects-content">
                                                         <div class="projects-tagline">ARCHITECTURE</div>
                                                         <div class="projects-title"><a
@@ -298,7 +297,7 @@
                                                 </div>
                                                 <div class="projects-single">
                                                     <div class="projects-img"> <img
-                                                            src="wp-content/uploads/2022/01/4.jpg" alt=""> </div>
+                                                            src="{{ asset('User/images/4.jpg') }}" alt=""> </div>
                                                     <div class="projects-content">
                                                         <div class="projects-tagline">URBAN DESIGN</div>
                                                         <div class="projects-title"><a
@@ -311,7 +310,7 @@
                                                 </div>
                                                 <div class="projects-single">
                                                     <div class="projects-img"> <img
-                                                            src="wp-content/uploads/2022/01/3-1.jpg" alt=""> </div>
+                                                            src="{{ asset('User/images/3-1.jpg') }}" alt=""> </div>
                                                     <div class="projects-content">
                                                         <div class="projects-tagline">INTERIOR DESIGN</div>
                                                         <div class="projects-title"><a
@@ -324,7 +323,7 @@
                                                 </div>
                                                 <div class="projects-single">
                                                     <div class="projects-img"> <img
-                                                            src="wp-content/uploads/2022/01/2-1.jpg" alt=""> </div>
+                                                            src="{{ asset('User/images/2-1.jpg') }}" alt=""> </div>
                                                     <div class="projects-content">
                                                         <div class="projects-tagline">EXTERIOR DESIGN</div>
                                                         <div class="projects-title"><a
@@ -337,7 +336,7 @@
                                                 </div>
                                                 <div class="projects-single">
                                                     <div class="projects-img"> <img
-                                                            src="wp-content/uploads/2022/01/1-1.jpg" alt=""> </div>
+                                                            src="{{ asset('User/images/1-1.jpg') }}" alt=""> </div>
                                                     <div class="projects-content">
                                                         <div class="projects-tagline">URBAN DESIGN</div>
                                                         <div class="projects-title"><a
@@ -376,7 +375,7 @@
                                                 <div class="col-md-12 animate-box" data-animate-effect="fadeInUp">
                                                     <div class="project-video left">
                                                         <figure>
-                                                            <img src="wp-content/uploads/2022/03/project.jpg" alt=""
+                                                            <img src="{{ asset('User/images/project.jpg') }}" alt=""
                                                                 class="img-fluid">
                                                             <div class="row">
                                                                 <div
@@ -453,7 +452,7 @@
                                                             <div class="post-img">
                                                                 <a href="index2df4.html?p=8">
                                                                     <div class="img"> <img
-                                                                            src="wp-content/uploads/2022/01/3.jpg"
+                                                                            src="{{ asset('User/images/3.jpg') }}"
                                                                             alt=""> </div>
                                                                 </a>
                                                             </div>
@@ -470,7 +469,7 @@
                                                             <div class="post-img">
                                                                 <a href="index2dc4.html?p=13">
                                                                     <div class="img"> <img
-                                                                            src="wp-content/uploads/2022/01/2.jpg"
+                                                                            src="{{ asset('User/images/2.jpg') }}"
                                                                             alt=""> </div>
                                                                 </a>
                                                             </div>
@@ -486,7 +485,7 @@
                                                             <div class="post-img">
                                                                 <a href="indexa1ca.html?p=15">
                                                                     <div class="img"> <img
-                                                                            src="wp-content/uploads/2022/01/1.jpg"
+                                                                            src="{{ asset('User/images/1.jpg') }}"
                                                                             alt=""> </div>
                                                                 </a>
                                                             </div>
@@ -502,7 +501,7 @@
                                                             <div class="post-img">
                                                                 <a href="indexd8eb.html?p=17">
                                                                     <div class="img"> <img
-                                                                            src="wp-content/uploads/2022/01/3.jpg"
+                                                                            src="{{ asset('User/images/3.jpg') }}"
                                                                             alt=""> </div>
                                                                 </a>
                                                             </div>
@@ -544,13 +543,13 @@
                                             <div class="row">
                                                 <div class="col-md-12 animate-box" data-animate-effect="fadeInUp">
                                                     <div class="testimonials left">
-                                                        <figure> <img src="wp-content/uploads/2022/03/client.jpg"
+                                                        <figure> <img src="{{ asset('User/images/client.jpg') }}"
                                                                 alt="" class="img-fluid"> </figure>
                                                         <div class="caption testimonials">
                                                             <div class="owl-carousel owl-theme">
                                                                 <div class="item-box">
                                                                     <span class="quote"><img
-                                                                            src="wp-content/uploads/2022/03/quot.png"
+                                                                            src="{{ asset('User/images/quot.png') }}"
                                                                             alt=""></span>
                                                                     <p>Architecture the inila duman aten elit
                                                                         finibus vivera alacus theonen sruden seneice
@@ -561,7 +560,7 @@
                                                                         drana incabout miss fermen.</p>
                                                                     <div class="info">
                                                                         <div class="author-img"> <img
-                                                                                src="wp-content/uploads/2022/03/1-1.jpg"
+                                                                                src="{{ asset('User/images/1-1.jpg') }}"
                                                                                 alt=""> </div>
                                                                         <div class="cont">
                                                                             <h6>Enrico Brown</h6>
@@ -572,7 +571,7 @@
                                                                 </div>
                                                                 <div class="item-box">
                                                                     <span class="quote"><img
-                                                                            src="wp-content/uploads/2022/03/quot.png"
+                                                                            src="{{ asset('User/images/quot.png') }}"
                                                                             alt=""></span>
                                                                     <p>Architecture the inila duman aten elit
                                                                         finibus vivera alacus theonen sruden seneice
@@ -583,7 +582,7 @@
                                                                         drana incabout miss fermen.</p>
                                                                     <div class="info">
                                                                         <div class="author-img"> <img
-                                                                                src="wp-content/uploads/2022/03/2-1.jpg"
+                                                                                src="{{ asset('User/images/2-1.jpg') }}"
                                                                                 alt=""> </div>
                                                                         <div class="cont">
                                                                             <h6>Emily White</h6>
@@ -594,7 +593,7 @@
                                                                 </div>
                                                                 <div class="item-box">
                                                                     <span class="quote"><img
-                                                                            src="wp-content/uploads/2022/03/quot.png"
+                                                                            src="{{ asset('User/images/quot.png') }}"
                                                                             alt=""></span>
                                                                     <p>Architecture the inila duman aten elit
                                                                         finibus vivera alacus theonen sruden seneice
@@ -605,7 +604,7 @@
                                                                         drana incabout miss fermen.</p>
                                                                     <div class="info">
                                                                         <div class="author-img"> <img
-                                                                                src="wp-content/uploads/2022/03/3-1.jpg"
+                                                                                src="{{ asset('User/images/3-1.jpg') }}"
                                                                                 alt=""> </div>
                                                                         <div class="cont">
                                                                             <h6>Daniel Martin</h6>
@@ -655,7 +654,7 @@
                                                     <div class="owl-carousel owl-theme">
                                                         <div class="item">
                                                             <div class="position-re o-hidden"> <img
-                                                                    src="wp-content/uploads/2022/03/1-1.jpg" alt="">
+                                                                    src="{{ asset('User/images/1-1.jpg') }}" alt="">
                                                             </div>
                                                             <div class="con">
                                                                 <h5>Enrico Brown</h5>
@@ -664,7 +663,7 @@
                                                         </div>
                                                         <div class="item">
                                                             <div class="position-re o-hidden"> <img
-                                                                    src="wp-content/uploads/2022/03/2-1.jpg" alt="">
+                                                                    src="{{ asset('User/images/2-1.jpg') }}" alt="">
                                                             </div>
                                                             <div class="con">
                                                                 <h5>Olivia White</h5>
@@ -673,7 +672,7 @@
                                                         </div>
                                                         <div class="item">
                                                             <div class="position-re o-hidden"> <img
-                                                                    src="wp-content/uploads/2022/03/3-1.jpg" alt="">
+                                                                    src="{{ asset('User/images/3-1.jpg') }}" alt="">
                                                             </div>
                                                             <div class="con">
                                                                 <h5>Daniel Martin</h5>
@@ -751,7 +750,7 @@
         </div>
     </footer>
     <!-- footer background image -->
-    <div class="main-footer-bg main-footer-bottom"> <img src="wp-content/uploads/2022/01/banner.jpg"
+    <div class="main-footer-bg main-footer-bottom"> <img src="{{ asset('User/images/banner.jpg') }}"
             alt="background">
         <div class="main-footer-bg-overlay"></div>
     </div>

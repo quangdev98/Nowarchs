@@ -1,35 +1,35 @@
-<script src='wp-content/plugins/contact-form-7/includes/js/scriptsce52.js?ver=5.0.2' id='contact-form-7-js'></script>
-<script src='wp-content/themes/nowarch/assets/js/jquery-3.6.0.min7404.js?ver=5.9.3' id='jquery-3.6.0-js'></script>
-<script src='wp-content/themes/nowarch/assets/js/jquery-migrate-3.0.0.min7404.js?ver=5.9.3'
+<script src="{{ asset('User/js/scriptsce52.js?ver=5.0.2') }}" id='contact-form-7-js'></script>
+<script src="{{ asset('User/js/jquery-3.6.0.min7404.js?ver=5.9.3') }}" id='jquery-3.6.0-js'></script>
+<script src="{{ asset('User/js/jquery-migrate-3.0.0.min7404.js?ver=5.9.3') }}"
 id='jquery-migrate-3.0.0-js'></script>
-<script src='wp-content/themes/nowarch/assets/js/modernizr-2.6.2.min7404.js?ver=5.9.3' id='modernizr-2.6.2-js'></script>
-<script src='wp-content/themes/nowarch/assets/js/imagesloaded.pkgd.min7404.js?ver=5.9.3' id='imagesloaded-pkgd-js'>
+<script src="{{ asset('User/js/modernizr-2.6.2.min7404.js?ver=5.9.3') }}" id='modernizr-2.6.2-js'></script>
+<script src="{{ asset('User/js/imagesloaded.pkgd.min7404.js?ver=5.9.3') }}" id='imagesloaded-pkgd-js'>
 </script>
-<script src='wp-content/themes/nowarch/assets/js/jquery.isotope.v3.0.27404.js?ver=5.9.3' id='jquery-isotope-js'>
+<script src="{{ asset('User/js/jquery.isotope.v3.0.27404.js?ver=5.9.3') }}" id='jquery-isotope-js'>
 </script>
-<script src='wp-content/themes/nowarch/assets/js/popper.min7404.js?ver=5.9.3' id='popper-js'></script>
-<script src='wp-content/themes/nowarch/assets/js/bootstrap.min7404.js?ver=5.9.3' id='bootstrap-js'></script>
-<script src='wp-content/themes/nowarch/assets/js/scrollIt.min7404.js?ver=5.9.3' id='scrollIt-js'></script>
-<script src='wp-content/themes/nowarch/assets/js/jquery.waypoints.min7404.js?ver=5.9.3' id='jquery-waypoints-js'>
+<script src="{{ asset('User/js/popper.min7404.js?ver=5.9.3') }}" id='popper-js'></script>
+<script src="{{ asset('User/js/bootstrap.min7404.js?ver=5.9.3') }}" id='bootstrap-js'></script>
+<script src="{{ asset('User/js/scrollIt.min7404.js?ver=5.9.3') }}" id='scrollIt-js'></script>
+<script src="{{ asset('User/js/jquery.waypoints.min7404.js?ver=5.9.3') }}" id='jquery-waypoints-js'>
 </script>
-<script src='wp-content/themes/nowarch/assets/js/owl.carousel.min7404.js?ver=5.9.3' id='owl-carousel-js'></script>
-<script src='wp-content/themes/nowarch/assets/js/jquery.stellar.min7404.js?ver=5.9.3' id='jquery-stellar-js'></script>
-<script src='wp-content/themes/nowarch/assets/js/jquery.fancybox.min7404.js?ver=5.9.3' id='jquery-fancybox-js'></script>
-<script src='wp-content/themes/nowarch/assets/js/YouTubePopUp7404.js?ver=5.9.3' id='YouTubePopUp-js'></script>
-<script src='wp-content/themes/nowarch/assets/js/custom7404.js?ver=5.9.3' id='nowarch-custom-js'></script>
-<script src='wp-content/plugins/bdevs-elementor/assets/js/bdevs-elementor8a54.js?ver=1.0.0' id='bdevs-elementor-js'>
+<script src="{{ asset('User/js/owl.carousel.min7404.js?ver=5.9.3') }}" id='owl-carousel-js'></script>
+<script src="{{ asset('User/js/jquery.stellar.min7404.js?ver=5.9.3') }}" id='jquery-stellar-js'></script>
+<script src="{{ asset('User/js/jquery.fancybox.min7404.js?ver=5.9.3') }}" id='jquery-fancybox-js'></script>
+<script src="{{ asset('User/js/YouTubePopUp7404.js?ver=5.9.3') }}" id='YouTubePopUp-js'></script>
+<script src="{{ asset('User/js/custom7404.js?ver=5.9.3') }}" id='nowarch-custom-js'></script>
+<script src="{{ asset('User/js/bdevs-elementor8a54.js?ver=1.0.0') }}" id='bdevs-elementor-js'>
 </script>
-<script src='wp-content/plugins/elementor/assets/js/webpack.runtime.mine5ca.js?ver=3.2.3'
+<script src="{{ asset('User/js/webpack.runtime.mine5ca.js?ver=3.2.3') }}"
 id='elementor-webpack-runtime-js'></script>
-<script src='wp-content/plugins/elementor/assets/js/frontend-modules.mine5ca.js?ver=3.2.3'
+<script src="{{ asset('User/js/frontend-modules.mine5ca.js?ver=3.2.3') }}"
 id='elementor-frontend-modules-js'></script>
-<script src='wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min05da.js?ver=4.0.2'
+<script src="{{ asset('User/js/waypoints.min05da.js?ver=4.0.2') }}"
 id='elementor-waypoints-js'></script>
-<script src='wp-includes/js/jquery/ui/core.min0028.js?ver=1.13.1' id='jquery-ui-core-js'></script>
-<script src='wp-content/plugins/elementor/assets/lib/swiper/swiper.min48f5.js?ver=5.3.6' id='swiper-js'></script>
-<script src='wp-content/plugins/elementor/assets/lib/share-link/share-link.mine5ca.js?ver=3.2.3' id='share-link-js'>
+<script src="{{ asset('User/js/core.min0028.js?ver=1.13.1') }}" id='jquery-ui-core-js'></script>
+<script src="{{ asset('User/js/swiper.min48f5.js?ver=5.3.6') }}" id='swiper-js'></script>
+<script src="{{ asset('User/js/share-link.mine5ca.js?ver=3.2.3') }}" id='share-link-js'>
 </script>
-<script src='wp-content/plugins/elementor/assets/lib/dialog/dialog.mina288.js?ver=4.8.1' id='elementor-dialog-js'>
+<script src="{{ asset('User/js/dialog.mina288.js?ver=4.8.1') }}" id='elementor-dialog-js'>
 </script>
 <script id='elementor-frontend-js-before'>
     var elementorFrontendConfig = {
@@ -133,7 +133,6 @@ id='elementor-waypoints-js'></script>
         }
     };
 </script>
-<script src='wp-content/plugins/elementor/assets/js/frontend.mine5ca.js?ver=3.2.3' id='elementor-frontend-js'></script>
-<script src='wp-content/plugins/elementor/assets/js/preloaded-modules.mine5ca.js?ver=3.2.3' id='preloaded-modules-js'>
-</script>
+<script src="{{ asset('User/js/frontend.mine5ca.js?ver=3.2.3') }}" id='elementor-frontend-js'></script>
+<script src="{{ asset('User/js/preloaded-modules.mine5ca.js?ver=3.2.3') }}" id='preloaded-modules-js'></script>
 @yield('scripts')

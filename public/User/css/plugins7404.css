@@ -3,20 +3,20 @@
 -----------------------------------------------------------------*/
 
 /* == bootstrap == */
-@import url("plugins/bootstrap.min.css");
+@import url("../css/bootstrap.min.css");
 
 /* == owl.carousel == */
-@import url("plugins/owl.carousel.min.css");
-@import url("plugins/owl.theme.default.min.css");
+@import url("../css/owl.carousel.min.css");
+@import url("../css/owl.theme.default.min.css");
 
 /* == animate css == */
-@import url("plugins/animate.min.css");
+@import url("../css/animate.min.css");
 
 /* == themify icons ==*/
-@import url("plugins/themify-icons.css");
+@import url("../css/themify-icons.css");
 
 /* == fancybox classes == */
-@import url("plugins/fancybox.min.css");
+@import url("../css/fancybox.min.css");
 
 /* == YouTubePopUp == */
-@import url("plugins/YouTubePopUp.css");
+@import url("../css/YouTubePopUp.css");
