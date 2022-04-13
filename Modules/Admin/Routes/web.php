@@ -14,8 +14,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/login', 'AuthController@getLogin')->name('admin.auth.login');
 Route::post('/login', 'AuthController@authenticate')->name('admin.auth.authenticate');
+Route::get('/logout', 'AuthController@logout')->name('admin.auth.logout');
 
 Route::prefix('admin')->group(function() {
-    Route::get('/', 'AdminController@index')->name('admin.index');
+    Route::get('/', 'AdminController@index')->name('admin.index')->middleware('admin');
 
 });
