@@ -1,19 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Module User</title>
+<html lang="en-US">
+<head>
+	@include("user::layouts.partials.meta")
 
-       {{-- Laravel Mix - CSS File --}}
-       {{-- <link rel="stylesheet" href="{{ mix('css/user.css') }}"> --}}
+</head>
 
-    </head>
-    <body>
-        @yield('content')
+<body class="home page-template page-template-page-templates page-template-home page-template-page-templateshome-php page page-id-43 elementor-default elementor-kit-75 elementor-page elementor-page-43">
+    @yield('content')
+    
+    @include("user::layouts.partials.scripts")
 
-        {{-- Laravel Mix - JS File --}}
-        {{-- <script src="{{ mix('js/user.js') }}"></script> --}}
-    </body>
+</body>
+
 </html>

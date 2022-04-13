@@ -1,9 +1,761 @@
 @extends('user::layouts.master')
 
 @section('content')
-    <h1>Hello World</h1>
 
-    <p>
-        This view is loaded from module: {!! config('user.name') !!}
-    </p>
+
+<div class="preloader-bg"></div>
+<div id="preloader">
+    <div id="preloader-status">
+        <div class="preloader-position loader"> <span></span> </div>
+    </div>
+</div>
+<!-- Progress scroll totop -->
+<div class="progress-wrap cursor-pointer">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+    </svg>
+</div>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-md">
+    <div class="container">
+        <!-- Logo -->
+        <div class="logo-wrapper navbar-brand valign">
+            <a class="logo" href="index.html"> <img src="wp-content/uploads/2022/01/logo.png" alt=""> </a>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
+            aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"> <span
+                class="navbar-toggler-icon"><i class="ti-menu"></i></span> </button>
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav ms-auto ">
+                <li id="menu-item-55"
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-43 current_page_item menu-item-55 nav-item active">
+                    <a title="Home" href="index.html" class="nav-link">Home</a></li>
+                <li id="menu-item-53"
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-53 nav-item"><a
+                        title="About" href="indexd079.html?page_id=45" class="nav-link">About</a></li>
+                <li id="menu-item-57"
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-57 nav-item"><a
+                        title="Services" href="indexc04b.html?page_id=47" class="nav-link">Services</a></li>
+                <li id="menu-item-56"
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-56 nav-item"><a
+                        title="Projects" href="indexc502.html?page_id=35" class="nav-link">Projects</a></li>
+                <li id="menu-item-58"
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58 nav-item"><a
+                        title="Blog" href="index1dfd.html?page_id=25" class="nav-link">Blog</a></li>
+                <li id="menu-item-54"
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54 nav-item"><a
+                        title="Contact" href="index6499.html?page_id=49" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="content-wrapper">
+    <!-- Lines section -->
+    <section class="content-lines-wrapper">
+        <div class="content-lines-inner">
+            <div class="content-lines"></div>
+        </div>
+    </section>
+    <div data-elementor-type="wp-page" data-elementor-id="43" class="elementor elementor-43"
+        data-elementor-settings="[]">
+        <div class="elementor-section-wrap">
+            <section
+                class="elementor-section elementor-top-section elementor-element elementor-element-01b8456 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+                data-id="01b8456" data-element_type="section">
+                <div class="elementor-container elementor-column-gap-no">
+                    <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-5ec1e36"
+                        data-id="5ec1e36" data-element_type="column">
+                        <div class="elementor-widget-wrap elementor-element-populated">
+                            <div class="elementor-element elementor-element-a1fe15f elementor-align-left elementor-widget elementor-widget-home-multi-slider"
+                                data-id="a1fe15f" data-element_type="widget"
+                                data-widget_type="home-multi-slider.default">
+                                <div class="elementor-widget-container">
+
+                                    <header class="header slider-fade">
+                                        <div class="owl-carousel owl-theme">
+                                            <div class="item bg-img" data-overlay-dark="3"
+                                                data-background="https://shtheme.com/demosd/nowarch/wp-content/uploads/2022/03/1.jpg">
+                                                <div class="v-middle caption">
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <div class="col-md-12 text-center">
+                                                                <div class="o-hidden">
+                                                                    <h6>Residental</h6>
+                                                                    <h1>The Brown House</h1>
+                                                                    <div class="butn-dark mt-30 mb-30"><a
+                                                                            href="indexd3c7.html?portfolio=brown-house-in-new-york"><span>See
+                                                                                project <i
+                                                                                    class="ti-arrow-right"></i></span></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="item bg-img" data-overlay-dark="3"
+                                                data-background="https://shtheme.com/demosd/nowarch/wp-content/uploads/2022/03/2.jpg">
+                                                <div class="v-middle caption">
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <div class="col-md-12 text-center">
+                                                                <div class="o-hidden">
+                                                                    <h6>Residental</h6>
+                                                                    <h1>The Soft Villa</h1>
+                                                                    <div class="butn-dark mt-30 mb-30"><a
+                                                                            href="indexaf29.html?portfolio=the-soft-villa-in-canada"><span>See
+                                                                                project <i
+                                                                                    class="ti-arrow-right"></i></span></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="item bg-img" data-overlay-dark="3"
+                                                data-background="https://shtheme.com/demosd/nowarch/wp-content/uploads/2022/03/3.jpg">
+                                                <div class="v-middle caption">
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <div class="col-md-12 text-center">
+                                                                <div class="o-hidden">
+                                                                    <h6>Residental</h6>
+                                                                    <h1>South Dan House</h1>
+                                                                    <div class="butn-dark mt-30 mb-30"><a
+                                                                            href="index6b79.html?portfolio=box-house-in-london"><span>See
+                                                                                project <i
+                                                                                    class="ti-arrow-right"></i></span></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="social-icon">
+                                            <a href="https://www.facebook.com/"><i class="ti-facebook"></i></a>
+                                            <a href="https://twitter.com/"><i class="ti-twitter"></i></a>
+                                            <a href="https://www.instagram.com/"><i class="ti-instagram"></i></a>
+                                            <a href="https://www.pinterest.com/"><i class="ti-pinterest"></i></a>
+                                        </div>
+                                    </header>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section
+                class="elementor-section elementor-top-section elementor-element elementor-element-52a4146 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+                data-id="52a4146" data-element_type="section">
+                <div class="elementor-container elementor-column-gap-no">
+                    <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-aaa642a"
+                        data-id="aaa642a" data-element_type="column">
+                        <div class="elementor-widget-wrap elementor-element-populated">
+                            <div class="elementor-element elementor-element-922d6ed elementor-align-left elementor-widget elementor-widget-home-multi-about"
+                                data-id="922d6ed" data-element_type="widget"
+                                data-widget_type="home-multi-about.default">
+                                <div class="elementor-widget-container">
+
+                                    <!-- About section -->
+                                    <section class="about section-padding">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-12 animate-box" data-animate-effect="fadeInUp">
+                                                    <div class="about">
+                                                        <figure> <img src="wp-content/uploads/2022/03/about.jpg"
+                                                                alt=""> </figure>
+                                                        <div class="caption">
+                                                            <div class="section-number">.01</div>
+                                                            <div class="section-subtitle">Get to know us</div>
+                                                            <div class="section-title">About Company</div>
+                                                            <p>Architecture the inila duman aten elit finibus vivera
+                                                                alacus company design drudean seneice miuscibe
+                                                                noneten the fermen. The design architecture duiman
+                                                                finibus viverra nec a lacus drudeane sene voice
+                                                                fermen.</p>
+                                                            <p>Design architecture duiman at elit finibus viverra
+                                                                nec a lacus vivento nuse ane sene voice the volume
+                                                                the miss drana inc fermen.</p>
+                                                            <div class="butn-dark"><a
+                                                                    href="indexd079.html?page_id=45"><span>Read more
+                                                                        <i class="ti-arrow-right"></i></span></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section
+                class="elementor-section elementor-top-section elementor-element elementor-element-36800d1 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+                data-id="36800d1" data-element_type="section">
+                <div class="elementor-container elementor-column-gap-no">
+                    <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-cfb170d"
+                        data-id="cfb170d" data-element_type="column">
+                        <div class="elementor-widget-wrap elementor-element-populated">
+                            <div class="elementor-element elementor-element-f9afc00 elementor-align-left elementor-widget elementor-widget-home-multi-service"
+                                data-id="f9afc00" data-element_type="widget"
+                                data-widget_type="home-multi-service.default">
+                                <div class="elementor-widget-container">
+
+                                    <section class="services mb-90">
+                                        <div class="container">
+                                            <div class="row">
+                                                <!-- You can access the background images on the services style line in the style.css file. -->
+                                                <div class="col-md-12 animate-box" data-animate-effect="fadeInUp">
+                                                    <div class="owl-carousel owl-theme">
+                                                        <div class="item bg-1">
+                                                            <div class="con">
+                                                                <div class="icon-img"><img
+                                                                        src="wp-content/uploads/2022/03/1.png"
+                                                                        alt=""></div>
+                                                                <h5>Architectural Design</h5>
+                                                                <p>Architecture bibendum eros onne vane the sutate
+                                                                    the sit ame vehicula nubare alacera in evensa
+                                                                    sitae zusto.</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item bg-2">
+                                                            <div class="con">
+                                                                <div class="icon-img"><img
+                                                                        src="wp-content/uploads/2022/03/2.png"
+                                                                        alt=""></div>
+                                                                <h5>Interior Design</h5>
+                                                                <p>Architecture bibendum eros onne vane the sutate
+                                                                    the sit ame vehicula nubare alacera in evensa
+                                                                    sitae zusto.</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item bg-3">
+                                                            <div class="con">
+                                                                <div class="icon-img"><img
+                                                                        src="wp-content/uploads/2022/03/3.png"
+                                                                        alt=""></div>
+                                                                <h5>Exterior Design</h5>
+                                                                <p>Architecture bibendum eros onne vane the sutate
+                                                                    the sit ame vehicula nubare alacera in evensa
+                                                                    sitae zusto.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section
+                class="elementor-section elementor-top-section elementor-element elementor-element-5d68dfc elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+                data-id="5d68dfc" data-element_type="section">
+                <div class="elementor-container elementor-column-gap-no">
+                    <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-770ea1e"
+                        data-id="770ea1e" data-element_type="column">
+                        <div class="elementor-widget-wrap elementor-element-populated">
+                            <div class="elementor-element elementor-element-aece2f0 elementor-align-left elementor-widget elementor-widget-home-multi-portfolio"
+                                data-id="aece2f0" data-element_type="widget"
+                                data-widget_type="home-multi-portfolio.default">
+                                <div class="elementor-widget-container">
+
+                                    <section class="projects section-padding">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-12 mb-30">
+                                                    <div class="section-number">.03</div>
+                                                    <div class="section-subtitle">Portfolio</div>
+                                                    <div class="section-title">Our Projects</div>
+                                                </div>
+                                            </div>
+                                            <div class="projects-carousel owl-theme owl-carousel">
+                                                <div class="projects-single">
+                                                    <div class="projects-img"> <img
+                                                            src="wp-content/uploads/2022/01/5.jpg" alt=""> </div>
+                                                    <div class="projects-content">
+                                                        <div class="projects-tagline">ARCHITECTURE</div>
+                                                        <div class="projects-title"><a
+                                                                href="index6b79.html?portfolio=box-house-in-london">BOX
+                                                                HOUSE, IN LONDON</a></div>
+                                                        <div class="projects-arrow"> <a
+                                                                href="index6b79.html?portfolio=box-house-in-london"><span
+                                                                    class="ti-arrow-right"></span></a> </div>
+                                                    </div>
+                                                </div>
+                                                <div class="projects-single">
+                                                    <div class="projects-img"> <img
+                                                            src="wp-content/uploads/2022/01/4.jpg" alt=""> </div>
+                                                    <div class="projects-content">
+                                                        <div class="projects-tagline">URBAN DESIGN</div>
+                                                        <div class="projects-title"><a
+                                                                href="indexe1ca.html?portfolio=spacex-villa-in-new-york">SPACEX
+                                                                VILLA, IN NEW YORK</a></div>
+                                                        <div class="projects-arrow"> <a
+                                                                href="indexe1ca.html?portfolio=spacex-villa-in-new-york"><span
+                                                                    class="ti-arrow-right"></span></a> </div>
+                                                    </div>
+                                                </div>
+                                                <div class="projects-single">
+                                                    <div class="projects-img"> <img
+                                                            src="wp-content/uploads/2022/01/3-1.jpg" alt=""> </div>
+                                                    <div class="projects-content">
+                                                        <div class="projects-tagline">INTERIOR DESIGN</div>
+                                                        <div class="projects-title"><a
+                                                                href="indexaf29.html?portfolio=the-soft-villa-in-canada">THE
+                                                                SOFT VILLA, IN CANADA</a></div>
+                                                        <div class="projects-arrow"> <a
+                                                                href="indexaf29.html?portfolio=the-soft-villa-in-canada"><span
+                                                                    class="ti-arrow-right"></span></a> </div>
+                                                    </div>
+                                                </div>
+                                                <div class="projects-single">
+                                                    <div class="projects-img"> <img
+                                                            src="wp-content/uploads/2022/01/2-1.jpg" alt=""> </div>
+                                                    <div class="projects-content">
+                                                        <div class="projects-tagline">EXTERIOR DESIGN</div>
+                                                        <div class="projects-title"><a
+                                                                href="indexd3c7.html?portfolio=brown-house-in-new-york">BROWN
+                                                                HOUSE, IN NEW YORK</a></div>
+                                                        <div class="projects-arrow"> <a
+                                                                href="indexd3c7.html?portfolio=brown-house-in-new-york"><span
+                                                                    class="ti-arrow-right"></span></a> </div>
+                                                    </div>
+                                                </div>
+                                                <div class="projects-single">
+                                                    <div class="projects-img"> <img
+                                                            src="wp-content/uploads/2022/01/1-1.jpg" alt=""> </div>
+                                                    <div class="projects-content">
+                                                        <div class="projects-tagline">URBAN DESIGN</div>
+                                                        <div class="projects-title"><a
+                                                                href="indexc867.html?portfolio=spacex-villa-in-new-york-2">SPACEX
+                                                                VILLA, IN NEW YORK</a></div>
+                                                        <div class="projects-arrow"> <a
+                                                                href="indexc867.html?portfolio=spacex-villa-in-new-york-2"><span
+                                                                    class="ti-arrow-right"></span></a> </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section
+                class="elementor-section elementor-top-section elementor-element elementor-element-26de352 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+                data-id="26de352" data-element_type="section">
+                <div class="elementor-container elementor-column-gap-no">
+                    <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-caaf155"
+                        data-id="caaf155" data-element_type="column">
+                        <div class="elementor-widget-wrap elementor-element-populated">
+                            <div class="elementor-element elementor-element-0d79bbc elementor-align-left elementor-widget elementor-widget-home-multi-video"
+                                data-id="0d79bbc" data-element_type="widget"
+                                data-widget_type="home-multi-video.default">
+                                <div class="elementor-widget-container">
+
+                                    <section class="section-padding">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-12 animate-box" data-animate-effect="fadeInUp">
+                                                    <div class="project-video left">
+                                                        <figure>
+                                                            <img src="wp-content/uploads/2022/03/project.jpg" alt=""
+                                                                class="img-fluid">
+                                                            <div class="row">
+                                                                <div
+                                                                    class="col-md-12 offset-md-4 valign v-middle clear">
+                                                                    <div class="vid-area">
+                                                                        <div class="vid-icon">
+                                                                            <a class="play-button vid"
+                                                                                href="https://youtu.be/y9j-BL5ocW8?t=12">
+                                                                                <svg class="circle-fill">
+                                                                                    <circle cx="43" cy="43" r="39"
+                                                                                        stroke="#fff"
+                                                                                        stroke-width="1"></circle>
+                                                                                </svg>
+                                                                                <svg class="circle-track">
+                                                                                    <circle cx="43" cy="43" r="39"
+                                                                                        stroke="none"
+                                                                                        stroke-width="1"
+                                                                                        fill="none"></circle>
+                                                                                </svg> <span class="polygon">
+                                                                                    <i class="ti-control-play"></i>
+                                                                                </span> </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </figure>
+                                                        <div class="caption">
+                                                            <div class="section-number">.04</div>
+                                                            <div class="section-subtitle">Take a look at our</div>
+                                                            <div class="section-title">Recent Project</div>
+                                                            <p>Take a look at our most recent project. Architecture
+                                                                the inila miss uman saten eliten finibus vivera
+                                                                alacus themone the drudean seneice muscibe noten
+                                                                tofermen. Design architecture duiman viverra nec a
+                                                                fermen.</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section
+                class="elementor-section elementor-top-section elementor-element elementor-element-b774bdd elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+                data-id="b774bdd" data-element_type="section">
+                <div class="elementor-container elementor-column-gap-no">
+                    <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-7b5cad1"
+                        data-id="7b5cad1" data-element_type="column">
+                        <div class="elementor-widget-wrap elementor-element-populated">
+                            <div class="elementor-element elementor-element-3169994 elementor-align-left elementor-widget elementor-widget-home-multi-blog"
+                                data-id="3169994" data-element_type="widget"
+                                data-widget_type="home-multi-blog.default">
+                                <div class="elementor-widget-container">
+
+                                    <section class="blog section-padding">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-12 text-center mb-30">
+                                                    <div class="section-number">.05</div>
+                                                    <div class="section-subtitle">Our Blog</div>
+                                                    <div class="section-title">Latest News</div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="owl-carousel owl-theme">
+                                                        <div class="item">
+                                                            <div class="post-img">
+                                                                <a href="index2df4.html?p=8">
+                                                                    <div class="img"> <img
+                                                                            src="wp-content/uploads/2022/01/3.jpg"
+                                                                            alt=""> </div>
+                                                                </a>
+                                                            </div>
+                                                            <div class="cont">
+                                                                <div class="info"> <a
+                                                                        href="index2df4.html?p=8"><span>Event</span></a>
+                                                                    January 17, 2022 </div>
+                                                                <h5><a href="index2df4.html?p=8">A BRIEF HISTORY ON
+                                                                        THE BEGINNINGS OF MODERN ARCHITECTURE</a>
+                                                                </h5>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item">
+                                                            <div class="post-img">
+                                                                <a href="index2dc4.html?p=13">
+                                                                    <div class="img"> <img
+                                                                            src="wp-content/uploads/2022/01/2.jpg"
+                                                                            alt=""> </div>
+                                                                </a>
+                                                            </div>
+                                                            <div class="cont">
+                                                                <div class="info"> <a
+                                                                        href="index2dc4.html?p=13"><span>Event</span></a>
+                                                                    January 17, 2022 </div>
+                                                                <h5><a href="index2dc4.html?p=13">THIS ULTRA-MODERN
+                                                                        MOUNTAIN HOME GOES ABOVE AND BEYOND</a></h5>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item">
+                                                            <div class="post-img">
+                                                                <a href="indexa1ca.html?p=15">
+                                                                    <div class="img"> <img
+                                                                            src="wp-content/uploads/2022/01/1.jpg"
+                                                                            alt=""> </div>
+                                                                </a>
+                                                            </div>
+                                                            <div class="cont">
+                                                                <div class="info"> <a
+                                                                        href="indexa1ca.html?p=15"><span>Event</span></a>
+                                                                    January 17, 2022 </div>
+                                                                <h5><a href="indexa1ca.html?p=15">LUXURIOUS AND
+                                                                        ULTRA MODERN HOMES IN THE WORLD</a></h5>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item">
+                                                            <div class="post-img">
+                                                                <a href="indexd8eb.html?p=17">
+                                                                    <div class="img"> <img
+                                                                            src="wp-content/uploads/2022/01/3.jpg"
+                                                                            alt=""> </div>
+                                                                </a>
+                                                            </div>
+                                                            <div class="cont">
+                                                                <div class="info"> <a
+                                                                        href="indexd8eb.html?p=17"><span>Event</span></a>
+                                                                    January 17, 2022 </div>
+                                                                <h5><a href="indexd8eb.html?p=17">A BRIEF HISTORY ON
+                                                                        THE BEGINNINGS OF MODERN ARCHITECTURE</a>
+                                                                </h5>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section
+                class="elementor-section elementor-top-section elementor-element elementor-element-00067dd elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+                data-id="00067dd" data-element_type="section">
+                <div class="elementor-container elementor-column-gap-no">
+                    <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-28cbbff"
+                        data-id="28cbbff" data-element_type="column">
+                        <div class="elementor-widget-wrap elementor-element-populated">
+                            <div class="elementor-element elementor-element-219f8e1 elementor-align-left elementor-widget elementor-widget-home-multi-testimonials"
+                                data-id="219f8e1" data-element_type="widget"
+                                data-widget_type="home-multi-testimonials.default">
+                                <div class="elementor-widget-container">
+
+                                    <section class="section-padding">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-12 animate-box" data-animate-effect="fadeInUp">
+                                                    <div class="testimonials left">
+                                                        <figure> <img src="wp-content/uploads/2022/03/client.jpg"
+                                                                alt="" class="img-fluid"> </figure>
+                                                        <div class="caption testimonials">
+                                                            <div class="owl-carousel owl-theme">
+                                                                <div class="item-box">
+                                                                    <span class="quote"><img
+                                                                            src="wp-content/uploads/2022/03/quot.png"
+                                                                            alt=""></span>
+                                                                    <p>Architecture the inila duman aten elit
+                                                                        finibus vivera alacus theonen sruden seneice
+                                                                        miuscibe noneten fermen. The design
+                                                                        architecture duiman finibus viverra nec a
+                                                                        lacus drudeane sene voice fermen.
+                                                                        Architecture vivente the nolume the miss
+                                                                        drana incabout miss fermen.</p>
+                                                                    <div class="info">
+                                                                        <div class="author-img"> <img
+                                                                                src="wp-content/uploads/2022/03/1-1.jpg"
+                                                                                alt=""> </div>
+                                                                        <div class="cont">
+                                                                            <h6>Enrico Brown</h6>
+
+                                                                            <span>HHM Director</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="item-box">
+                                                                    <span class="quote"><img
+                                                                            src="wp-content/uploads/2022/03/quot.png"
+                                                                            alt=""></span>
+                                                                    <p>Architecture the inila duman aten elit
+                                                                        finibus vivera alacus theonen sruden seneice
+                                                                        miuscibe noneten fermen. The design
+                                                                        architecture duiman finibus viverra nec a
+                                                                        lacus drudeane sene voice fermen.
+                                                                        Architecture vivente the nolume the miss
+                                                                        drana incabout miss fermen.</p>
+                                                                    <div class="info">
+                                                                        <div class="author-img"> <img
+                                                                                src="wp-content/uploads/2022/03/2-1.jpg"
+                                                                                alt=""> </div>
+                                                                        <div class="cont">
+                                                                            <h6>Emily White</h6>
+
+                                                                            <span>IOT Company</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="item-box">
+                                                                    <span class="quote"><img
+                                                                            src="wp-content/uploads/2022/03/quot.png"
+                                                                            alt=""></span>
+                                                                    <p>Architecture the inila duman aten elit
+                                                                        finibus vivera alacus theonen sruden seneice
+                                                                        miuscibe noneten fermen. The design
+                                                                        architecture duiman finibus viverra nec a
+                                                                        lacus drudeane sene voice fermen.
+                                                                        Architecture vivente the nolume the miss
+                                                                        drana incabout miss fermen.</p>
+                                                                    <div class="info">
+                                                                        <div class="author-img"> <img
+                                                                                src="wp-content/uploads/2022/03/3-1.jpg"
+                                                                                alt=""> </div>
+                                                                        <div class="cont">
+                                                                            <h6>Daniel Martin</h6>
+
+                                                                            <span>TOGO Director</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="section-number">.06</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section
+                class="elementor-section elementor-top-section elementor-element elementor-element-b92759c elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+                data-id="b92759c" data-element_type="section">
+                <div class="elementor-container elementor-column-gap-no">
+                    <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-0cdbf21"
+                        data-id="0cdbf21" data-element_type="column">
+                        <div class="elementor-widget-wrap elementor-element-populated">
+                            <div class="elementor-element elementor-element-e76028a elementor-align-left elementor-widget elementor-widget-home-multi-team"
+                                data-id="e76028a" data-element_type="widget"
+                                data-widget_type="home-multi-team.default">
+                                <div class="elementor-widget-container">
+
+                                    <section class="team section-padding">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-12 text-center mb-30">
+                                                    <div class="section-number">.07</div>
+                                                    <div class="section-subtitle">Our Experts</div>
+                                                    <div class="section-title">Creative Team</div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="owl-carousel owl-theme">
+                                                        <div class="item">
+                                                            <div class="position-re o-hidden"> <img
+                                                                    src="wp-content/uploads/2022/03/1-1.jpg" alt="">
+                                                            </div>
+                                                            <div class="con">
+                                                                <h5>Enrico Brown</h5>
+                                                                <p>dipl. Arch ETH/SIA</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item">
+                                                            <div class="position-re o-hidden"> <img
+                                                                    src="wp-content/uploads/2022/03/2-1.jpg" alt="">
+                                                            </div>
+                                                            <div class="con">
+                                                                <h5>Olivia White</h5>
+                                                                <p>dipl. Arch FH</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item">
+                                                            <div class="position-re o-hidden"> <img
+                                                                    src="wp-content/uploads/2022/03/3-1.jpg" alt="">
+                                                            </div>
+                                                            <div class="con">
+                                                                <h5>Daniel Martin</h5>
+                                                                <p>M.A. FH in Architecture</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+    <footer class="main-footer">
+        <div class="container call-action">
+            <div class="row valign">
+                <div>
+                    <div class="textwidget custom-html-widget">
+                        <div class="col-md-12 text-center mb-60 mt-60 animate-box" data-animate-effect="fadeInUp">
+                            <div class="section-subtitle">Let Talk</div>
+                            <div class="section-title">About your next project.</div>
+                            <div class="butn-dark mt-30 mb-30"><a href="index6499.html?page_id=49"><span>Get in
+                                        touch <i class="ti-arrow-right"></i></span></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <div class="textwidget custom-html-widget">
+                        <div class="col-md-12 text-center">
+                            <div class="contact-info">
+                                <div class="section-subtitle">Contact Info</div>
+                                <p class="mb-0">120 King St, Charleston SC 29401 USA</p>
+                                <p class="mb-0">+1 123-456-0606</p>
+                                <p class="mb-60">info@architecture.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- bottom footer -->
+        <div class="bottom-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <p>© 2022, Nowarch. All right reserved.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="social">
+                            <li><a href="https://www.facebook.com/"><i class="ti-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/"><i class="ti-twitter"></i></a></li>
+                            <li><a href="https://www.instagram.com/"><i class="ti-instagram"></i></a></li>
+                            <li><a href="https://www.pinterest.com/"><i class="ti-pinterest"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <p>
+                            <a href="index6499.html?page_id=49">Privacy Policy</a>
+                            <span>|</span> <a href="index6499.html?page_id=49">Terms & Conditions</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer background image -->
+    <div class="main-footer-bg main-footer-bottom"> <img src="wp-content/uploads/2022/01/banner.jpg"
+            alt="background">
+        <div class="main-footer-bg-overlay"></div>
+    </div>
+</div>
+
+
 @endsection
