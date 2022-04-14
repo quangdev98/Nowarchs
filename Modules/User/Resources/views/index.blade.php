@@ -133,7 +133,7 @@
                                                                     nec a lacus vivento nuse ane sene voice the volume
                                                                     the miss drana inc fermen.</p>
                                                                 <div class="butn-dark"><a
-                                                                        href="indexd079.html?page_id=45"><span>Read more
+                                                                        href="{{ route('user.about') }}"><span>Read more
                                                                             <i class="ti-arrow-right"></i></span></a>
                                                                 </div>
                                                             </div>
@@ -240,10 +240,10 @@
                                                         <div class="projects-content">
                                                             <div class="projects-tagline">ARCHITECTURE</div>
                                                             <div class="projects-title"><a
-                                                                    href="index6b79.html?portfolio=box-house-in-london">BOX
+                                                                    href="{{ route('user.project.show') }}">BOX
                                                                     HOUSE, IN LONDON</a></div>
                                                             <div class="projects-arrow"> <a
-                                                                    href="index6b79.html?portfolio=box-house-in-london"><span
+                                                                    href="{{ route('user.project.show') }}"><span
                                                                         class="ti-arrow-right"></span></a> </div>
                                                         </div>
                                                     </div>
@@ -253,10 +253,10 @@
                                                         <div class="projects-content">
                                                             <div class="projects-tagline">URBAN DESIGN</div>
                                                             <div class="projects-title"><a
-                                                                    href="indexe1ca.html?portfolio=spacex-villa-in-new-york">SPACEX
+                                                                    href="{{ route('user.project.show') }}">SPACEX
                                                                     VILLA, IN NEW YORK</a></div>
                                                             <div class="projects-arrow"> <a
-                                                                    href="indexe1ca.html?portfolio=spacex-villa-in-new-york"><span
+                                                                    href="{{ route('user.project.show') }}"><span
                                                                         class="ti-arrow-right"></span></a> </div>
                                                         </div>
                                                     </div>
@@ -266,10 +266,10 @@
                                                         <div class="projects-content">
                                                             <div class="projects-tagline">INTERIOR DESIGN</div>
                                                             <div class="projects-title"><a
-                                                                    href="indexaf29.html?portfolio=the-soft-villa-in-canada">THE
+                                                                    href="{{ route('user.project.show') }}">THE
                                                                     SOFT VILLA, IN CANADA</a></div>
                                                             <div class="projects-arrow"> <a
-                                                                    href="indexaf29.html?portfolio=the-soft-villa-in-canada"><span
+                                                                    href="{{ route('user.project.show') }}"><span
                                                                         class="ti-arrow-right"></span></a> </div>
                                                         </div>
                                                     </div>
@@ -279,10 +279,10 @@
                                                         <div class="projects-content">
                                                             <div class="projects-tagline">EXTERIOR DESIGN</div>
                                                             <div class="projects-title"><a
-                                                                    href="indexd3c7.html?portfolio=brown-house-in-new-york">BROWN
+                                                                    href="{{ route('user.project.show') }}">BROWN
                                                                     HOUSE, IN NEW YORK</a></div>
                                                             <div class="projects-arrow"> <a
-                                                                    href="indexd3c7.html?portfolio=brown-house-in-new-york"><span
+                                                                    href="{{ route('user.project.show') }}"><span
                                                                         class="ti-arrow-right"></span></a> </div>
                                                         </div>
                                                     </div>
@@ -292,10 +292,10 @@
                                                         <div class="projects-content">
                                                             <div class="projects-tagline">URBAN DESIGN</div>
                                                             <div class="projects-title"><a
-                                                                    href="indexc867.html?portfolio=spacex-villa-in-new-york-2">SPACEX
+                                                                    href="{{ route('user.project.show') }}">SPACEX
                                                                     VILLA, IN NEW YORK</a></div>
                                                             <div class="projects-arrow"> <a
-                                                                    href="indexc867.html?portfolio=spacex-villa-in-new-york-2"><span
+                                                                    href="{{ route('user.project.show') }}"><span
                                                                         class="ti-arrow-right"></span></a> </div>
                                                         </div>
                                                     </div>
@@ -400,7 +400,7 @@
                                                         <div class="owl-carousel owl-theme">
                                                             <div class="item">
                                                                 <div class="post-img">
-                                                                    <a href="index2df4.html?p=8">
+                                                                    <a href="{{ route('user.blog.show') }}">
                                                                         <div class="img"> <img
                                                                                 src="{{ asset('User/images/3.jpg') }}"
                                                                                 alt=""> </div>
@@ -408,16 +408,16 @@
                                                                 </div>
                                                                 <div class="cont">
                                                                     <div class="info"> <a
-                                                                            href="index2df4.html?p=8"><span>Event</span></a>
+                                                                            href="{{ route('user.blog.show') }}"><span>Event</span></a>
                                                                         January 17, 2022 </div>
-                                                                    <h5><a href="index2df4.html?p=8">A BRIEF HISTORY ON
+                                                                    <h5><a href="{{ route('user.blog.show') }}">A BRIEF HISTORY ON
                                                                             THE BEGINNINGS OF MODERN ARCHITECTURE</a>
                                                                     </h5>
                                                                 </div>
                                                             </div>
                                                             <div class="item">
                                                                 <div class="post-img">
-                                                                    <a href="index2dc4.html?p=13">
+                                                                    <a href="{{ route('user.blog.show') }}">
                                                                         <div class="img"> <img
                                                                                 src="{{ asset('User/images/2.jpg') }}"
                                                                                 alt=""> </div>
@@ -425,15 +425,15 @@
                                                                 </div>
                                                                 <div class="cont">
                                                                     <div class="info"> <a
-                                                                            href="index2dc4.html?p=13"><span>Event</span></a>
+                                                                            href="{{ route('user.blog.show') }}"><span>Event</span></a>
                                                                         January 17, 2022 </div>
-                                                                    <h5><a href="index2dc4.html?p=13">THIS ULTRA-MODERN
+                                                                    <h5><a href="{{ route('user.blog.show') }}">THIS ULTRA-MODERN
                                                                             MOUNTAIN HOME GOES ABOVE AND BEYOND</a></h5>
                                                                 </div>
                                                             </div>
                                                             <div class="item">
                                                                 <div class="post-img">
-                                                                    <a href="indexa1ca.html?p=15">
+                                                                    <a href="{{ route('user.blog.show') }}">
                                                                         <div class="img"> <img
                                                                                 src="{{ asset('User/images/1.jpg') }}"
                                                                                 alt=""> </div>
@@ -441,15 +441,15 @@
                                                                 </div>
                                                                 <div class="cont">
                                                                     <div class="info"> <a
-                                                                            href="indexa1ca.html?p=15"><span>Event</span></a>
+                                                                            href="{{ route('user.blog.show') }}"><span>Event</span></a>
                                                                         January 17, 2022 </div>
-                                                                    <h5><a href="indexa1ca.html?p=15">LUXURIOUS AND
+                                                                    <h5><a href="{{ route('user.blog.show') }}">LUXURIOUS AND
                                                                             ULTRA MODERN HOMES IN THE WORLD</a></h5>
                                                                 </div>
                                                             </div>
                                                             <div class="item">
                                                                 <div class="post-img">
-                                                                    <a href="indexd8eb.html?p=17">
+                                                                    <a href="{{ route('user.blog.show') }}">
                                                                         <div class="img"> <img
                                                                                 src="{{ asset('User/images/3.jpg') }}"
                                                                                 alt=""> </div>
@@ -457,9 +457,9 @@
                                                                 </div>
                                                                 <div class="cont">
                                                                     <div class="info"> <a
-                                                                            href="indexd8eb.html?p=17"><span>Event</span></a>
+                                                                            href="{{ route('user.blog.show') }}"><span>Event</span></a>
                                                                         January 17, 2022 </div>
-                                                                    <h5><a href="indexd8eb.html?p=17">A BRIEF HISTORY ON
+                                                                    <h5><a href="{{ route('user.blog.show') }}">A BRIEF HISTORY ON
                                                                             THE BEGINNINGS OF MODERN ARCHITECTURE</a>
                                                                     </h5>
                                                                 </div>
