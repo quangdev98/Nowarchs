@@ -4,9 +4,9 @@
 	<title>Nowarch</title>
 	<meta name='robots' content='max-image-preview:large' />
 	<link rel='dns-prefetch' href='http://s.w.org/' />
-	<link rel="alternate" type="application/rss+xml" title="Nowarch &raquo; Feed" href="indexd784.html?feed=rss2" />
+	{{-- <link rel="alternate" type="application/rss+xml" title="Nowarch &raquo; Feed" href="indexd784.html?feed=rss2" />
 	<link rel="alternate" type="application/rss+xml" title="Nowarch &raquo; Comments Feed"
-		href="indexa6da.html?feed=comments-rss2" />
+		href="indexa6da.html?feed=comments-rss2" /> --}}
 	<script type="text/javascript">
 		window._wpemojiSettings = { "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/", "ext": ".png", "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/", "svgExt": ".svg", "source": { "concatemoji": "https:\/\/shtheme.com\/demosd\/nowarch\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.9.3" } };
 		/*! This file is auto-generated */
@@ -26,8 +26,7 @@
 			padding: 0 !important;
 		}
 	</style>
-	<link rel='stylesheet' id='wp-block-library-css'
-		href="{{ asset('User/css/style.min7404.css?ver=5.9.3') }}" media='all' />
+	<link rel='stylesheet' id='wp-block-library-css' href="{{ asset('User/css/style.min7404.css?ver=5.9.3') }}" media='all' />
 	<style id='global-styles-inline-css' type='text/css'>
 		body {
 			--wp--preset--color--black: #000000;
@@ -276,35 +275,30 @@
 			font-size: var(--wp--preset--font-size--x-large) !important;
 		}
 	</style>
-	<link rel='stylesheet' id='contact-form-7-css'
-		href="{{ asset('User/css/stylesce52.css?ver=5.0.2') }}" media='all' />
-	<link rel='stylesheet' id='nowarch-plugins-css'
-		href="{{ asset('User/css/plugins7404.css?ver=5.9.3') }}" media='all' />
+	<link rel='stylesheet' id='contact-form-7-css' href="{{ asset('User/css/stylesce52.css?ver=5.0.2') }}" media='all' />
+	<link rel='stylesheet' id='nowarch-plugins-css' href="{{ asset('User/css/plugins7404.css?ver=5.9.3') }}" media='all' />
 	<link rel='stylesheet' id='nowarch-style-css' href="{{ asset('User/css/style7404.css?ver=5.9.3') }}"
 		media='all' />
 	<link rel='stylesheet' id='nowarch-css-css' href="{{ asset('User/css/style493a.css?ver=2022-01-17') }}"
 		media='all' />
-	<link rel='stylesheet' id='elementor-icons-css'
-		href="{{ asset('User/css/elementor-icons.min21f9.css?ver=5.11.0') }}" media='all' />
-	<link rel='stylesheet' id='elementor-animations-css'
-		href="{{ asset('User/css/animations.mine5ca.css?ver=3.2.3') }}" media='all' />
-	<link rel='stylesheet' id='elementor-frontend-css'
-		href="{{ asset('User/css/frontend.mine5ca.css?ver=3.2.3') }}" media='all' />
+	<link rel='stylesheet' id='elementor-icons-css' href="{{ asset('User/css/elementor-icons.min21f9.css?ver=5.11.0') }}" media='all' />
+	<link rel='stylesheet' id='elementor-animations-css' href="{{ asset('User/css/animations.mine5ca.css?ver=3.2.3') }}" media='all' />
+	<link rel='stylesheet' id='elementor-frontend-css' href="{{ asset('User/css/frontend.mine5ca.css?ver=3.2.3') }}" media='all' />
 	<style id='elementor-frontend-inline-css' type='text/css'>
 		@font-face {
 			font-family: eicons;
 			src: url("{{ asset('User/fonts/eicons0b93.eot?5.10.0') }}");
-			src: url(https://shtheme.com/demosd/nowarch/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.eot?5.10.0#iefix) format("embedded-opentype"), url(https://shtheme.com/demosd/nowarch/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.woff2?5.10.0) format("woff2"), url(https://shtheme.com/demosd/nowarch/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.woff?5.10.0) format("woff"), url(https://shtheme.com/demosd/nowarch/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.ttf?5.10.0) format("truetype"), url(https://shtheme.com/demosd/nowarch/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.svg?5.10.0#eicon) format("svg");
+			src: url("{{ asset('User/fonts/eicons.eot?5.10.0#iefix') }}") format("embedded-opentype"),
+                 url("{{ asset('User/fonts/eicons.woff2?5.10.0') }}") format("woff2"),
+                 url("{{ asset('User/fonts/eicons.woff?5.10.0') }}") format("woff"),
+                 url("{{ asset('User/fonts/eicons.ttf?5.10.0') }}") format("truetype");
 			font-weight: 400;
 			font-style: normal
 		}
 	</style>
-	<link rel='stylesheet' id='elementor-post-75-css'
-		href="{{ asset('User/css/post-75ab11.css?ver=1646902606') }}" media='all' />
-	<link rel='stylesheet' id='elementor-global-css'
-		href="{{ asset('User/css/globalac43.css?ver=1646902889') }}" media='all' />
-	<link rel='stylesheet' id='google-fonts-1-css'
-		href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;display=auto&amp;ver=5.9.3'
+	<link rel='stylesheet' id='elementor-post-75-css' href="{{ asset('User/css/post-75ab11.css?ver=1646902606') }}" media='all' />
+	<link rel='stylesheet' id='elementor-global-css' href="{{ asset('User/css/globalac43.css?ver=1646902889') }}" media='all' />
+	<link rel='stylesheet' id='google-fonts-1-css' href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;display=auto&amp;ver=5.9.3'
 		media='all' />
 	<script src="{{ asset('User/js/jquery.minaf6c.js?ver=3.6.0') }}" id='jquery-core-js'></script>
 	<script src="{{ asset('User/js/jquery-migrate.mind617.js?ver=3.3.2') }}" id='jquery-migrate-js'></script>

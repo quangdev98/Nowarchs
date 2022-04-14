@@ -2,7 +2,7 @@
  01. Google fonts
  02. General style
  03. Preloader style
- 04. Selection style 
+ 04. Selection style
  05. Owl-Theme custom style
  06. Section style
  07. Navbar style
@@ -10,7 +10,7 @@
  09. Slider style
  10. Content Lines style
  11. Page Header style
- 12. About style 
+ 12. About style
  13. Team style
  14. Projects style
  15. Services style
@@ -25,12 +25,13 @@
  24. toTop Button style
  25. Error Page 404 style
  26. Responsive (Media Query)
- 27. Overlay Effect Bg image 
+ 27. Overlay Effect Bg image
 
 ----------------------------------------------------------------------------------- */
 
 /* ======= Google fonts (Oswald & Didact Gothic) ======= */
-@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&amp;family=Oswald:wght@300;400;500;600;700&amp;display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap');
 
 /* ======= General style ======= */
 html,
@@ -521,7 +522,7 @@ hr {
 
 .navbar .navbar-toggler-icon {
     color: #8e6d45;
-    
+
 }
 
 .navbar .icon-bar {
@@ -544,7 +545,7 @@ hr {
 .navbar .navbar-nav .nav-link:hover {
     color: #8e6d45;
 }
-.navbar .navbar-nav .active {
+.navbar .navbar-nav .active, .navbar .navbar-nav .active a {
     color: #8e6d45 !important;
 }
 .nav-scroll {
@@ -572,7 +573,7 @@ hr {
 .nav-scroll .navbar-nav .nav-link {
     color: rgba(255, 255, 250, 0.7);
 }
-.nav-scroll .navbar-nav .active {
+.nav-scroll .navbar-nav .active, .nav-scroll .navbar-nav .active a {
     color: #8e6d45 !important;
 }
 .nav-scroll .navbar-nav .logo {
@@ -600,7 +601,7 @@ hr {
     line-height: 1.25em;
     letter-spacing: 5px;
     display: none;
-    
+
 }
 .nav-scroll .logo-wrapper .logo span {
     display: block;
@@ -612,7 +613,7 @@ hr {
     display: block;
     margin-top: 3px;
     line-height: 1.2em;
-    
+
     margin-left: 5px;
     display: none !important;
 }
@@ -648,7 +649,7 @@ float: left;
     display: block;
     margin-top: 5px;
     line-height: 1.5em;
-    
+
 }
 .logo {
     padding: 0;
@@ -947,7 +948,7 @@ float: left;
 .slider-fade .owl-theme .owl-dots {
     position: absolute;
     bottom: 6vh;
-     width: 100%; 
+     width: 100%;
 }
 /* social icon */
 .slider-fade .social-icon,
@@ -978,7 +979,7 @@ float: left;
     background: #fff;
     border: 1px solid #fff;
     color: #252525;
-    
+
 }
 @media screen and (max-width: 767px) {
     .slider-fade .social-icon,
@@ -1470,7 +1471,7 @@ float: left;
 }
 @media (max-width: 576px) {
     .project-bar {
-     margin-top: 0px; 
+     margin-top: 0px;
     }
 }
 
@@ -1606,7 +1607,7 @@ float: left;
 }
 .services .item:hover h5,
 .services .item:hover p,
-.services .item:hover h5 
+.services .item:hover h5
 .services .item:hover span {
     color: #fff;
 }
@@ -2020,7 +2021,7 @@ float: left;
   transition: -webkit-transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
   -o-transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
   transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
-  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1), 
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1),
   -webkit-transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .gallery-masonry-wrapper .gallery-masonry-item-title {
@@ -2194,7 +2195,7 @@ float: left;
 }
 .blog-sidebar .widget-title h6 {
     padding-bottom: 15px;
-    border-bottom: 1px solid rgba(255,255,255,0.05);    
+    border-bottom: 1px solid rgba(255,255,255,0.05);
     font-family: 'Oswald', sans-serif;
     font-size: 24px;
     line-height: 1.25em;
@@ -2763,7 +2764,7 @@ float: left;
     padding-left: 15px;
 }
     .nav-scroll .logo-wrapper {
-     padding-left: 15px; 
+     padding-left: 15px;
 }
     .logo-img {
         margin-bottom: 0px;
@@ -2775,7 +2776,7 @@ float: left;
         outline: none;
         margin-top: 10px;
     }
-    
+
     .navbar button:active,
     .navbar button:focus,
     .navbar button:hover {
@@ -2784,7 +2785,7 @@ float: left;
         color: transparent !important;
         border: 1px solid #1e1e1e;
     }
-    
+
     .navbar .container {
         max-width: 100%;
         background: #1e1e1e;
@@ -2852,7 +2853,7 @@ float: left;
     }
     .slider-services-box-info h5 {
     font-size: 15px;
-}  
+}
 }
 @media screen and (max-width: 767px) {
     .logo-wrapper .logo h2 {
