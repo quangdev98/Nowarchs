@@ -23,10 +23,15 @@ class AuthController extends Controller
 
     public function getLogin()
     {
-        if(Auth::guard('admins')->user()) {
-            return redirect()->route('admin.index');
+        try {
+            if(Auth::guard('admins')->user()) {
+                return redirect()->route('admin.index');
+            }
+            // dd(Auth::guard('admins')->user());
+            return view('admin::auth.login');   
+        } catch (\Exception $e) {
+            abort('500');
         }
-        return view('admin::auth.login');
     }
 
     public function authenticate(Request $request)
@@ -39,6 +44,16 @@ class AuthController extends Controller
             }
             return redirect('/login');
 
+        } catch (\Exception $e) {
+            abort('500');
+        }
+    }
+
+    public function logout()
+    {
+        try {
+            auth('admins')->logout();
+            return redirect() -> route('admin.auth.login');
         } catch (\Exception $e) {
             abort('500');
         }

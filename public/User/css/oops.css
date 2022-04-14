@@ -1,0 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Square+Peg&display=swap');
+.oops{margin: 0 auto; text-align: center; margin-top: 60px; margin-bottom: 30px;}
+.oops img{width: 100%; max-width: 350px;}
+.oops h2{font-size: 45px; line-height: 1.45; margin-bottom: 10px; font-family: 'Square Peg', cursive;}
+.oops p{font-size: 30px; font-family: 'Square Peg', cursive; margin-top: 10px;}
+.oops  a{text-decoration: underline; font-family: 'Square Peg', cursive; font-size: 25px;}

@@ -15,6 +15,9 @@ id='jquery-migrate-3.0.0-js'></script>
 <script src="{{ asset('User/js/owl.carousel.min7404.js?ver=5.9.3') }}" id='owl-carousel-js'></script>
 <script src="{{ asset('User/js/jquery.stellar.min7404.js?ver=5.9.3') }}" id='jquery-stellar-js'></script>
 <script src="{{ asset('User/js/jquery.fancybox.min7404.js?ver=5.9.3') }}" id='jquery-fancybox-js'></script>
+<script>
+    let url_youtube = '{{asset('/')}}/';
+</script>
 <script src="{{ asset('User/js/YouTubePopUp7404.js?ver=5.9.3') }}" id='YouTubePopUp-js'></script>
 <script src="{{ asset('User/js/custom7404.js?ver=5.9.3') }}" id='nowarch-custom-js'></script>
 <script src="{{ asset('User/js/bdevs-elementor8a54.js?ver=1.0.0') }}" id='bdevs-elementor-js'>

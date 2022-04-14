@@ -1,0 +1,12 @@
+.wrap-login{max-width: 450px; width: 100%; margin: 0 auto; margin-top: 60px; background-color: #1e1e2d; padding: 30px; border-radius: 10px;}
+.wrap-login label{color: #FFFFFF;}
+.wrap-login input{height: 45px;}
+.input-pass{position: relative;}
+form .input-pass input.form-control{padding-right: 40px;}
+.input-pass span.eyes{position: absolute; top: 9px; right: 20px; cursor: pointer;}
+.main-login form input.form-control{height: 48px;}
+.wrap-login .btn{ background-color: #FFFFFF; color: #1E1E2D; width: 100%; height: 50px; margin-top: 30px; transition: all .4s;}
+.wrap-login .btn:hover{opacity: .7;}
+.wrap-login .logo{margin-bottom: 20px; text-align: center; display: block;}
+.wrap-login .logo img{max-width: 150px; width: auto; object-fit: cover;}
+.wrap-login .out-index{ color: white; margin-top: 10px; display: block; text-decoration: underline;}

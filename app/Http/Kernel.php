@@ -2,7 +2,9 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\CheckGEOIpMiddleware;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
+use Modules\Admin\Http\Middleware\AdminAuthenticate;
 
 class Kernel extends HttpKernel
 {
@@ -60,6 +62,7 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'admin' => AdminAuthenticate::class,
     ];
 
     /**
