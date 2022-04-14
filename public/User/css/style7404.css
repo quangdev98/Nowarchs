@@ -494,6 +494,7 @@ hr {
     background: linear-gradient(to top, rgba(30, 30, 30, 1) 0%, rgba(30, 30, 30, 0.8) 100%, rgba(30, 30, 30, 0.5) 100%);
     object-fit: cover;
 }
+.project-page .owl-carousel .owl-item img, .portfolio-item img.img-fluid{max-height: 630px; object-fit: cover;}
 @media screen and (max-width: 767px) {
     .section-number {
     display: none;
@@ -3030,3 +3031,8 @@ float: left;
 [data-overlay-light="10"]:before {
     opacity: 1;
 }
+
+
+
+
+.wrap-blog-detail .image-detail-blog{max-height: 630px; object-fit: cover;}
