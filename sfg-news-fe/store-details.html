@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Store Details</title>
+    <link rel="stylesheet" href="./css/bootstrap4_3_1.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+</head>
+
+<body>
+    <header id="header">
+        <div class="container">
+            <a href="" title="" class="logo">
+                <img src="./images/sfg-logo.png" alt="">
+            </a>
+            <div class="icon-bar"><span></span></div>
+            <nav id="nav" class="menu-header">
+                <ul class="wrap-menu">
+                    <li class="item-menu"><button class="btn btn-blue">ログイン</button></li>
+                    <li class="item-menu"><button class="btn btn-border">新規登録</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main id="main">
+        <section id="store">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="title-main text-center bg-white">
+                            <h2>レンタルジム渋谷店</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="store-slide" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img class="" src="./images/store-s1.png " alt="">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="" src="./images/background-main.png" alt="">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="" src="./images/search-1.png" alt=""> 
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#store-slide" role="button" data-slide="prev">
+                              <img src="./images/prev.png" alt="">
+                            </a>
+                            <a class="carousel-control-next" href="#store-slide" role="button" data-slide="next">
+                              <img src="./images/next.png" alt="">
+                            </a>
+                          </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="wrap-map">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4771.698392148989!2d139.69837109841782!3d35.68977169839411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d68974de2e9%3A0x4049becbb713f81d!2zVG9zaGltYSwgVMO0a3nDtCwgTmjhuq10IELhuqNu!5e0!3m2!1svi!2s!4v1641357530800!5m2!1svi!2s" width="100%" height="305" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="wrap-store-details bg-white">
+                            <div>
+                                <h3 class="name-title">トレーニング機器</h3>
+                                <div>
+                                    <p>パワーラック</p>
+                                    <p>トレッドミル</p>
+                                    <p>スミスマシン</p>
+                                    <p>ダンベル</p>
+                                    <p>ストレッチポール</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="name-title">設備</h3>
+                                <div>
+                                    <p>キッズルーム</p>
+                                    <p>シャワー室</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="name-title">トレーニング機器</h3>
+                                <div>
+                                    <p>女性でも使いやすいアメニティ、撮影機器、キッズルーム完備。駅近だから仕事帰りにも利用しやすい専用ジムです</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="name-title">利用プラン</h3>
+                                <div>
+                                    <ul>
+                                        <li>60分 ¥1,000</li>
+                                        <li>90分 ¥1,300</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="datepicker-wrap bg-white">
+                            <h3 class="name-title title-date">空き状況</h3>
+                            <div class="dateTime">
+                                <div id="datepicker" ></div>
+                                <input type="hidden" id="my_hidden_input">
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="name-title font-bold">時間を入力</label>
+                                <select name="" id="datepickerHours" class="form-control time">
+                                    <option value="">00:00</option>
+                                    <option value="">01:00</option>
+                                    <option value="">02:00</option>
+                                    <option value="">03:00</option>
+                                    <option value="">04:00</option>
+                                    <option value="">05:00</option>
+                                    <option value="">06:00</option>
+                                    <option value="">07:00</option>
+                                    <option value="">08:00</option>
+                                    <option value="">09:00</option>
+                                    <option value="">10:00</option>
+                                    <option value="">11:00</option>
+                                    <option value="">12:00</option>
+                                    <option value="">13:00</option>
+                                    <option value="">14:00</option>
+                                    <option value="">15:00</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 text-center button-submit">
+                        <button type="submit" class="btn btn-blue max-width">確認画面に進む</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="footer">
+        <div class="container">
+            <div class="wrap-left">
+                <p>©2022 Rental gym matching platform | All rights reserved</p>
+            </div>
+            <div class="wrap-right">
+                <ul>
+                    <li>
+                        <a href="" title="">利用規約</a>
+                    </li>
+                    <li>
+                        <a href="" title="">プライバシーポリシー</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/popper.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
+<script>
+    (function($){
+        $.fn.datepicker.dates['ja'] = {
+            days: ["日曜", "月曜", "火曜", "水曜", "木曜", "金曜", "土曜"],
+            daysShort: ["日", "月", "火", "水", "木", "金", "土"],
+            daysMin: ["日", "月", "火", "水", "木", "金", "土"],
+            months: ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
+            monthsShort: ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
+            today: "今日",
+            format: "yyyy/mm/dd",
+            titleFormat: "yyyy/m",
+            clear: "クリア"
+        };
+    }(jQuery));
+    $('#datepicker').datepicker({
+        language: 'ja',
+        todayHighlight: 'true',
+    });
+    $('#datepicker').on('changeDate', function() {
+        $('#my_hidden_input').val(
+            $('#datepicker').datepicker('getFormattedDate')
+        );
+    });
+</script>
+</html>
