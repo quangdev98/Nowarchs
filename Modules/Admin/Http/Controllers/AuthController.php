@@ -39,7 +39,6 @@ class AuthController extends Controller
         try {
             $dataLogin = $request->only(['email', 'password']);
             if(Auth::guard('admins')->attempt($dataLogin)) {
-                Auth::shouldUse('admins');
                 return redirect()->route('admin.index');
             }
             return redirect('/login')->with('error', 'Tài khoản hoặc mật khẩu không chính xác! </br> Vui lòng thử lại!');

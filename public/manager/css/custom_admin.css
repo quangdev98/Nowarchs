@@ -1,0 +1,8 @@
+button, button:focus, .btn:focus, .icon-sidebar, .icon-sidebar:focus {
+    box-shadow: none;
+}
+
+/* .main-content {
+    padding-top: 90px;
+    padding-left: 20px;
+} */

@@ -18,5 +18,8 @@ Route::get('/logout', 'AuthController@logout')->name('admin.auth.logout');
 
 Route::prefix('admin')->group(function() {
     Route::get('/', 'AdminController@index')->name('admin.index')->middleware('admin');
-
+    // profile
+    Route::prefix('profile/{id}')->group(function(){
+        Route::get('detail', 'ProfileController@show')->name('admin.profile.show');
+    });
 });
