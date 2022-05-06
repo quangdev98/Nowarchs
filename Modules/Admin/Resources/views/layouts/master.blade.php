@@ -1,19 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Module Admin</title>
-
-       {{-- Laravel Mix - CSS File --}}
-       {{-- <link rel="stylesheet" href="{{ mix('css/admin.css') }}"> --}}
-
-    </head>
-    <body>
-        @yield('content')
-
-        {{-- Laravel Mix - JS File --}}
-        {{-- <script src="{{ mix('js/admin.js') }}"></script> --}}
-    </body>
+<!doctype html>
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg">
+<head>
+    <meta charset="utf-8" />
+    <title>Dashboard</title>
+    @include('admin::layouts.partials.meta')
+    @include('admin::layouts.partials.style')
+</head>
+<body>
+    {{--  <div id="layout-wrapper">  --}}
+        @include('admin::layouts.partials.header')
+        @include('admin::layouts.partials.sidebar')
+        <div class="vertical-overlay"></div>
+        <div class="main-content">
+            <div class="page-content">
+            @yield('content')
+            </div>
+        </div>
+        @include('admin::layouts.partials.footer')
+    {{--  </div>  --}}
+    @include('admin::layouts.partials.scripts')
+</body>
 </html>

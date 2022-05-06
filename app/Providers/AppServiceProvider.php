@@ -26,6 +26,8 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        //
+        if (Auth::guard(self::GUARD_ADMIN)->check()) {
+            view()->share('adminName', Auth::guard(self::GUARD_ADMIN)->user() );
+        }
     }
 }

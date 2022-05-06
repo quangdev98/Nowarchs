@@ -28,7 +28,7 @@ class AuthController extends Controller
                 return redirect()->route('admin.index');
             }
             // dd(Auth::guard('admins')->user());
-            return view('admin::auth.login');   
+            return view('admin::auth.login');
         } catch (\Exception $e) {
             abort('500');
         }
@@ -39,10 +39,9 @@ class AuthController extends Controller
         try {
             $dataLogin = $request->only(['email', 'password']);
             if(Auth::guard('admins')->attempt($dataLogin)) {
-                Auth::shouldUse('admins');
                 return redirect()->route('admin.index');
             }
-            return redirect('/login');
+            return redirect('/login')->with('error', 'Tài khoản hoặc mật khẩu không chính xác! </br> Vui lòng thử lại!');
 
         } catch (\Exception $e) {
             abort('500');
