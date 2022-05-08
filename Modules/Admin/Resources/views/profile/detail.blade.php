@@ -3,20 +3,20 @@
 <div class="container-fluid">
     <div class="profile-foreground position-relative mx-n4 mt-n4">
         <div class="profile-wid-bg">
-            <img src="assets/images/profile-bg.jpg" alt="" class="profile-wid-img">
+            <img src="{{ asset('manager/images/profile-bg.jpg') }}" alt="" class="profile-wid-img">
         </div>
     </div>
     <div class="pt-4 mb-4 mb-lg-3 pb-lg-4">
         <div class="row g-4">
             <div class="col-auto">
                 <div class="avatar-lg">
-                    <img src="assets/images/users/avatar-1.jpg" alt="user-img" class="img-thumbnail rounded-circle">
+                    <img src="{{ $data['detail']->avatar ? $data['detail']->avatar : asset('manager/images/users/avatar-1.jpg') }}" alt="user-img" class="img-thumbnail rounded-circle">
                 </div>
             </div>
             <!--end col-->
             <div class="col">
                 <div class="p-2">
-                    <h3 class="text-white mb-1">{{ $data['detail']->email }}</h3>
+                    <h3 class="text-white mb-1">{{ $data['detail']->name ? $data['detail']->name : '' }}</h3>
                     <p class="text-white-75">Owner &amp; Founder</p>
                     <div class="hstack text-white-50 gap-1">
                         <div class="me-2"><i class="ri-map-pin-user-line me-1 text-white-75 fs-16 align-middle"></i>California,
@@ -94,15 +94,17 @@
                                                 <tbody>
                                                     <tr>
                                                         <th class="ps-0" scope="row">Full Name :</th>
-                                                        <td class="text-muted">Anna Adame</td>
+                                                        <td class="text-muted">{{ $data['detail']->name}}</td>
                                                     </tr>
+                                                    @if( $data['detail']->phone)
                                                     <tr>
                                                         <th class="ps-0" scope="row">Mobile :</th>
-                                                        <td class="text-muted">+(1) 987 6543</td>
+                                                        <td class="text-muted">{{ $data['detail']->phone}}</td>
                                                     </tr>
+                                                    @endif
                                                     <tr>
                                                         <th class="ps-0" scope="row">E-mail :</th>
-                                                        <td class="text-muted">daveadame@velzon.com</td>
+                                                        <td class="text-muted">{{ $data['detail']->email}}</td>
                                                     </tr>
                                                     <tr>
                                                         <th class="ps-0" scope="row">Location :</th>
@@ -111,7 +113,7 @@
                                                     </tr>
                                                     <tr>
                                                         <th class="ps-0" scope="row">Joining Date</th>
-                                                        <td class="text-muted">24 Nov 2021</td>
+                                                        <td class="text-muted">{{ $data['detail']->created_at}}</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -196,7 +198,7 @@
                                         </div>
                                         <div class="d-flex mb-4">
                                             <div class="flex-shrink-0">
-                                                <img src="assets/images/small/img-4.jpg" alt="" height="50" class="rounded">
+                                                <img src="{{ asset('manager/images/small/img-4.jpg') }}" alt="" height="50" class="rounded">
                                             </div>
                                             <div class="flex-grow-1 ms-3 overflow-hidden">
                                                 <a href="javascript:void(0);">
@@ -208,7 +210,7 @@
                                         </div>
                                         <div class="d-flex mb-4">
                                             <div class="flex-shrink-0">
-                                                <img src="assets/images/small/img-5.jpg" alt="" height="50" class="rounded">
+                                                <img src="{{ asset('manager/images/small/img-5.jpg') }}" alt="" height="50" class="rounded">
                                             </div>
                                             <div class="flex-grow-1 ms-3 overflow-hidden">
                                                 <a href="javascript:void(0);">
@@ -220,7 +222,7 @@
                                         </div>
                                         <div class="d-flex">
                                             <div class="flex-shrink-0">
-                                                <img src="assets/images/small/img-6.jpg" alt="" height="50" class="rounded">
+                                                <img src="{{ asset('manager/images/small/img-6.jpg') }}" alt="" height="50" class="rounded">
                                             </div>
                                             <div class="flex-grow-1 ms-3 overflow-hidden">
                                                 <a href="javascript:void(0);">
