@@ -6,3 +6,28 @@ button, button:focus, .btn:focus, .icon-sidebar, .icon-sidebar:focus {
     padding-top: 90px;
     padding-left: 20px;
 } */
+.flex-shrink-0{
+    margin-right: 5px;
+}
+.text-start {
+    margin-left: 5px;
+}
+.navbar-header{
+    padding-right: 0;
+}
+.name-product{text-transform: capitalize;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
