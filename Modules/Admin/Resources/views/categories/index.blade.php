@@ -134,13 +134,33 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="editCategoryModal" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+    <div class="modal modal-danger fade" id="destroyCategoryModal" tabindex="-1" role="dialog" aria-labelledby="Delete" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form action="" method="post" id="destroyCategory" name="delete-category">
+                    @csrf
+                    <div class="modal-header">
+
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-center font-bold mb-4">Bạn có muốn xoá danh mục này không？</p>
+                        <p class="text-center" id="contentModal"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn big bg-gray" data-dismiss="modal">Trở lại</button>
+                        <button type="submit" class="btn big bg-blue" name="action" value="delete">Xoá bỏ</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="editCategoryModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <form name="post" action="" method="POST" id="editCategory">
                     @csrf
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Thêm Mới Danh Mục</h5>
+                        <h5 class="modal-title" id="exampleModalLongTitle">Sửa danh mục</h5>
                     </div>
                     <div class="modal-body">
                         <div class="row">
@@ -153,26 +173,8 @@
                         </div>
                     </div>
                     <div class="modal-footer">
+                        <button type="button" class="btn big bg-gray" data-dismiss="modal">Trở lại</button>
                         <button type="submit" name="submit" class="btn big bg-blue" value="add">Update</button>
-                    </div>
-                <form>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="destroyCategoryModal" tabindex="-1" role="dialog" aria-labelledby="delete" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <form name="post-delete" action="" method="POST" id="destroyCategory">
-                    @csrf
-                    <div class="modal-header">
-                    </div>
-                    <div class="modal-body">
-                        <p class="text-center font-bold mb-4">Bạn có muốn xoá danh mục này không？</p>
-                        <p class="text-center" id="contentModal"></p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn big bg-gray" data-bs-dismiss="modal">Trở lại</button>
-                        <button type="submit" class="btn big bg-blue" name="action" value="delete">Xoá bỏ</button>
                     </div>
                 <form>
             </div>
