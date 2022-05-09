@@ -67,6 +67,10 @@
                                 <a href="{{ route('admin.categories.index') }}" class="nav-link"
                                     data-key="t-horizontal">Index</a>
                             </li>
+                            <li class="nav-item">
+                                <a href="{{ route('admin.categories.create') }}" class="nav-link"
+                                    data-key="t-horizontal">Add</a>
+                            </li>
                         </ul>
                     </div>
                 </li>

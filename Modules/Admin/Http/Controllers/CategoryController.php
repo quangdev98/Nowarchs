@@ -106,7 +106,11 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         try {
-            $this->categoryServices->delete($id);
+            if(!$this->categoryServices->delete($id))
+            {
+                return redirect()->back();
+            }
+            return redirect()->back();
         } catch (\Exception $e) {
             abort('500');
         }
