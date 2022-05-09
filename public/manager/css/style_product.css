@@ -3560,7 +3560,7 @@ fieldset:disabled .btn {
 
 .btn-check:focus+.btn-outline-secondary,
 .btn-outline-secondary:focus {
-    box-shadow: 0 0 0 .25rem rgba(108, 117, 125, 0.5)
+    box-shadow: none;
 }
 
 .btn-check:checked+.btn-outline-secondary,

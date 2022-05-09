@@ -16,11 +16,18 @@ button, button:focus, .btn:focus, .icon-sidebar, .icon-sidebar:focus {
     padding-right: 0;
 }
 .name-product{text-transform: capitalize;}
-.help-block,.error-help-block{
+.help-block,.error-help-block, .ri-delete-bin-6-line{
     color: tomato;
 }
 
-
+.bg-blue{
+    background-color: var(--primary-color)!important;
+    color: #FFF!important;
+}
+.bg-gray{
+    background-color: gray!important;
+    color: #FFF!important;
+}
 
 
 
