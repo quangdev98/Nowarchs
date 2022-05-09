@@ -16,7 +16,7 @@
                         <h3 class="fw-bold mb-0">Categorie List</h3>
                         <a href="{{ Route('admin.categories.create') }}"
                             class="btn btn-primary py-2 px-5 btn-set-task w-sm-100"><i
-                                class="icofont-plus-circle me-2 fs-6"></i> Add Categories</a>
+                                class="ri ri-folder-add-fill"></i> Add Categories</a>
                     </div>
                 </div>
             </div> <!-- Row end  -->
@@ -92,8 +92,9 @@
                                                                     class="btn btn-outline-secondary deleterow" id="destroyCategoryButton"
                                                                     data-bs-toggle="modal" data-url="{{ route('admin.categories.delete', ['id' => $c->id]) }}"
                                                                     data-content="{{ $c->name }}"
-                                                                    data-bs-target="#destroyCategoryModal"><i
-                                                                        class="icofont-ui-delete text-danger"></i></button>
+                                                                    data-bs-target="#destroyCategoryModal">
+                                                                    <i class="ri ri-delete-bin-6-line"></i>
+                                                                </button>
                                                             </div>
                                                         </td>
                                                     </tr>
