@@ -21,4 +21,55 @@ class CategoryRepository implements CategoryRepositoryInterface
     {
         return DB::table(self::TABLE)->orderBy('id')->get();
     }
+
+    public function store($_data)
+    {
+        DB::beginTransaction();
+        try {
+            if(DB::table(self::TABLE)->insert($_data))
+            {
+                DB::commit();
+                return true;
+            }
+                DB::rollBack();
+                return false;
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return false;
+        }
+    }
+
+    public function update($_data, $_id)
+    {
+        DB::beginTransaction();
+        try {
+            if(DB::table(self::TABLE)->where('id', '=', $_id)->update($_data))
+            {
+                DB::commit();
+                return true;
+            }
+                DB::rollBack();
+                return false;
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return false;
+        }
+    }
+
+    public function delete($_id)
+    {
+        DB::beginTransaction();
+        try {
+            if(DB::table(self::TABLE)->where('id', '=', $_id)->delete())
+            {
+                DB::commit();
+                return true;
+            }
+            DB::rollBack();
+            return false;
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return false;
+        }
+    }
 }

@@ -1,4 +1,5 @@
 <!-- JAVASCRIPT -->
+<script src="{{ asset('manager/js/jquery-3.6.0.min.js') }}"></script>
 <script src="{{ asset('manager/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('manager/libs/simplebar/simplebar.min.js') }}"></script>
 <script src="{{ asset('manager/libs/node-waves/waves.min.js') }}"></script>
