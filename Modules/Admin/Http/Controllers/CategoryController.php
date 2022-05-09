@@ -5,6 +5,8 @@ namespace Modules\Admin\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Modules\Admin\Http\Requests\CategoryRequest;
+use Modules\Admin\Http\Requests\CategoryEditRequest;
 use App\Services\Admin\CategoryServices;
 
 class CategoryController extends Controller
@@ -41,9 +43,19 @@ class CategoryController extends Controller
      * @param Request $request
      * @return Renderable
      */
-    public function store(Request $request)
+    public function store(CategoryRequest $request)
     {
-        //
+        try {
+            $data = $request->all();
+            if(!$this->categoryServices->store($data))
+            {
+                return redirect()->back();
+            }
+            return redirect()->route('admin.categories.index')->with('success','Thêm thể loại thành công!');
+        } catch (\Exception $e) {
+            abort('500');
+        }
+
     }
 
     /**
@@ -72,9 +84,18 @@ class CategoryController extends Controller
      * @param int $id
      * @return Renderable
      */
-    public function update(Request $request, $id)
+    public function update(CategoryEditRequest $request, $id)
     {
-        //
+        try {
+            $data = $request->all();
+            if(!$this->categoryServices->update($data, $id))
+            {
+                return redirect()->back();
+            }
+            return redirect()->back();
+        } catch (\Exception $e) {
+            abort('500');
+        }
     }
 
     /**
@@ -84,6 +105,10 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {
+            $this->categoryServices->delete($id);
+        } catch (\Exception $e) {
+            abort('500');
+        }
     }
 }

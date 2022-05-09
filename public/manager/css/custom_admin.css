@@ -16,7 +16,9 @@ button, button:focus, .btn:focus, .icon-sidebar, .icon-sidebar:focus {
     padding-right: 0;
 }
 .name-product{text-transform: capitalize;}
-
+.help-block,.error-help-block{
+    color: tomato;
+}
 
 
 

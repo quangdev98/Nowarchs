@@ -64,7 +64,7 @@
                     <div class="collapse menu-dropdown" id="sidebarLayouts">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="{{ route('admin.categories.index') }}" target="_blank" class="nav-link"
+                                <a href="{{ route('admin.categories.index') }}" class="nav-link"
                                     data-key="t-horizontal">Index</a>
                             </li>
                         </ul>
@@ -79,11 +79,11 @@
                     <div class="collapse menu-dropdown" id="sidebarProduct">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="{{ route('admin.product.index') }}" target="_blank" class="nav-link"
+                                <a href="{{ route('admin.product.index') }}" class="nav-link"
                                     data-key="t-horizontal">Index</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ Route('admin.product.create') }}" target="_blank" class="nav-link"
+                                <a href="{{ Route('admin.product.create') }}" class="nav-link"
                                     data-key="t-detached">Create</a>
                             </li>
                         </ul>

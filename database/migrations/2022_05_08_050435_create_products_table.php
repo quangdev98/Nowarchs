@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\DB;
 
 class CreateProductsTable extends Migration
 {
@@ -19,11 +20,12 @@ class CreateProductsTable extends Migration
             $table->string('slug');
             $table->string('images');
             $table->integer('price');
-            
+
             $table->longText('contents');
             $table->tinyInteger('status')->default(1)->comment('1:active, 2:draf');
-            $table->timestamps();
-            
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+
         });
 
         Schema::table('products', function ($table) {
