@@ -22,4 +22,17 @@ Route::prefix('admin')->group(function() {
     Route::prefix('profile/{id}')->group(function(){
         Route::get('detail', 'ProfileController@show')->name('admin.profile.show');
     });
+
+    Route::prefix('categories')->group(function(){
+        Route::get('/', 'CategoryController@index')->name('admin.categories.index');
+        Route::get('/create', 'CategoryController@create')->name('admin.categories.create');
+        Route::post('/create', 'CategoryController@store')->name('admin.categories.store');
+        Route::post('/update/{id}', 'CategoryController@update')->name('admin.categories.update');
+        Route::post('/destroy/{id}', 'CategoryController@destroy')->name('admin.categories.delete');
+    });
+
+    Route::prefix('product')->group(function(){
+        Route::get('/', 'ProductController@index')->name('admin.product.index');
+        Route::get('/create', 'ProductController@create')->name('admin.product.create');
+    });
 });

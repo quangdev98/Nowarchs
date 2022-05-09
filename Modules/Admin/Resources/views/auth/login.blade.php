@@ -63,7 +63,7 @@
         let url = '{{asset('manager/')}}/';
     </script>
     <script src="{{ asset('manager/js/main.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('/vendor/jsvalidation/js/jsvalidation.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
     {!! JsValidator::formRequest('Modules\Admin\Http\Requests\LoginRequest','#postLogin') !!}
 
 </body>
