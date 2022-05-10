@@ -3,8 +3,9 @@
 <link rel="stylesheet" href="{{ asset('manager/css/style_product.css') }}">
 @endsection
 @section('content')
-@php 
+@php
  $index = $data['index'];
+ $category = $data['categories'];
 @endphp
 <div class="body d-flex py-3">
     <div class="container-fluid">
@@ -45,41 +46,16 @@
                                 </div>
                                 <div class="filter-category">
                                     <ul class="category-list">
-                                        <li><a href="#" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" class="collapsed">Game accessories</a>
-                                            <ul id="collapseOne" class="sub-category collapse" data-parent="#category" style="">
-                                                <li><a href="#">PlayStation 4</a></li>
-                                                <li><a href="#">Oculus VR</a></li>
-                                                <li><a href="#">Remote</a></li>
-                                                <li><a href="#">Lighting Keyborad</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a class="collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseTwo">Bags</a>
-                                            <ul id="collapseTwo" class="sub-category collapse" data-parent="#category">
-                                                <li><a href="#">School Bags</a></li>
-                                                <li><a href="#">Traveling Bags</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a class="collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseThree">Flower Port</a>
-                                            <ul id="collapseThree" class="sub-category collapse" data-parent="#category">
-                                                <li><a href="#">Woodan Port</a></li>
-                                                <li><a href="#">Pattern Port</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a class="collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseFour">Watch</a>
-                                            <ul id="collapseFour" class="sub-category collapse" data-parent="#category">
-                                                <li><a href="#">Wall Clock</a></li>
-                                                <li><a href="#">Smart Watch</a></li>
-                                                <li><a href="#">Rado Watch</a></li>
-                                                <li><a href="#">Fasttrack Watch</a></li>
-                                                <li><a href="#">Noise Watch</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a class="collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseFive">Accessories</a>
-                                            <ul id="collapseFive" class="sub-category collapse" data-parent="#category">
-                                                <li><a href="#">Note Diaries</a></li>
-                                                <li><a href="#">Fold Diaries</a></li>
-                                            </ul>
-                                        </li>
+                                        @foreach ($category as $cate)
+                                            <li><a href="#" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" class="collapsed">{{ $cate->name }}</a>
+                                                {{--  <ul id="collapseOne" class="sub-category collapse" data-parent="#category" style="">
+                                                    <li><a href="#">PlayStation 4</a></li>
+                                                    <li><a href="#">Oculus VR</a></li>
+                                                    <li><a href="#">Remote</a></li>
+                                                    <li><a href="#">Lighting Keyborad</a></li>
+                                                </ul>  --}}
+                                            </li>
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>
@@ -100,7 +76,7 @@
                                         <div class="amount-input mt-1">
                                             <label class="fw-bold">Maximum Price</label>
                                             <input type="text" id="maxAmount2" class="form-control">
-                                        </div>                                    
+                                        </div>
                                     </div>
                                     <div id="slider-range2" class="slider-range noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr"><div class="noUi-base"><div class="noUi-connects"><div class="noUi-connect" style="transform: translate(7.45%, 0px) scale(0.125, 1);"></div></div><div class="noUi-origin" style="transform: translate(-925.5%, 0px); z-index: 5;"><div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="399.0" aria-valuenow="149.0" aria-valuetext="149.00"><div class="noUi-touch-area"></div></div></div><div class="noUi-origin" style="transform: translate(-800.5%, 0px); z-index: 6;"><div class="noUi-handle noUi-handle-upper" data-handle="1" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="149.0" aria-valuemax="2000.0" aria-valuenow="399.0" aria-valuetext="399.00"><div class="noUi-touch-area"></div></div></div></div></div>
                                 </div>
@@ -112,7 +88,7 @@
             <div class="col-md-12 col-lg-8 col-xl-9">
                 <div class="card mb-3 bg-transparent p-2">
                     @foreach ($index as $p)
-                    
+
                         <div class="card border-0 mb-1">
                             <div class="form-check form-switch position-absolute top-0 end-0 py-3 px-3 d-none d-md-block" style="z-index: 11">
                                 <input class="form-check-input" type="checkbox" id="Eaten-switch1" checked="">
@@ -136,6 +112,10 @@
                                             <div class="pe-xl-5 pe-md-4 ps-md-0 px-3 mb-2">
                                                 <div class="text-muted small">Status</div>
                                                 <strong>{{ $p->status == 1 ? 'Published' : ($p->status == 2 ? 'Scheduled' : 'Hidden')}}</strong>
+                                            </div>
+                                            <div class="pe-xl-5 pe-md-4 ps-md-0 px-3 mb-2">
+                                                <div class="text-muted small">Category</div>
+                                                <strong>{{ $p->category_name }}</strong>
                                             </div>
                                         </div>
                                 </div>

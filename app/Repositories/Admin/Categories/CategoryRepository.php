@@ -17,8 +17,9 @@ class CategoryRepository implements CategoryRepositoryInterface
         $this->adminModel = $adminModel;
     }
 
-    public function index()
+    public function index($data)
     {
+        if(isset($data['paginate'])) return DB::table(self::TABLE)->orderBy('id')->paginate($data['paginate']);
         return DB::table(self::TABLE)->orderBy('id')->get();
     }
 
@@ -70,6 +71,18 @@ class CategoryRepository implements CategoryRepositoryInterface
         } catch (\Exception $e) {
             DB::rollBack();
             return false;
+        }
+    }
+
+    public function formStatus($_data)
+    {
+        if (request()->ajax()) {
+            $record = DB::table(self::TABLE)->where('id', '=', request()->id)->first();
+            $_data = [
+                'status' => $record->status == 1 ? 2 : 1,
+                'updated_at' =>date('Y-m-d H:i:s'),
+            ];
+            return DB::table(self::TABLE)->where('id', '=', request()->id)->update($_data);
         }
     }
 }

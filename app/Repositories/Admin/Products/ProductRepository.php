@@ -19,6 +19,26 @@ class ProductRepository implements ProductRepositoryInterface
 
     public function index()
     {
-        return DB::table(self::TABLE)->orderBy('id')->get();
+        $db = DB::table(self::TABLE)
+        ->leftJoin('categories', 'products.category_id', '=', 'categories.id');
+        return $db->select('products.*', 'categories.name as category_name')->orderBy('products.id')->get();
+    }
+
+    public function store($_data)
+    {
+        DB::beginTransaction();
+        try {
+            if(DB::table(self::TABLE)->insert($_data))
+            {
+                DB::commit();
+                return true;
+            }
+            DB::rollBack();
+            return false;
+        } catch (\Exception $e) {
+            // dd($e);
+            DB::rollBack();
+            return false;
+        }
     }
 }

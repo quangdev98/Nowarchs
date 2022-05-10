@@ -19,7 +19,7 @@ class CreateBlogsTable extends Migration
             $table->string('title');
             $table->string('slug');
             $table->string('images');
-            $table->unsignedBigInteger('admin_id')->unique()->nullable();
+            $table->unsignedBigInteger('admin_id')->index();
             $table->longText('contents');
             $table->tinyInteger('status')->default(1)->comment('1:active, 2:draf');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
