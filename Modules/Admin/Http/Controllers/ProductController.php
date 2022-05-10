@@ -4,6 +4,7 @@ namespace Modules\Admin\Http\Controllers;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
+use Modules\Admin\Http\Requests\ProductCreateRequest;
 use Illuminate\Routing\Controller;
 use App\Services\Admin\CategoryServices;
 use App\Services\Admin\ProductServices;
@@ -26,9 +27,14 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $data['index'] = $this->productServices->index();
-        // dd($data['index']);
-        return view('admin::products.index', compact(['data']));
+        try {
+            $data['index'] = $this->productServices->index();
+            $data['categories'] = $this->categoryServices->index();
+            // dd($data['index']);
+            return view('admin::products.index', compact(['data']));
+        } catch (\Exception $e) {
+            abort('500');
+        }
     }
 
     /**
@@ -38,7 +44,7 @@ class ProductController extends Controller
     public function create()
     {
         // if()
-        $data['categories'] = $this->categoryServices->index();
+        $data['categories'] = $this->categoryServices->index()->where('status', '=',1);
         return view('admin::products.create', compact('data'));
     }
 
@@ -47,9 +53,17 @@ class ProductController extends Controller
      * @param Request $request
      * @return Renderable
      */
-    public function store(Request $request)
+    public function store(ProductCreateRequest $request)
     {
-        //
+        try {
+            $data = $request->all();
+            // dd($data);
+            $this->productServices->store($data);
+            return redirect()->route('admin.product.index');
+        } catch (\Exception $e) {
+            dd('$e');
+            abort('500');
+        }
     }
 
     /**

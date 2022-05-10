@@ -7,4 +7,6 @@ interface ProductRepositoryInterface
 {
 
     public function index();
+
+    public function store($_data);
 }

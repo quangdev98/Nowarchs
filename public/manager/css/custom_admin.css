@@ -29,9 +29,30 @@ button, button:focus, .btn:focus, .icon-sidebar, .icon-sidebar:focus {
     color: #FFF!important;
 }
 
-
-
-
+.pagination-page{padding-top: 20px;}
+.position-relative{
+    position: relative;
+}
+.wrap-public .form-switch{
+    display: flex!important;
+    padding-left: 0!important;
+    align-items: center;
+}
+.wrap-public .form-switch label{
+    padding-left: 35px;
+}
+input:focus{
+    box-shadow: none!important;
+}
+.form-switch .form-check-input:focus{
+    /* background-image: none!important; */
+    border-color:none!important
+}
+.w120.rounded.img-fluid{
+height: 120px!important;
+min-width: 120px!important;
+object-fit: cover;
+}
 
 
 

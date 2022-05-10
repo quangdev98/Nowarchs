@@ -25,8 +25,12 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $data['category'] = $this->categoryServices->index();
-        return view('admin::categories.index', compact('data'));
+        try{
+            $data['category'] = $this->categoryServices->index(['paginate' => 10]);
+            return view('admin::categories.index', compact('data'));
+        } catch (\Exception $e){
+            abort(500);
+        }
     }
 
     /**
@@ -113,6 +117,16 @@ class CategoryController extends Controller
             return redirect()->back();
         } catch (\Exception $e) {
             abort('500');
+        }
+    }
+
+    public function formStatus()
+    {
+        try {
+            $data = request()->only('id', 'status');
+            return response()->json($this->categoryServices->formStatus($data));
+        } catch (\Exception $e){
+            return response()->json($e->getMessage());
         }
     }
 }

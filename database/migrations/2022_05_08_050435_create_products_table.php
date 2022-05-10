@@ -25,13 +25,10 @@ class CreateProductsTable extends Migration
             $table->tinyInteger('status')->default(1)->comment('1:active, 2:draf');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-
-        });
-
-        Schema::table('products', function ($table) {
-            $table->unsignedBigInteger('category_id')->unique();
+            $table->unsignedBigInteger('category_id')->index();
             $table->foreign('category_id')->references('id')->on('categories')->onDelete("cascade");
         });
+
     }
 
     /**

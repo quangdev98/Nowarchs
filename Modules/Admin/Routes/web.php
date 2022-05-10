@@ -29,10 +29,12 @@ Route::prefix('admin')->group(function() {
         Route::post('/create', 'CategoryController@store')->name('admin.categories.store');
         Route::post('/update/{id}', 'CategoryController@update')->name('admin.categories.update');
         Route::post('/destroy/{id}', 'CategoryController@destroy')->name('admin.categories.delete');
+        Route::post('/formStatus', 'CategoryController@formStatus')->name('admin.categories.status');
     });
 
     Route::prefix('product')->group(function(){
         Route::get('/', 'ProductController@index')->name('admin.product.index');
         Route::get('/create', 'ProductController@create')->name('admin.product.create');
+        Route::post('/create', 'ProductController@store')->name('admin.product.store');
     });
 });
