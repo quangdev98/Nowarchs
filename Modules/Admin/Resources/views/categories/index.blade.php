@@ -132,7 +132,7 @@
                         <p class="text-center" id="contentModal"></p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn big bg-gray" data-dismiss="modal">Trở lại</button>
+                        <button type="button" class="btn big bg-gray" data-bs-dismiss="modal">Trở lại</button>
                         <button type="submit" class="btn big bg-blue" name="action" value="delete">Xoá bỏ</button>
                     </div>
                 </form>
@@ -158,7 +158,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn big bg-gray" data-dismiss="modal">Trở lại</button>
+                        <button type="button" class="btn big bg-gray" data-bs-dismiss="modal">Trở lại</button>
                         <button type="submit" name="submit" class="btn big bg-blue" value="add">Update</button>
                     </div>
                 <form>
