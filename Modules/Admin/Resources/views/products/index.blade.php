@@ -103,7 +103,7 @@
                                         <div class="d-flex flex-row flex-wrap align-items-center justify-content-center justify-content-md-start">
                                             <div class="pe-xl-5 pe-md-4 ps-md-0 px-3 mb-2">
                                                 <div class="text-muted small">Special priceends</div>
-                                                <strong>20h:46m:30s</strong>
+                                                <strong>{{ Helpers::FormatDate($p->created_at) }}</strong>
                                             </div>
                                             <div class="pe-xl-5 pe-md-4 ps-md-0 px-3 mb-2">
                                                 <div class="text-muted small">Price</div>
