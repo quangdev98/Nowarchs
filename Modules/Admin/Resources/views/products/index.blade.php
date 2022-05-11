@@ -1,6 +1,8 @@
 @extends('admin::layouts.master')
 @section('style')
+<link rel="stylesheet" href="{{ asset('manager/css/common.css') }}">
 <link rel="stylesheet" href="{{ asset('manager/css/style_product.css') }}">
+{{--  <link rel="stylesheet" href="{{ asset('manager/css/filler.scss') }}">  --}}
 @endsection
 @section('content')
 @php
@@ -38,16 +40,10 @@
                                 <a class="title" data-bs-toggle="collapse" href="#category" role="button" aria-expanded="true">Categories</a>
                             </div>
                             <div class="collapse show" id="category" style="">
-                                <div class="filter-search">
-                                    <form action="#">
-                                        <input type="text" placeholder="Search" class="form-control">
-                                        <button><i class="lni lni-search-alt"></i></button>
-                                    </form>
-                                </div>
                                 <div class="filter-category">
                                     <ul class="category-list">
                                         @foreach ($category as $cate)
-                                            <li><a href="#" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" class="collapsed">{{ $cate->name }}</a>
+                                            <li><a href="#">{{ $cate->name }}</a>
                                                 {{--  <ul id="collapseOne" class="sub-category collapse" data-parent="#category" style="">
                                                     <li><a href="#">PlayStation 4</a></li>
                                                     <li><a href="#">Oculus VR</a></li>
@@ -71,14 +67,24 @@
                                     <div class="price-amount flex-wrap">
                                         <div class="amount-input mt-1">
                                             <label class="fw-bold">Minimum Price</label>
-                                            <input type="text" id="minAmount2" class="form-control">
+                                            <span>$</span>
+                                            <span id="range1">
+                                                0
+                                            </span>
                                         </div>
                                         <div class="amount-input mt-1">
                                             <label class="fw-bold">Maximum Price</label>
-                                            <input type="text" id="maxAmount2" class="form-control">
+                                            <span>$</span>
+                                            <span id="range2">
+                                                0
+                                              </span>
                                         </div>
                                     </div>
-                                    <div id="slider-range2" class="slider-range noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr"><div class="noUi-base"><div class="noUi-connects"><div class="noUi-connect" style="transform: translate(7.45%, 0px) scale(0.125, 1);"></div></div><div class="noUi-origin" style="transform: translate(-925.5%, 0px); z-index: 5;"><div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="399.0" aria-valuenow="149.0" aria-valuetext="149.00"><div class="noUi-touch-area"></div></div></div><div class="noUi-origin" style="transform: translate(-800.5%, 0px); z-index: 6;"><div class="noUi-handle noUi-handle-upper" data-handle="1" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="149.0" aria-valuemax="2000.0" aria-valuenow="399.0" aria-valuetext="399.00"><div class="noUi-touch-area"></div></div></div></div></div>
+                                    <div class="container-ranger">
+                                        <div class="slider-track"></div>
+                                        <input type="range" min="10" max="5000" value="300" id="slider-1" oninput="slideOne()">
+                                        <input type="range" min="10" max="5000" value="3500" id="slider-2" oninput="slideTwo()">
+                                      </div>
                                 </div>
                             </div>
                         </div>
@@ -89,10 +95,25 @@
                 <div class="card mb-3 bg-transparent p-2">
                     @foreach ($index as $p)
 
-                        <div class="card border-0 mb-1">
-                            <div class="form-check form-switch position-absolute top-0 end-0 py-3 px-3 d-none d-md-block" style="z-index: 11">
-                                <input class="form-check-input" type="checkbox" id="Eaten-switch1" checked="">
-                                <label class="form-check-label" for="Eaten-switch1">Add to Cart</label>
+                        <div class="card border-0 mb-1 item-product">
+                            <div class="form-check form-switch position-absolute top-0 end-0 py-3 px-3 d-none d-md-block form-status" style="z-index: 11">
+                                <div class="text-right">
+                                    <input class="form-check-input" type="checkbox" id="Published{{ $p->id }}" name="status" value="{{ $p->status }}" data-id="{{ $p->id }}" {{ $p->status ==1 ? "checked=''" : "" }}>
+                                    <label class="form-check-label" for="Published{{ $p->id }}">{{ $p->status ==1 ? 'Published' :'Hidden' }}</label>
+                                </div>
+                                <div class="btn-group mt-3" role="group"
+                                    aria-label="Basic outlined example">
+                                    <a href="{{ route('admin.product.edit', ['id' =>$p->id]) }}" title=""
+                                        class="btn btn-outline-secondary" id="editCategoryButton" >
+                                        <i class="bx bx-edit-alt"></i></a>
+                                    <button type="button"
+                                        class="btn btn-outline-secondary deleterow" id="destroyButton"
+                                        data-bs-toggle="modal" data-url="{{ route('admin.product.delete', ['id' =>$p->id]) }}"
+                                        data-content="{{ $p->name }}"
+                                        data-bs-target="#IdDestroyModal">
+                                        <i class="ri ri-delete-bin-6-line"></i>
+                                    </button>
+                                </div>
                             </div>
                             <div class="card-body d-flex align-items-center flex-column flex-md-row">
                                 <a href="product-detail.html">
@@ -109,9 +130,9 @@
                                                 <div class="text-muted small">Price</div>
                                                 <strong>${{ $p->price }}</strong>
                                             </div>
-                                            <div class="pe-xl-5 pe-md-4 ps-md-0 px-3 mb-2">
+                                            <div class="pe-xl-5 pe-md-4 ps-md-0 px-3 mb-2 box-status">
                                                 <div class="text-muted small">Status</div>
-                                                <strong>{{ $p->status == 1 ? 'Published' : ($p->status == 2 ? 'Scheduled' : 'Hidden')}}</strong>
+                                                <strong>{{ $p->status == 1 ? 'Published' : 'Hidden'}}</strong>
                                             </div>
                                             <div class="pe-xl-5 pe-md-4 ps-md-0 px-3 mb-2">
                                                 <div class="text-muted small">Category</div>
@@ -121,30 +142,54 @@
                                 </div>
                             </div>
                         </div>
-
                     @endforeach
                 </div>
-                <div class="row g-3 mb-3">
-                    <div class="col-md-12">
-                        <nav class="justify-content-end d-flex">
-                            <ul class="pagination">
-                            <li class="page-item disabled">
-                                <a class="page-link" href="#" tabindex="-1">Previous</a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item active" aria-current="page">
-                                <a class="page-link" href="#">2</a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">Next</a>
-                            </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
+                {{ $data['index']->links('admin::components.pagination') }}
             </div>
         </div> <!-- Row end  -->
     </div>
 </div>
+@include('admin::components.ModalDelete')
+@endsection
+@section('scripts')
+<script src="https://pixelwibes.com/template/ebazar/laravel/public/backend/dist/assets/plugin/nouislider/nouislider.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $(document).on('click','#destroyButton',function(){
+            const url = $(this).data('url');
+            const value = $(this).data('content');
+            $("#destroyModal").attr("action", url);
+            $("#contentModal").html(value);
+        });
+
+        $('.form-status input').click(function(){
+            $value = $(this).val();
+            $id = $(this).data('id');
+            console.log($value);
+            var token='{{csrf_token()}}';
+            $.ajax({
+                type: 'post',
+                url: '{{ route('admin.ajax.status') }}',
+                data: {
+                    //_method: 'POST',
+                    _token : token,
+                    'table': 'products',
+                    'id': $id,
+                    'status': $value
+                },
+                dataType: 'JSON',
+
+            });
+            $(this).siblings('.form-check-label').text(function(i, oldText){
+                return oldText === 'Published' ? 'Hidden' : 'Published';
+            });
+            $(this).parents('.item-product').find('.box-status strong').text(function(i, oldText){
+                return oldText === 'Published' ? 'Hidden' : 'Published';
+            });
+
+        });
+        $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
+    })
+</script>
+<script src="{{ asset('manager/js/ranger-slide.js') }}"></script>
 @endsection

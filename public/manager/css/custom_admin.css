@@ -54,6 +54,25 @@ min-width: 120px!important;
 object-fit: cover;
 }
 
+/* choose image */
+form .drop-file{background-color: #eef0f8; padding: 0; max-width: 400px;; margin: 20px auto 0 auto; border-radius: 10px; position: relative;}
+form .drop-file .invalid-feedback{position: absolute; bottom: 10px; left: 10px; z-index: 99999;}
+form .drop-file .drop-image{font-size: 16px; text-align: center;}
+form .drop-file .drop-image.active{color: white; padding: 90px 35px;}
+form .drop-file .drop-image .b-drop{color: #333; position: relative; z-index: 999; text-align: center;}
+form .drop-file .drop-image img{margin-right: 15px;}
+form .drop-file .drop-image span{color: #4fb6ff; text-decoration: underline; cursor: pointer;border: 1px solid #4fb6ff;padding: 14px 13px;border-radius: 8px;margin-left: 6px;}
+form .drop-file input.file-upload{position: absolute; top: 0; left: 0; right: 0; bottom: 0; height: 100% !important; width: 100%; opacity: 0; z-index: 1000;}
+form .drop-file .preview{position: absolute; top: 0; left: 0; height: 100%; width: 100%; z-index: 1; display: none; border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px;}
+form .drop-file .fill.active{display: block;border-radius: 10px;}
+form .drop-file .fill{background-color: black; opacity: 36%; height: 100%; width: 100%; position: absolute; top: 0; left: 0; z-index: 9; display: none;}
+form .drop-file .b-drop.active{color: white;}
+form .drop-file .b-drop button{margin: 0 0 0 10px; border: 1px solid #43AFFF; color: #43AFFF; text-decoration: underline; display: inline; }
+
+
+.categories .filter-category .category-list li a::before{
+    display: none;
+}
 
 
 

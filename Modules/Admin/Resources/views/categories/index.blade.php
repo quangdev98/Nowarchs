@@ -190,10 +190,11 @@
                 var token='{{csrf_token()}}';
                 $.ajax({
                     type: 'post',
-                    url: '{{ route('admin.categories.status') }}',
+                    url: '{{ route('admin.ajax.status') }}',
                     data: {
                         //_method: 'POST',
                         _token : token,
+                        'table': 'categories',
                         'id': $id,
                         'status': $value
                     },

@@ -6,11 +6,12 @@
 @section('content')
     @php
     $category = $data['categories'];
+    $productDetail = $data['productDetail'];
     @endphp
     <div class="body d-flex py-3">
         <div class="container-fluid">
-            <form action="{{ Route('admin.product.store') }}" method="POST" name="" enctype="multipart/form-data"
-                id="formAddProduct">
+            <form action="{{ Route('admin.product.update', ['id' => $productDetail->id]) }}" method="POST" name="" enctype="multipart/form-data"
+                id="formEditProduct">
                 @csrf
                 <div class="row align-items-center">
                     <div class="border-0 mb-4">
@@ -34,13 +35,13 @@
                                     <div class="form-group">
                                         <div class="form-group drop-file relative">
                                             <div class="active after drop-image">
-                                                <div class="b-drop">
+                                                <div class="b-drop active">
                                                     Mời chọn file ảnh <span class="select_file">chọn file</span>
                                                 </div>
                                             </div>
-                                            <div class="fill"></div>
+                                            <div class="fill active"></div>
                                             <input class="form-control file-upload" id="file" type="file" name="images">
-                                            <div class="preview"></div>
+                                            <div class="preview" style="background: #eef0f8 url({{ $productDetail->images }}) no-repeat top center; background-size: contain; display: block; background-position: center"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -52,36 +53,19 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="status" value="1" checked="">
+                                        <input class="form-check-input" type="radio" name="status" value="1" {{ $productDetail->status == 1 ? 'checked' : '' }}>
                                         <label class="form-check-label">
                                             Published
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="status" value="2">
+                                        <input class="form-check-input" type="radio" name="status" value="2" {{ $productDetail->status == 2 ? 'checked' : '' }}>
                                         <label class="form-check-label">
-                                            Scheduled
+                                            Hidden
                                         </label>
                                     </div>
                                 </div>
                             </div>
-                            {{-- <div class="card mb-3">
-                            <div class="card-header py-3 d-flex justify-content-between align-items-center bg-transparent border-bottom-0">
-                                <h6 class="m-0 fw-bold">Publish Schedule</h6>
-                            </div>
-                            <div class="card-body">
-                                <div class="row g-3 align-items-center">
-                                    <div class="col-md-12">
-                                        <label class="form-label">Publish Date</label>
-                                        <input type="date" class="form-control w-100">
-                                    </div>
-                                    <div class="col-md-12">
-                                        <label class="form-label">Publish Time</label>
-                                        <input type="time" class="form-control w-100">
-                                    </div>
-                                </div>
-                            </div>
-                        </div> --}}
                             <div class="card mb-3">
                                 <div
                                     class="card-header py-3 d-flex justify-content-between align-items-center bg-transparent border-bottom-0">
@@ -91,7 +75,7 @@
                                     <label class="form-label">Categories Select</label>
                                     <select class="form-select" name="category_id">
                                         @foreach ($category as $c)
-                                            <option value="{{ $c->id }}">{{ $c->name }}</option>
+                                            <option value="{{ $c->id }}" {{ $c->id == $productDetail->category_id ? 'selected' : '' }}>{{ $c->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -108,7 +92,7 @@
                                     <div class="row g-3 align-items-center">
                                         <div class="col-md-12">
                                             <label class="form-label">Name</label>
-                                            <input type="text" name="name" class="form-control">
+                                            <input type="text" name="name" class="form-control" value="{{ $productDetail->name }}">
                                         </div>
                                         {{-- <div class="col-md-12">
                                         <label class="form-label">Tags</label>
@@ -127,7 +111,7 @@
                                 <div class="row g-3 align-items-center">
                                     <div class="col-md-12">
                                         <label class="form-label">Product Price</label>
-                                        <input type="text" class="form-control" name="price">
+                                        <input type="text" class="form-control" name="price" value="{{ $productDetail->price }}">
                                     </div>
                                     {{-- <div class="col-md-12">
                                     <label class="form-label">Product Sale</label>
@@ -145,7 +129,9 @@
                                 <div class="row g-3 align-items-center">
                                     <div class="col-md-12">
                                         <label class="form-label">Contents</label>
-                                        <textarea id="content" cols="30" rows="10" name="contents" class="form-control"></textarea>
+                                        <textarea id="content" cols="30" rows="10" name="contents" class="form-control">
+                                            {{ $productDetail->contents }}
+                                        </textarea>
                                     </div>
                                 </div>
                             </div>
@@ -158,5 +144,5 @@
 @endsection
 @section('scripts')
     <script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js') }}"></script>
-    {!! JsValidator::formRequest('Modules\Admin\Http\Requests\ProductCreateRequest', '#formAddProduct') !!}
+    {!! JsValidator::formRequest('Modules\Admin\Http\Requests\ProductEditRequest', '#formEditProduct') !!}
 @endsection

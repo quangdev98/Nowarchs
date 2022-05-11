@@ -23,6 +23,7 @@
 <!-- App js -->
 <script src="{{ asset('manager/js/app.js') }}"></script>
 <script src="{{ asset('manager/js/tyniMCE.min.js') }}"></script>
+<script src="{{ asset('manager/js/main.js') }}"></script>
 <script>
     tinymce.init({
       selector: 'textarea#content',

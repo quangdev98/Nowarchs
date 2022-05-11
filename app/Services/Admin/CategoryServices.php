@@ -37,9 +37,5 @@
             return $this->categoryRepository->delete($id);
         }
 
-        public function formStatus($data)
-        {
-            return $this->categoryRepository->formStatus($data);
-        }
     }
 ?>

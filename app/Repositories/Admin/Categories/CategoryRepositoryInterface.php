@@ -14,5 +14,4 @@ interface CategoryRepositoryInterface
 
     public function delete($_id);
 
-    public function formStatus($_data);
 }
