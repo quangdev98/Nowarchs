@@ -18,5 +18,10 @@
         {
             return $this->ajaxRepository->formStatus($data);
         }
+
+        public function filterPrice($data)
+        {
+            return $this->ajaxRepository->filterPrice($data);
+        }
     }
 ?>

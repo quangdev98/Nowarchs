@@ -26,4 +26,19 @@ class AjaxController extends Controller
             return response()->json($e->getMessage());
         }
     }
+
+    // fiter price 
+    public function filterPrice()
+    {
+        try {
+            $data = request()->all();
+            // $dataResult = $this->ajaxServices->filterPrice($data);
+            // $data['index'] =  view('admin::products.index', compact($dataResult))->render();
+            // dd(response()->json(array('success' => true, 'html'=>$data)));
+            return response()->json($this->ajaxServices->filterPrice($data));
+        } catch (\Exception $e) {
+            dd($e);
+            abort('500');
+        }
+    }
 }

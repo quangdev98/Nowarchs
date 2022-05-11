@@ -69,8 +69,8 @@ class ProductRepository implements ProductRepositoryInterface
     {
         DB::beginTransaction();
         try {
-            Helpers::HandleDeleteImage('products', 'products', $id);
-            if(DB::table(self::TABLE)->where('id', '=', $id)->delete())
+            $imageDelete = Helpers::HandleDeleteImage('products', 'products', $id);
+            if($imageDelete && DB::table(self::TABLE)->where('id', '=', $id)->delete())
             {
                 DB::commit();
                 return true;

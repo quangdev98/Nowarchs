@@ -39,17 +39,17 @@ class Helpers
 	{
 		$img = DB::table($table)->where('id','=', $id)->first();
  		$imageOld = $img->images;
+        //  dd(!is_null($imageName));
  		if (!is_null($imageName))
 		{
 			$imageService = 'IMAGE-'.$url.time().'-'.$imageName->getClientOriginalName();
             $imageName->move(public_path('uploads/'.$url),$imageService);
  			if(!empty($imageOld) && file_exists(public_path().$imageOld)){
                 unlink(public_path().$imageOld);
-                return true;
             }
-            // return $urlImage = '/uploads/'.$url.'/'.$imageService;
+            return '/uploads/'.$url.'/'.$imageService;
 		} else{
- 			return $imageService = $imageOld;
+ 			return $imageOld;
  		}
 	}
 

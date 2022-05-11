@@ -28,4 +28,22 @@ class AjaxRepository implements AjaxRepositoryInterface
             return DB::table($table)->where('id', '=', request()->id)->update($_data);
         }
     }
+
+    public function filterPrice($_data)
+    {
+        // dd($_data);
+        if (request()->ajax()) {
+            $table = $_data['table'];
+            $db = DB::table($table)
+            ->leftJoin('categories', 'products.category_id', '=', 'categories.id')
+            ->select('products.*', 'categories.name as category_name')->orderBy('products.id');
+            if(isset($_data['this_ajax']) && isset($_data['price_min']) && isset($_data['price_max']))
+            {
+                $db = $db->where('products.price', '>=', $_data['price_min'])
+                ->where('products.price', '<=', $_data['price_max'])->paginate(10);
+            }
+            // dd($db);
+            return $db;
+        }
+    }
 }

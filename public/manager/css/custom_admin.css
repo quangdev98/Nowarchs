@@ -74,7 +74,13 @@ form .drop-file .b-drop button{margin: 0 0 0 10px; border: 1px solid #43AFFF; co
     display: none;
 }
 
-
+.ds_progress_rangeslider{
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+.price-amount{
+    margin-bottom: 25px;
+}
 
 
 
