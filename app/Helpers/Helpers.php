@@ -47,7 +47,7 @@ class Helpers
                 unlink(public_path().$imageOld);
                 return true;
             }
-            return $urlImage = '/uploads/'.$url.'/'.$imageService;
+            // return $urlImage = '/uploads/'.$url.'/'.$imageService;
 		} else{
  			return $imageService = $imageOld;
  		}

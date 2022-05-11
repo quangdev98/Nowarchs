@@ -39,6 +39,7 @@
 
         public function update($data, $id) {
             $image = Helpers::HandleUploadedImage(request()->file('images'), 'products', 'products', $id);
+            dd($image);
             $data = [
                 'name' =>$data['name'],
                 'slug' =>Helpers::Slug($data['name']),
