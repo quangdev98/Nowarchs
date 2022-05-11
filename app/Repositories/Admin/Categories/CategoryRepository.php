@@ -74,15 +74,4 @@ class CategoryRepository implements CategoryRepositoryInterface
         }
     }
 
-    public function formStatus($_data)
-    {
-        if (request()->ajax()) {
-            $record = DB::table(self::TABLE)->where('id', '=', request()->id)->first();
-            $_data = [
-                'status' => $record->status == 1 ? 2 : 1,
-                'updated_at' =>date('Y-m-d H:i:s'),
-            ];
-            return DB::table(self::TABLE)->where('id', '=', request()->id)->update($_data);
-        }
-    }
 }

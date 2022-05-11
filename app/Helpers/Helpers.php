@@ -38,13 +38,14 @@ class Helpers
 	public static function HandleUploadedImage($imageName, $table, $url, $id)
 	{
 		$img = DB::table($table)->where('id','=', $id)->first();
- 		$imageOld = $img->image;
+ 		$imageOld = $img->images;
  		if (!is_null($imageName))
 		{
 			$imageService = 'IMAGE-'.$url.time().'-'.$imageName->getClientOriginalName();
             $imageName->move(public_path('uploads/'.$url),$imageService);
- 			if(file_exists('uploads/'.$url.'/'.$imageOld)){
-                unlink($imageOld);
+ 			if(!empty($imageOld) && file_exists(public_path().$imageOld)){
+                unlink(public_path().$imageOld);
+                return true;
             }
             return $urlImage = '/uploads/'.$url.'/'.$imageService;
 		} else{
@@ -57,9 +58,10 @@ class Helpers
 	{
         try {
             $img = DB::table($table)->where('id','=', $id)->first();
-            $imageOld = $img->image;
-            if(file_exists('uploads/'.$url.'/'.$imageOld)){
-               unlink($imageOld);
+            $imageOld = $img->images;
+            if(!empty($imageOld) && file_exists(public_path().$imageOld)){
+               unlink(public_path().$imageOld);
+               return true;
             }
         } catch (\Exception $e) {
             return false;

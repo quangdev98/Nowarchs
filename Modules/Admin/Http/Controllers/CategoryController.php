@@ -120,13 +120,4 @@ class CategoryController extends Controller
         }
     }
 
-    public function formStatus()
-    {
-        try {
-            $data = request()->only('id', 'status');
-            return response()->json($this->categoryServices->formStatus($data));
-        } catch (\Exception $e){
-            return response()->json($e->getMessage());
-        }
-    }
 }
