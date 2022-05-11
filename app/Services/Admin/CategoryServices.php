@@ -13,8 +13,8 @@
             $this->categoryRepository = $categoryRepository;
         }
 
-        public function index() {
-            return $this->categoryRepository->index();
+        public function index($data = []) {
+            return $this->categoryRepository->index($data);
         }
 
         public function store($data) {
@@ -36,5 +36,6 @@
         {
             return $this->categoryRepository->delete($id);
         }
+
     }
 ?>

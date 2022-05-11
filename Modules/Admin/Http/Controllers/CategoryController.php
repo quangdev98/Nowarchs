@@ -25,8 +25,12 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $data['category'] = $this->categoryServices->index();
-        return view('admin::categories.index', compact('data'));
+        try{
+            $data['category'] = $this->categoryServices->index(['paginate' => 10]);
+            return view('admin::categories.index', compact('data'));
+        } catch (\Exception $e){
+            abort(500);
+        }
     }
 
     /**
@@ -115,4 +119,5 @@ class CategoryController extends Controller
             abort('500');
         }
     }
+
 }

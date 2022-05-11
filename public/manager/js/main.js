@@ -9,4 +9,20 @@ $(document).ready(function(){
             return attr == url + '/images/eyes_active.png' ? url + '/images/eyes_disable.png' : url + '/images/eyes_active.png' ;
         });
     });
+
+
+    // choose image
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var url = URL.createObjectURL(event.target.files[0]);
+            $(input).parent().find('span.invalid-feedback').text('');
+            $(input).parent().find('div.preview').show();
+            $(input).parent().find('div.preview').attr("style", "background: #eef0f8 url('" + url + "') no-repeat top center; background-size: contain; display: block; background-position: center");
+            $(input).parent().find('div.fill').addClass('active');
+            $(input).parent().find('.b-drop').addClass('active');
+        }
+    }
+    $("#file").change(function() {
+        readURL(this);
+      });
 })

@@ -80,8 +80,16 @@
                                                             <strong>#00{{ $c->id < 10 ? '0' . $c->id : $c->id }}</strong>
                                                         </td>
                                                         <td>{{ $c->name }}</td>
-                                                        <td class=" dt-body-right">{{ $c->created_at }}</td>
-                                                        <td><span class="badge bg-success">Published</span></td>
+                                                        <td class=" dt-body-right">{{ Helpers::FormatDate($c->created_at) }}</td>
+                                                        <td class="position-relative wrap-public">
+                                                            {{--  <form action="{{ route('admin.categories.update', ['id' => $c->id]) }}" method="POST" name="status-{{ $c->id }}">  --}}
+                                                                <div class="form-check form-switch form-status">
+                                                                    <input type="hidden" name="id" value="{{ $c->id }}">
+                                                                    <input class="form-check-input" type="checkbox" id="Published{{ $c->id }}" name="status" value="{{ $c->status }}" data-id="{{ $c->id }}" {{ $c->status ==1 ? "checked=''" : "" }}>
+                                                                    <label class="form-check-label" for="Published{{ $c->id }}">{{ $c->status ==1 ? 'Published' :'Hidden' }}</label>
+                                                                </div>
+                                                            {{--  </form>  --}}
+                                                        </td>
                                                         <td class=" dt-body-right">
                                                             <div class="btn-group" role="group"
                                                                 aria-label="Basic outlined example">
@@ -103,31 +111,7 @@
                                         </table>
                                     </div>
                                 </div>
-                                {{--  <div class="row">
-                                    <div class="col-sm-12 col-md-5">
-                                        <div class="dataTables_info" id="myDataTable_info" role="status" aria-live="polite">
-                                            Showing 1 to 10 of 13 entries</div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-7">
-                                        <div class="dataTables_paginate paging_simple_numbers" id="myDataTable_paginate">
-                                            <ul class="pagination">
-                                                <li class="paginate_button page-item previous disabled"
-                                                    id="myDataTable_previous"><a href="#" aria-controls="myDataTable"
-                                                        data-dt-idx="0" tabindex="0" class="page-link">Previous</a>
-                                                </li>
-                                                <li class="paginate_button page-item active"><a href="#"
-                                                        aria-controls="myDataTable" data-dt-idx="1" tabindex="0"
-                                                        class="page-link">1</a></li>
-                                                <li class="paginate_button page-item "><a href="#"
-                                                        aria-controls="myDataTable" data-dt-idx="2" tabindex="0"
-                                                        class="page-link">2</a></li>
-                                                <li class="paginate_button page-item next" id="myDataTable_next"><a href="#"
-                                                        aria-controls="myDataTable" data-dt-idx="3" tabindex="0"
-                                                        class="page-link">Next</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>  --}}
+                                {{ $data['category']->links('admin::components.pagination') }}
                             </div>
                         </div>
                     </div>
@@ -148,7 +132,7 @@
                         <p class="text-center" id="contentModal"></p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn big bg-gray" data-dismiss="modal">Trở lại</button>
+                        <button type="button" class="btn big bg-gray" data-bs-dismiss="modal">Trở lại</button>
                         <button type="submit" class="btn big bg-blue" name="action" value="delete">Xoá bỏ</button>
                     </div>
                 </form>
@@ -174,7 +158,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn big bg-gray" data-dismiss="modal">Trở lại</button>
+                        <button type="button" class="btn big bg-gray" data-bs-dismiss="modal">Trở lại</button>
                         <button type="submit" name="submit" class="btn big bg-blue" value="add">Update</button>
                     </div>
                 <form>
@@ -198,6 +182,31 @@
             $("#destroyCategory").attr("action", url);
             $("#contentModal").html(value);
         });
+        $(document).ready(function(){
+            $('.form-status input').click(function(){
+                $value = $(this).val();
+                $id = $(this).data('id');
+                console.log($value);
+                var token='{{csrf_token()}}';
+                $.ajax({
+                    type: 'post',
+                    url: '{{ route('admin.ajax.status') }}',
+                    data: {
+                        //_method: 'POST',
+                        _token : token,
+                        'table': 'categories',
+                        'id': $id,
+                        'status': $value
+                    },
+                    dataType: 'JSON',
+
+                });
+                $(this).siblings('.form-check-label').text(function(i, oldText){
+                    return oldText === 'Published' ? 'Hidden' : 'Published';
+                });
+            });
+            $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
+        })
     </script>
 @endsection
 

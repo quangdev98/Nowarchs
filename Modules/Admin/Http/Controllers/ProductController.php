@@ -4,6 +4,8 @@ namespace Modules\Admin\Http\Controllers;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
+use Modules\Admin\Http\Requests\ProductCreateRequest;
+use Modules\Admin\Http\Requests\ProductEditRequest;
 use Illuminate\Routing\Controller;
 use App\Services\Admin\CategoryServices;
 use App\Services\Admin\ProductServices;
@@ -26,9 +28,13 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $data['index'] = $this->productServices->index();
-        // dd($data['index']);
-        return view('admin::products.index', compact(['data']));
+        try {
+            $data['categories'] = $this->categoryServices->index();
+            $data['index'] = $this->productServices->index(['paginate' => 10]);
+            return view('admin::products.index', compact(['data']));
+        } catch (\Exception $e) {
+            abort('500');
+        }
     }
 
     /**
@@ -38,7 +44,7 @@ class ProductController extends Controller
     public function create()
     {
         // if()
-        $data['categories'] = $this->categoryServices->index();
+        $data['categories'] = $this->categoryServices->index()->where('status', '=',1);
         return view('admin::products.create', compact('data'));
     }
 
@@ -47,9 +53,15 @@ class ProductController extends Controller
      * @param Request $request
      * @return Renderable
      */
-    public function store(Request $request)
+    public function store(ProductCreateRequest $request)
     {
-        //
+        try {
+            $data = $request->all();
+            $this->productServices->store($data);
+            return redirect()->route('admin.product.index');
+        } catch (\Exception $e) {
+            abort('500');
+        }
     }
 
     /**
@@ -69,7 +81,9 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        return view('admin::edit');
+        $data['categories'] = $this->categoryServices->index()->where('status', '=',1);
+        $data['productDetail']=$this->productServices->edit($id);
+        return view('admin::products.edit', compact(['data']));
     }
 
     /**
@@ -78,9 +92,15 @@ class ProductController extends Controller
      * @param int $id
      * @return Renderable
      */
-    public function update(Request $request, $id)
+    public function update(ProductEditRequest $request, $id)
     {
-        //
+        try {
+            $data = $request->all();
+            $this->productServices->update($data, $id);
+            return redirect()->route('admin.product.index');
+        } catch (\Exception $e) {
+            abort('500');
+        }
     }
 
     /**
@@ -90,6 +110,14 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {
+            if(!$this->productServices->delete($id))
+            {
+                return redirect()->back();
+            }
+            return redirect()->back();
+        } catch (\Exception $e) {
+            abort('500');
+        }
     }
 }

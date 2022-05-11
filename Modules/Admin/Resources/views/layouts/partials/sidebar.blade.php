@@ -39,10 +39,11 @@
                     </a>
                 </li> <!-- end Dashboard Menu -->
                 <li class="menu-title"><span data-key="t-menu">Pages</span></li>
+                @if (!empty(Auth::guard('admins')->user()))
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarApps" data-bs-toggle="collapse" role="button"
-                        aria-expanded="false" aria-controls="sidebarApps">
-                        <i class="ri-apps-2-line"></i> <span data-key="t-apps">Profile</span>
+                    aria-expanded="false" aria-controls="sidebarApps">
+                    <i class="ri-apps-2-line"></i> <span data-key="t-apps">Profile</span>
                     </a>
                     <div class="collapse menu-dropdown" id="sidebarApps">
                         <ul class="nav nav-sm flex-column">
@@ -55,6 +56,7 @@
                         </ul>
                     </div>
                 </li>
+                @endif
 
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarLayouts" data-bs-toggle="collapse" role="button"
@@ -78,7 +80,7 @@
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarProduct" data-bs-toggle="collapse" role="button"
                         aria-expanded="false" aria-controls="sidebarProduct">
-                        <i class="ri-layout-3-line"></i> <span data-key="t-layouts">Products</span>
+                        <i class="bx bx bxs-data"></i> <span data-key="t-layouts">Products</span>
                     </a>
                     <div class="collapse menu-dropdown" id="sidebarProduct">
                         <ul class="nav nav-sm flex-column">
@@ -89,6 +91,39 @@
                             <li class="nav-item">
                                 <a href="{{ Route('admin.product.create') }}" class="nav-link"
                                     data-key="t-detached">Create</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li> <!-- end Dashboard Menu -->
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="#sidebarBlogs" data-bs-toggle="collapse" role="button"
+                        aria-expanded="false" aria-controls="sidebarBlogs">
+                        <i class="bx bx bxl-blogger"></i> <span data-key="t-layouts">Blogs</span>
+                    </a>
+                    <div class="collapse menu-dropdown" id="sidebarBlogs">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a href="{{ route('admin.product.index') }}" class="nav-link"
+                                    data-key="t-horizontal">Index</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ Route('admin.product.create') }}" class="nav-link"
+                                    data-key="t-detached">Create</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li> <!-- end Dashboard Menu -->
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="#sidebarBlogs" data-bs-toggle="collapse" role="button"
+                        aria-expanded="false" aria-controls="sidebarBlogs">
+                        <i class="bx bx bxl-blogger"></i> <span data-key="t-layouts">Comments</span>
+                    </a>
+                    <div class="collapse menu-dropdown" id="sidebarBlogs">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a href="{{ route('admin.product.index') }}" class="nav-link"
+                                    data-key="t-horizontal">Index</a>
                             </li>
                         </ul>
                     </div>
