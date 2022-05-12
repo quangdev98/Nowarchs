@@ -42,13 +42,13 @@
                 @if (!empty(Auth::guard('admins')->user()))
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarApps" data-bs-toggle="collapse" role="button"
-                    aria-expanded="false" aria-controls="sidebarApps">
+                    aria-expanded="{{ Route::is('admin.profile.*') ? 'true' : 'false' }}" aria-controls="sidebarApps">
                     <i class="ri-apps-2-line"></i> <span data-key="t-apps">Profile</span>
                     </a>
-                    <div class="collapse menu-dropdown" id="sidebarApps">
+                    <div class="collapse menu-dropdown {{ Route::is('admin.profile.*') ? 'show' : '' }}" id="sidebarApps">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="{{ Route('admin.profile.show', ['id' => Auth::guard('admins')->user()->id]) }}" class="nav-link" data-key="t-PROFILE"> Detail </a>
+                                <a href="{{ Route('admin.profile.show', ['id' => Auth::guard('admins')->user()->id]) }}" class="nav-link {{ Route::is('admin.profile.show') ? 'active' : '' }}" data-key="t-PROFILE"> Detail </a>
                             </li>
                             <li class="nav-item">
                                 <a href="{{ Route('admin.profile.show', ['id' => Auth::guard('admins')->user()->id]) }}" class="nav-link" data-key="t-PROFILE"> Setting</a>
@@ -60,17 +60,17 @@
 
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarLayouts" data-bs-toggle="collapse" role="button"
-                        aria-expanded="false" aria-controls="sidebarLayouts">
+                        aria-expanded="{{ Route::is('admin.categories.*') ? 'true' : 'false' }}" aria-controls="sidebarLayouts">
                         <i class="ri-layout-3-line"></i> <span data-key="t-layouts">Categories</span>
                     </a>
-                    <div class="collapse menu-dropdown" id="sidebarLayouts">
+                    <div class="collapse menu-dropdown {{ Route::is('admin.categories.*') ? 'show' : '' }}" id="sidebarLayouts">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="{{ route('admin.categories.index') }}" class="nav-link"
+                                <a href="{{ route('admin.categories.index') }}" class="nav-link {{ Route::is('admin.categories.index') ? 'active' : '' }}"
                                     data-key="t-horizontal">Index</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('admin.categories.create') }}" class="nav-link"
+                                <a href="{{ route('admin.categories.create') }}" class="nav-link {{ Route::is('admin.categories.create') ? 'active' : '' }}"
                                     data-key="t-horizontal">Add</a>
                             </li>
                         </ul>
@@ -79,17 +79,17 @@
 
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarProduct" data-bs-toggle="collapse" role="button"
-                        aria-expanded="false" aria-controls="sidebarProduct">
+                        aria-expanded="{{ Route::is('admin.product.*') ? 'true' : 'false' }}" aria-controls="sidebarProduct">
                         <i class="bx bx bxs-data"></i> <span data-key="t-layouts">Products</span>
                     </a>
-                    <div class="collapse menu-dropdown" id="sidebarProduct">
+                    <div class="collapse menu-dropdown {{ Route::is('admin.product.*') ? 'show' : '' }}" id="sidebarProduct">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="{{ route('admin.product.index') }}" class="nav-link"
+                                <a href="{{ route('admin.product.index') }}" class="nav-link {{ Route::is('admin.product.index') ? 'active' : '' }}"
                                     data-key="t-horizontal">Index</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ Route('admin.product.create') }}" class="nav-link"
+                                <a href="{{ Route('admin.product.create') }}" class="nav-link {{ Route::is('admin.product.create') ? 'active' : '' }}"
                                     data-key="t-detached">Create</a>
                             </li>
                         </ul>

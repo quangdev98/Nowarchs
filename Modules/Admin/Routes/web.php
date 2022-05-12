@@ -42,7 +42,7 @@ Route::middleware('web')->group(function () {
         });
         Route::prefix('ajax')->group(function () {
             Route::post('/formStatus', 'AjaxController@formStatus')->name('admin.ajax.status');
-            Route::get('/filter', 'AjaxController@filterPrice')->name('admin.ajax.filterPrice');
+            Route::get('/filter', 'AjaxController@filterProduct')->name('admin.ajax.filterProduct');
         });
     });
 });

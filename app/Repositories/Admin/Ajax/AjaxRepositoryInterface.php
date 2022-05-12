@@ -8,7 +8,7 @@ interface AjaxRepositoryInterface
 
 
     public function formStatus($_data);
-    public function filterPrice($_data);
-    
-    
+    public function filterProduct($_data);
+
+
 }
