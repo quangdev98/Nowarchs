@@ -99,8 +99,10 @@
                                         </div>  --}}
                                         <div class="product-price">
                                             <h6 class="price-title fw-bold">Price</h6>
-                                            <p class="sale-price">$ {{ ($detail->price)*(($detail->number_sale)/100) }} USD</p>
-                                            <p class="regular-price text-danger">$ {{ $detail->price }} USD</p>
+                                            <p class="sale-price">$ {{ ($detail->price) - (($detail->price)*(($detail->number_sale)/100)) }} USD</p>
+                                            @if (!empty($detail->number_sale))
+                                                <p class="regular-price text-danger">$ {{ $detail->price }} USD</p>
+                                            @endif
                                         </div>
                                         <p>{!! $detail->contents !!}</p>
                                         <div class="product-btn mb-5">
