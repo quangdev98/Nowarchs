@@ -71,7 +71,8 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        return view('admin::show');
+        $data['detail'] = $this->productServices->show($id);
+        return view('admin::products.show', compact('data'));
     }
 
     /**
@@ -120,4 +121,5 @@ class ProductController extends Controller
             abort('500');
         }
     }
+
 }

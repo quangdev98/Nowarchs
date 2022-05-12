@@ -112,11 +112,11 @@
                                 </div>
                             </div>
                             <div class="card-body d-flex align-items-center flex-column flex-md-row">
-                                <a href="product-detail.html">
+                                <a href="{{ Route('admin.product.show', ['id' => $p->id]) }}">
                                     <img class="w120 rounded img-fluid" src="{{ $p->images ? $p->images : asset('manager/images/products/product-1.jpg') }}" alt="">
                                 </a>
                                 <div class="ms-md-4 m-0 mt-4 mt-md-0 text-md-start text-center w-100">
-                                    <a href="product-detail.html"><h6 class="mb-3 fw-bold name-product">{{ $p->name }}  <span class="text-muted small fw-light d-block">Reference 1204</span></h6></a>
+                                    <a href="{{ Route('admin.product.show', ['id' => $p->id]) }}"><h6 class="mb-3 fw-bold name-product">{{ $p->name }}  <span class="text-muted small fw-light d-block">Reference 1204</span></h6></a>
                                         <div class="d-flex flex-row flex-wrap align-items-center justify-content-center justify-content-md-start">
                                             <div class="pe-xl-5 pe-md-4 ps-md-0 px-3 mb-2">
                                                 <div class="text-muted small">Special priceends</div>
@@ -210,11 +210,11 @@
                                     </div>
                                 </div>
                                 <div class="card-body d-flex align-items-center flex-column flex-md-row">
-                                    <a href="product-detail.html">
+                                    <a href="${href}/${value.id}/show">
                                         <img class="w120 rounded img-fluid" src="${ value.images ? value.images : ''}" alt="">
                                     </a>
                                     <div class="ms-md-4 m-0 mt-4 mt-md-0 text-md-start text-center w-100">
-                                        <a href="product-detail.html"><h6 class="mb-3 fw-bold name-product">${ value.name }  <span class="text-muted small fw-light d-block">Reference 1204</span></h6></a>
+                                        <a href="${href}/${value.id}/show"><h6 class="mb-3 fw-bold name-product">${ value.name }  <span class="text-muted small fw-light d-block">Reference 1204</span></h6></a>
                                             <div class="d-flex flex-row flex-wrap align-items-center justify-content-center justify-content-md-start">
                                                 <div class="pe-xl-5 pe-md-4 ps-md-0 px-3 mb-2">
                                                     <div class="text-muted small">Special priceends</div>
@@ -315,11 +315,11 @@
                                 </div>
                             </div>
                             <div class="card-body d-flex align-items-center flex-column flex-md-row">
-                                <a href="product-detail.html">
+                                <a href="${href}/${value.id}/show">
                                     <img class="w120 rounded img-fluid" src="${ value.images ? value.images : ''}" alt="">
                                 </a>
                                 <div class="ms-md-4 m-0 mt-4 mt-md-0 text-md-start text-center w-100">
-                                    <a href="product-detail.html"><h6 class="mb-3 fw-bold name-product">${ value.name }  <span class="text-muted small fw-light d-block">Reference 1204</span></h6></a>
+                                    <a href="${href}/${value.id}/show"><h6 class="mb-3 fw-bold name-product">${ value.name }  <span class="text-muted small fw-light d-block">Reference 1204</span></h6></a>
                                         <div class="d-flex flex-row flex-wrap align-items-center justify-content-center justify-content-md-start">
                                             <div class="pe-xl-5 pe-md-4 ps-md-0 px-3 mb-2">
                                                 <div class="text-muted small">Special priceends</div>

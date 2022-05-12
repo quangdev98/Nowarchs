@@ -39,6 +39,7 @@ Route::middleware('web')->group(function () {
             Route::get('/update/{id}', 'ProductController@edit')->name('admin.product.edit');
             Route::post('/update/{id}', 'ProductController@update')->name('admin.product.update');
             Route::post('/destroy/{id}', 'ProductController@destroy')->name('admin.product.delete');
+            Route::get('{id}/show', 'ProductController@show')->name('admin.product.show');
         });
         Route::prefix('ajax')->group(function () {
             Route::post('/formStatus', 'AjaxController@formStatus')->name('admin.ajax.status');

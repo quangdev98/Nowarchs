@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: May 12, 2022 at 04:20 PM
+-- Generation Time: May 12, 2022 at 05:23 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.22
 
@@ -127,7 +127,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (6, '2022_05_08_051100_create_blogs_table', 1),
 (7, '2022_05_08_051431_create_tags_table', 1),
 (8, '2022_05_08_052951_create_comments_table', 1),
-(9, '2022_05_10_032225_update_categories_table', 1);
+(9, '2022_05_10_032225_update_categories_table', 1),
+(10, '2022_05_12_095416_update_products_table', 2);
 
 -- --------------------------------------------------------
 
@@ -157,23 +158,24 @@ CREATE TABLE `products` (
   `status` tinyint(4) NOT NULL DEFAULT '1' COMMENT '1:active, 2:draf',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `category_id` bigint(20) UNSIGNED NOT NULL
+  `category_id` bigint(20) UNSIGNED NOT NULL,
+  `number_sale` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `slug`, `images`, `price`, `contents`, `status`, `created_at`, `updated_at`, `category_id`) VALUES
-(13, 'Dưỡng da', 'duong-da', '/uploads/products/IMAGE-products1652319932-ph-1.png', 20, '<p>dfgds sdf gfgdfgdfg dfgfdgfdg fdgfd gdfgdfgdf</p>', 1, '2022-05-11 10:24:07', '2022-05-12 00:56:27', 1),
-(14, 'Dưỡng da từ thiên nhiên', 'duong-da-tu-thien-nhien', '/uploads/products/IMAGE-products1652320129-ph-2.png', 25, '<p>dfdsf sfdsf sdfdsf dsf ds</p>', 1, '2022-05-12 01:48:49', '2022-05-12 00:56:30', 1),
-(15, 'Giầu gội dưỡng tóc từ thiên nhiên', 'giau-goi-duong-toc-tu-thien-nhien', '/uploads/products/IMAGE-products1652320169-ph-3.png', 15, '<p>sdf dfsf sadfsdfasdfadsfdasfdsa</p>', 1, '2022-05-12 01:49:29', '2022-05-11 23:44:30', 1),
-(16, 'Lọ dưỡng da toàn thân', 'lo-duong-da-toan-than', '/uploads/products/IMAGE-products1652320212-ph-4.png', 18, '<p>dsgf sgfd fgh jghj fgjfg jg</p>', 1, '2022-05-12 01:50:12', '2022-05-11 19:35:05', 1),
-(17, 'Kem chống nắng Apol', 'kem-chong-nang-apol', '/uploads/products/IMAGE-products1652320259-product-detail-1.jpeg', 12, '<p>dsfdsf dfds sdfdsfdsfsd</p>', 1, '2022-05-12 01:50:59', '2022-05-11 19:35:02', 1),
-(18, 'Colagen Dưỡng da chiết xuất từ thiên nhiên', 'colagen-duong-da-chiet-xuat-tu-thien-nhien', '/uploads/products/IMAGE-products1652327389-product-detail-2.jpeg', 12, '<p>DFGDS FGD SDSFDS FS</p>', 1, '2022-05-12 01:52:17', '2022-05-12 01:52:17', 1),
-(19, 'Tinh dầu dưỡng da ban đêm, trị mụn hiệu quả', 'tinh-dau-duong-da-ban-dem-tri-mun-hieu-qua', '/uploads/products/IMAGE-products1652320370-product-detail-2.png', 13, '<p>dfgdf gfdsgsfdgfsdgdfsg dsf</p>', 1, '2022-05-12 01:52:50', '2022-05-12 01:52:50', 3),
-(20, 'Bộ sản phẩm trị mụn, dưỡng da Solwlsoo', 'bo-san-pham-tri-mun-duong-da-solwlsoo', '/uploads/products/IMAGE-products1652320442-product-detail-3.png', 160, '<p>sfgfd gsdfg sdfgdfs gdfg fdg jghk jkjkhjk jgjkjkghkkljk;yudfjghdghdhhhghdfghehtr5hthgnbvnssdbjfdgfdhbgsdfkjghfdsgjfsdklghfdjgkhfgkljfhgfdhgdfjhgkjfghdjfkghkdfljhdfkghdf</p>', 1, '2022-05-12 01:54:02', '2022-05-12 00:58:57', 3),
-(21, 'Kem Cowslip đặc trị nám, tàm nhang', 'kem-cowslip-dac-tri-nam-tam-nhang', '/uploads/products/IMAGE-products1652320507-product-detail-4.png', 50, '<p>fdg dfgfdgsdfgdfsgsdf</p>', 1, '2022-05-12 01:55:07', '2022-05-12 01:55:07', 4);
+INSERT INTO `products` (`id`, `name`, `slug`, `images`, `price`, `contents`, `status`, `created_at`, `updated_at`, `category_id`, `number_sale`) VALUES
+(13, 'Dưỡng da', 'duong-da', '/uploads/products/IMAGE-products1652319932-ph-1.png', 20, '<p>dfgds sdf gfgdfgdfg dfgfdgfdg fdgfd gdfgdfgdf</p>', 1, '2022-05-11 10:24:07', '2022-05-12 00:56:27', 1, '5'),
+(14, 'Dưỡng da từ thiên nhiên', 'duong-da-tu-thien-nhien', '/uploads/products/IMAGE-products1652320129-ph-2.png', 25, '<p>dfdsf sfdsf sdfdsf dsf ds</p>', 1, '2022-05-12 01:48:49', '2022-05-12 00:56:30', 1, NULL),
+(15, 'Giầu gội dưỡng tóc từ thiên nhiên', 'giau-goi-duong-toc-tu-thien-nhien', '/uploads/products/IMAGE-products1652320169-ph-3.png', 15, '<p>sdf dfsf sadfsdfasdfadsfdasfdsa</p>', 1, '2022-05-12 01:49:29', '2022-05-11 23:44:30', 1, NULL),
+(16, 'Lọ dưỡng da toàn thân', 'lo-duong-da-toan-than', '/uploads/products/IMAGE-products1652320212-ph-4.png', 18, '<p>dsgf sgfd fgh jghj fgjfg jg</p>', 1, '2022-05-12 01:50:12', '2022-05-11 19:35:05', 1, NULL),
+(17, 'Kem chống nắng Apol', 'kem-chong-nang-apol', '/uploads/products/IMAGE-products1652320259-product-detail-1.jpeg', 12, '<p>dsfdsf dfds sdfdsfdsfsd</p>', 1, '2022-05-12 01:50:59', '2022-05-11 19:35:02', 1, NULL),
+(18, 'Colagen Dưỡng da chiết xuất từ thiên nhiên', 'colagen-duong-da-chiet-xuat-tu-thien-nhien', '/uploads/products/IMAGE-products1652327389-product-detail-2.jpeg', 12, '<p>DFGDS FGD SDSFDS FS</p>', 1, '2022-05-12 01:52:17', '2022-05-12 01:52:17', 1, NULL),
+(19, 'Tinh dầu dưỡng da ban đêm, trị mụn hiệu quả', 'tinh-dau-duong-da-ban-dem-tri-mun-hieu-qua', '/uploads/products/IMAGE-products1652320370-product-detail-2.png', 13, '<p>dfgdf gfdsgsfdgfsdgdfsg dsf</p>', 1, '2022-05-12 01:52:50', '2022-05-12 01:52:50', 3, NULL),
+(20, 'Bộ sản phẩm trị mụn, dưỡng da Solwlsoo', 'bo-san-pham-tri-mun-duong-da-solwlsoo', '/uploads/products/IMAGE-products1652320442-product-detail-3.png', 160, '<p>sfgfd gsdfg sdfgdfs gdfg fdg jghk jkjkhjk jgjkjkghkkljk;yudfjghdghdhhhghdfghehtr5hthgnbvnssdbjfdgfdhbgsdfkjghfdsgjfsdklghfdjgkhfgkljfhgfdhgdfjhgkjfghdjfkghkdfljhdfkghdf</p>', 1, '2022-05-12 01:54:02', '2022-05-12 00:58:57', 3, NULL),
+(21, 'Kem Cowslip đặc trị nám, tàm nhang', 'kem-cowslip-dac-tri-nam-tam-nhang', '/uploads/products/IMAGE-products1652320507-product-detail-4.png', 50, '<p>fdg dfgfdgsdfgdfsgsdf</p>', 1, '2022-05-12 01:55:07', '2022-05-12 01:55:07', 4, NULL);
 
 -- --------------------------------------------------------
 
@@ -312,7 +314,7 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `products`

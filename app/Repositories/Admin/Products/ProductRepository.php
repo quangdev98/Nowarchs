@@ -83,4 +83,9 @@ class ProductRepository implements ProductRepositoryInterface
         }
     }
 
+    public function show($id)
+    {
+        return DB::table(self::TABLE)->where('id', $id)->first();
+    }
+
 }
