@@ -16,6 +16,7 @@ class ProductEditRequest extends FormRequest
         return [
                 'name' => 'required|min:4',
                 'price' => 'required|numeric',
+                'number_sale'=> 'numeric',
                 'contents' =>'required',
                 'images' =>'mimes:jpeg,jpg,png,gif|max:10000',
         ];
@@ -36,6 +37,7 @@ class ProductEditRequest extends FormRequest
             'name.required'=>'Bạn chưa nhập tên sản phẩm',
             'price.required' =>'Bạn chưa nhập giá sản phẩm',
             'contents.required'=>'Bạn chưa nhập Nội dung',
+            'number_sale.numeric'=>'Vui lòng nhập số',
             'images.required'=>'Bạn chưa nhập image',
             'images.max'=>'File qua dung lượng',
         ];

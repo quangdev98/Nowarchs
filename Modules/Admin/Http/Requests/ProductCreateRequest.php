@@ -16,6 +16,7 @@ class ProductCreateRequest extends FormRequest
         return [
                 'name' => 'required|min:4|unique:products,name,'.request()->route('id'),
                 'price' => 'required|numeric',
+                'number_sale' => 'numeric',
                 'contents' =>'required||unique:products,contents,'.request()->route('id'),
                 'images' =>'mimes:jpeg,jpg,png,gif|max:10000',
         ];
@@ -36,6 +37,7 @@ class ProductCreateRequest extends FormRequest
             'name.required'=>'Bạn chưa nhập tên sản phẩm',
             'price.required' =>'Bạn chưa nhập giá sản phẩm',
             'name.unique'=>'Tiêu đề đã tồn tại',
+            'number_sale.numeric'=>'Vui lòng nhập số',
             'contents.required'=>'Bạn chưa nhập Nội dung',
             'images.required'=>'Bạn chưa nhập image',
             'images.max'=>'File qua dung lượng',

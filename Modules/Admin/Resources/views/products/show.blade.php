@@ -3,6 +3,9 @@
 <link rel="stylesheet" href="{{ asset('manager/css/style_product.css') }}">
 @endsection
 @section('content')
+@php
+    $detail = $data['detail'];
+@endphp
 <div class="body d-flex py-3">
     <div class="container-fluid">
 
@@ -12,7 +15,7 @@
                     <h3 class="fw-bold mb-0">Products Detail</h3>
                 </div>
             </div>
-        </div> <!-- Row end  -->  
+        </div> <!-- Row end  -->
 
         <div class="row g-3 mb-3">
             <div class="col-md-12">
@@ -25,38 +28,26 @@
                                         <div class="product-thumb-image">
                                             <div class="product-thumb-image-active nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                                                 <a class="single-thumb" id="v-pills-one-tab" data-bs-toggle="pill" href="#v-pills-one" role="button" aria-controls="v-pills-one">
-                                                    <img src="assets/images/product/thunb-1.jpg" alt="">
-                                                </a>
-                                                <a class="single-thumb" id="v-pills-two-tab" data-bs-toggle="pill" href="#v-pills-two" role="button" aria-controls="v-pills-two">
-                                                    <img src="assets/images/product/thunb-2.jpg" alt="">
-                                                </a>
-                                                <a class="single-thumb active" aria-current="page" id="v-pills-three-tab" data-bs-toggle="pill" role="button" href="#v-pills-three" aria-controls="v-pills-three">
-                                                    <img src="assets/images/product/thunb-3.jpg" alt="">
-                                                </a>
-                                                <a class="single-thumb" id="v-pills-four-tab" data-bs-toggle="pill" href="#v-pills-four" role="button" aria-controls="v-pills-four">
-                                                    <img src="assets/images/product/thunb-4.jpg" alt="">
-                                                </a>
-                                                <a class="single-thumb" id="v-pills-five-tab" data-bs-toggle="pill" href="#v-pills-five" role="button" aria-controls="v-pills-five">
-                                                    <img src="assets/images/product/thunb-5.jpg" alt="">
+                                                    <img src="{{ $detail->images }}" alt="">
                                                 </a>
                                             </div>
                                         </div>
                                         <div class="product-image">
                                             <div class="product-image-active tab-content" id="v-pills-tabContent">
                                                 <a class="single-image tab-pane fade" id="v-pills-one" role="tabpanel" aria-labelledby="v-pills-one-tab">
-                                                    <img src="assets/images/product/productslide-1.jpg" alt="">
+                                                    <img src="{{ $detail->images }}" alt="">
                                                 </a>
                                                 <a class="single-image tab-pane fade" id="v-pills-two" role="tabpanel" aria-labelledby="v-pills-two-tab">
-                                                    <img src="assets/images/product/productslide-2.jpg" alt="">
+                                                    <img src="{{ $detail->images }}" alt="">
                                                 </a>
                                                 <a class="single-image tab-pane fade active show" id="v-pills-three" role="tabpanel" aria-labelledby="v-pills-three-tab">
-                                                    <img src="assets/images/product/productslide-3.jpg" alt="">
+                                                    <img src="{{ $detail->images }}" alt="">
                                                 </a>
                                                 <a class="single-image tab-pane fade" id="v-pills-four" role="tabpanel" aria-labelledby="v-pills-four-tab">
-                                                    <img src="assets/images/product/productslide-5.jpg" alt="">
+                                                    <img src="{{ $detail->images }}" alt="">
                                                 </a>
                                                 <a class="single-image tab-pane fade " id="v-pills-five" role="tabpanel" aria-labelledby="v-pills-five-tab">
-                                                    <img src="assets/images/product/productslide-5.jpg" alt="">
+                                                    <img src="{{ $detail->images }}" alt="">
                                                 </a>
                                             </div>
                                         </div>
@@ -64,7 +55,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="product-details-content mt-45">
-                                        <h2 class="fw-bold fs-4">Oculus VR</h2>
+                                        <h2 class="fw-bold fs-4">{{ $detail->name }}</h2>
                                         <div class="my-3">
                                             <i class="fa fa-star text-warning"></i>
                                             <i class="fa fa-star text-warning"></i>
@@ -73,7 +64,7 @@
                                             <i class="fa fa-star text-warning"></i>
                                             <span class="text-muted ms-3">(449 customer review)</span>
                                         </div>
-                                        <div class="product-items flex-wrap">
+                                        {{--  <div class="product-items flex-wrap">
                                             <h6 class="item-title fw-bold">Select Your Oculus</h6>
                                             <div class="items-wrapper" id="select-item-1">
                                                 <div class="single-item active">
@@ -95,8 +86,8 @@
                                                     <p class="text">Oculus Rift S</p>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="product-select-wrapper flex-wrap">
+                                        </div>  --}}
+                                        {{--  <div class="product-select-wrapper flex-wrap">
                                             <div class="select-item">
                                                 <h6 class="select-title fw-bold">Select Color</h6>
                                                 <ul class="color-select" id="select-color-1">
@@ -105,16 +96,13 @@
                                                     <li style="background-color: #4C4C4C;"></li>
                                                 </ul>
                                             </div>
-                                        </div>
+                                        </div>  --}}
                                         <div class="product-price">
                                             <h6 class="price-title fw-bold">Price</h6>
-                                            <p class="sale-price">$ 149 USD</p>
-                                            <p class="regular-price text-danger">$ 179 USD</p>
+                                            <p class="sale-price">$ {{ ($detail->price)*(($detail->number_sale)/100) }} USD</p>
+                                            <p class="regular-price text-danger">$ {{ $detail->price }} USD</p>
                                         </div>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and
-                                            typesetting industry. Lorem Ipsum has been the industry's standard
-                                            dummy text ever since the 1500s, when an unknown printer took a
-                                            galley of type and scrambled it to make a type specimen book.</p>
+                                        <p>{!! $detail->contents !!}</p>
                                         <div class="product-btn mb-5">
                                             <div class="d-flex flex-wrap">
                                                 <div class="mt-2 mt-sm-0  me-1">
@@ -128,13 +116,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div> 
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div> <!-- Row end  -->  
+        </div> <!-- Row end  -->
 
         <div class="row g-3 mb-3">
             <div class="col-md-12">
@@ -418,7 +406,7 @@
                     </div>
                 </div>
             </div>
-        </div><!-- Row end  -->  
+        </div><!-- Row end  -->
 
     </div>
 </div>

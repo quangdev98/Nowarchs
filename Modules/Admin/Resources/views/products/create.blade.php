@@ -125,14 +125,14 @@
                             </div>
                             <div class="card-body">
                                 <div class="row g-3 align-items-center">
-                                    <div class="col-md-12">
+                                    <div class="col-md-6">
                                         <label class="form-label">Product Price</label>
                                         <input type="text" class="form-control" name="price">
                                     </div>
-                                    {{-- <div class="col-md-12">
-                                    <label class="form-label">Product Sale</label>
-                                    <input type="text" class="form-control">
-                                </div> --}}
+                                    <div class="col-md-6">
+                                        <label class="form-label">Product Sale</label>
+                                        <input type="text" class="form-control" name="number_sale" placeholder="5%, 10%, %15%">
+                                    </div>
                                 </div>
                             </div>
                         </div>

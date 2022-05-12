@@ -113,7 +113,7 @@
                                                     </tr>
                                                     <tr>
                                                         <th class="ps-0" scope="row">Joining Date</th>
-                                                        <td class="text-muted">{{ $data['detail']->created_at}}</td>
+                                                        <td class="text-muted">{{ Helpers::FormatDate($data['detail']->created_at)}}</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
