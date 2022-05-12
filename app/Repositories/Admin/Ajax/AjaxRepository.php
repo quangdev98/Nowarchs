@@ -47,6 +47,14 @@ class AjaxRepository implements AjaxRepositoryInterface
                 $db->where('products.name', 'LIKE', '%'.$_data['search'].'%')
                 ->orWhere('categories.name', 'LIKE', '%'.$_data['search'].'%');
             }
+            if(isset($_data['id_category']))
+            {
+                $db->where('categories.id', $_data['id_category']);
+            }
+            if(isset($_data['reset']))
+            {
+                return $db->paginate(10);
+            }
             return $db->paginate(10);
         }
     }

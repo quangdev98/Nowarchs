@@ -14,7 +14,7 @@ class UpdateProductsTable extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->string('number_sale')->nullable();
+            $table->integer('number_sale')->default(0)->nullable();
         });
     }
 

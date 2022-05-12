@@ -18,4 +18,6 @@ interface ProductRepositoryInterface
 
     public function show($id);
 
+    public function getCategory();
+
 }

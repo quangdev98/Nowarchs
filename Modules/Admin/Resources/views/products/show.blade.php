@@ -6,13 +6,16 @@
 @php
     $detail = $data['detail'];
 @endphp
-<div class="body d-flex py-3">
+<div class="body d-flex">
     <div class="container-fluid">
 
         <div class="row align-items-center">
             <div class="border-0 mb-4">
                 <div class="card-header py-3 no-bg bg-transparent d-flex align-items-center px-0 justify-content-between border-bottom flex-wrap">
                     <h3 class="fw-bold mb-0">Products Detail</h3>
+                    <div class="btn-group group-link btn-set-task w-sm-100">
+                        <a href="{{ Route('admin.product.edit', ['id'=>$detail->id]) }}" class="btn active d-inline-flex align-items-center">Edit Product</a>
+                    </div>
                 </div>
             </div>
         </div> <!-- Row end  -->
@@ -98,25 +101,14 @@
                                             </div>
                                         </div>  --}}
                                         <div class="product-price">
-                                            <h6 class="price-title fw-bold">Price</h6>
-                                            <p class="sale-price">$ {{ ($detail->price) - (($detail->price)*(($detail->number_sale)/100)) }} USD</p>
+                                            <h6 class="price-title fw-bold">Price @if (!empty($detail->number_sale))(sale: {{ ($detail->number_sale) }}%) @endif</h6>
+                                            <p class="sale-price">$ {{
+                                            !empty($detail->number_sale) ? (($detail->price) - (($detail->price)*(($detail->number_sale)/100))) : $detail->price }} USD</p>
                                             @if (!empty($detail->number_sale))
                                                 <p class="regular-price text-danger">$ {{ $detail->price }} USD</p>
                                             @endif
                                         </div>
-                                        <p>{!! $detail->contents !!}</p>
-                                        <div class="product-btn mb-5">
-                                            <div class="d-flex flex-wrap">
-                                                <div class="mt-2 mt-sm-0  me-1">
-                                                    <div class="input-group">
-                                                        <input type="number" class="form-control" placeholder="1" min="1" max="5">
-                                                        <span class="input-group-text"><i class="fa fa-sort"></i></span>
-                                                    </div>
-                                                </div>
-                                                <button class="btn btn-primary mx-1 mt-2  mt-sm-0"><i class="fa fa-heart me-1"></i> Addto Wishlist</button>
-                                                <button class="btn btn-primary mx-1 mt-2 mt-sm-0 w-sm-100"><i class="fa fa-shopping-cart me-1"></i> Add to Cart</button>
-                                            </div>
-                                        </div>
+                                        <div class="content-show-lest">{!! $detail->contents !!}</div>
                                     </div>
                                 </div>
                             </div>
@@ -133,7 +125,6 @@
                         <ul class="nav nav-tabs tab-body-header rounded  d-inline-flex" role="tablist">
                             <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#review" role="tab">Reviews</a></li>
                             <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#descriptions" role="tab">Descriptions</a></li>
-                            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#about" role="tab">About</a></li>
                         </ul>
                     </div>
                     <div class="tab-content">
@@ -388,21 +379,7 @@
                         </div>
                         <div class="tab-pane fade" id="descriptions">
                             <div class="card-body">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse aliquet sem in erat volutpat, nec sollicitudin erat varius. Sed feugiat, leo varius facilisis sagittis, lorem magna cursus tortor, molestie venenatis odio nunc quis eros.Morbi volutpat dui vitae efficitur posuere.</p>
-                                <p>Donec ut libero imperdiet, eleifend ipsum vitae, laoreet nisl. Morbi volutpat dui vitae efficitur posuere. Pellentesque mi libero, dapibus ut tellus eu, volutpat viverra magna. Phasellus vitae erat porta, condimentum enim ac, luctus dui. Fusce dignissim, neque quis aliquet posuere, ante tortor lobortis eros, et facilisis dolor ipsum malesuada ante.</p>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="about">
-                            <div class="card-body">
-                                <h3>Where can I get some?</h3>
-                                <ul>
-                                    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                                    <li>Phasellus accumsan orci sit amet orci malesuada tristique.</li>
-                                    <li>Morbi varius odio et lorem ornare, auctor rutrum est rhoncus.</li>
-                                    <li>Vivamus consequat tortor eu consequat eleifend.</li>
-                                </ul>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse aliquet sem in erat volutpat, nec sollicitudin erat varius. Sed feugiat, leo varius facilisis sagittis, lorem magna cursus tortor, molestie venenatis odio nunc quis eros.Morbi volutpat dui vitae efficitur posuere.</p>
-                                <p>Donec ut libero imperdiet, eleifend ipsum vitae, laoreet nisl. Morbi volutpat dui vitae efficitur posuere. Pellentesque mi libero, dapibus ut tellus eu, volutpat viverra magna. Phasellus vitae erat porta, condimentum enim ac, luctus dui. Fusce dignissim, neque quis aliquet posuere, ante tortor lobortis eros, et facilisis dolor ipsum malesuada ante.</p>
+                                {!! $detail->contents !!}
                             </div>
                         </div>
                     </div>

@@ -16,7 +16,7 @@ class ProductCreateRequest extends FormRequest
         return [
                 'name' => 'required|min:4|unique:products,name,'.request()->route('id'),
                 'price' => 'required|numeric',
-                'number_sale' => 'numeric',
+                'number_sale' => 'nullable|numeric',
                 'contents' =>'required||unique:products,contents,'.request()->route('id'),
                 'images' =>'mimes:jpeg,jpg,png,gif|max:10000',
         ];

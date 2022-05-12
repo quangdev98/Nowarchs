@@ -7,7 +7,7 @@
     @php
     $category = $data['categories'];
     @endphp
-    <div class="body d-flex py-3">
+    <div class="body d-flex">
         <div class="container-fluid">
             <form action="{{ Route('admin.product.store') }}" method="POST" name="" enctype="multipart/form-data"
                 id="formAddProduct">
@@ -24,7 +24,7 @@
                 </div> <!-- Row end  -->
 
                 <div class="row g-3 mb-3">
-                    <div class="col-xl-4 col-lg-4">
+                    <div class="col-xl-4 col-lg-3">
                         <div class="sticky-lg-top">
                             <div class="card mb-3">
                                 <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
@@ -98,7 +98,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-8 col-lg-8">
+                    <div class="col-xl-8 col-lg-9">
                         <div class="card mb-3">
                             <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
                                 <h6 class="mb-0 fw-bold ">Basic information</h6>

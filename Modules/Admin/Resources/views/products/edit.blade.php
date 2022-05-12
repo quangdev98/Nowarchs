@@ -8,7 +8,7 @@
     $category = $data['categories'];
     $productDetail = $data['productDetail'];
     @endphp
-    <div class="body d-flex py-3">
+    <div class="body d-flex">
         <div class="container-fluid">
             <form action="{{ Route('admin.product.update', ['id' => $productDetail->id]) }}" method="POST" name="" enctype="multipart/form-data"
                 id="formEditProduct">
@@ -25,7 +25,7 @@
                 </div> <!-- Row end  -->
 
                 <div class="row g-3 mb-3">
-                    <div class="col-xl-4 col-lg-4">
+                    <div class="col-xl-3 col-lg-3">
                         <div class="sticky-lg-top">
                             <div class="card mb-3">
                                 <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
@@ -80,9 +80,27 @@
                                     </select>
                                 </div>
                             </div>
+                            <div class="card mb-3">
+                                <div
+                                    class="card-header py-3 d-flex justify-content-between align-items-center bg-transparent border-bottom-0">
+                                    <h6 class="m-0 fw-bold">Pricing Info</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row g-3 align-items-center">
+                                        <div class="col-md-6">
+                                            <label class="form-label">Product Price</label>
+                                            <input type="text" class="form-control" name="price" value="{{ $productDetail->price }}">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">Product Sale</label>
+                                            <input type="text" class="form-control" value="{{ $productDetail->number_sale }}" name="number_sale" placeholder="5%, 10%, %15%">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-xl-8 col-lg-8">
+                    <div class="col-xl-9 col-lg-9">
                         <div class="card mb-3">
                             <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
                                 <h6 class="mb-0 fw-bold ">Basic information</h6>
@@ -100,24 +118,6 @@
                                     </div> --}}
                                     </div>
                                 </form>
-                            </div>
-                        </div>
-                        <div class="card mb-3">
-                            <div
-                                class="card-header py-3 d-flex justify-content-between align-items-center bg-transparent border-bottom-0">
-                                <h6 class="m-0 fw-bold">Pricing Info</h6>
-                            </div>
-                            <div class="card-body">
-                                <div class="row g-3 align-items-center">
-                                    <div class="col-md-6">
-                                        <label class="form-label">Product Price</label>
-                                        <input type="text" class="form-control" name="price" value="{{ $productDetail->price }}">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="form-label">Product Sale</label>
-                                        <input type="text" class="form-control" value="{{ $productDetail->number_sale }}" name="number_sale" placeholder="5%, 10%, %15%">
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <div class="card mb-3">

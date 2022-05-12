@@ -88,4 +88,13 @@ class ProductRepository implements ProductRepositoryInterface
         return DB::table(self::TABLE)->where('id', $id)->first();
     }
 
+    public function getCategory()
+    {
+        return DB::table(self::TABLE)
+        ->rightJoin('categories', 'products.category_id', '=', 'categories.id')
+        ->select('categories.*', DB::raw('COUNT(products.category_id) as count_number'))
+        ->groupBy('categories.id')->get();
+
+    }
+
 }

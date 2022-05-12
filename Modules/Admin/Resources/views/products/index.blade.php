@@ -9,7 +9,7 @@
  $index = $data['index'];
  $category = $data['categories'];
 @endphp
-<div class="body d-flex py-3">
+<div class="body d-flex">
     <div class="container-fluid">
         <div class="row align-items-center">
             <div class="border-0 mb-4">
@@ -24,6 +24,16 @@
         <div class="row g-3 mb-3">
             <div class="col-md-12 col-lg-4 col-xl-3">
                 <div class="sticky-lg-top">
+                    <div class="card mb-3">
+                        <div class="reset-block">
+                            <div class="filter-title">
+                                <h4 class="title">Filter</h4>
+                            </div>
+                            <div class="filter-btn">
+                                <a class="btn btn-primary" id="resetProduct" data-container="true" href="" onclick="event.preventDefault();">Reset</a>
+                            </div>
+                        </div>
+                    </div>
                     <div class="card mb-3">
                         <div class="reset-block flex-column align-items-start">
                             <div class="filter-title">
@@ -48,7 +58,9 @@
                                 <div class="filter-category">
                                     <ul class="category-list">
                                         @foreach ($category as $cate)
-                                            <li><a href="#">{{ $cate->name }}</a>
+                                            <li class="d-flex justify-content-between align-items-center">
+                                                <a href="#" class="categor-name" data-content="{{ $cate->id }}">{{ $cate->name }}</a>
+                                                <span class="number-count">{{ $cate->count_number }}</span>
                                             </li>
                                         @endforeach
                                     </ul>
@@ -150,6 +162,7 @@
 @section('scripts')
 <script src="{{ asset('manager/js/isotope.min.js') }}"></script>
 <script src="{{ asset('manager/js/ranger.js') }}"></script>
+{{-- FILTER PRICE SLIDER  --}}
 <script>
     $(function() {    // <== doc ready
         $( ".slider-range-page-product" ).slider({
@@ -247,6 +260,8 @@
 
     });
 </script>
+
+{{-- SEARCH PRODUCT BY CATEGORY NAME OR PRODUCT NAME  --}}
 <script>
     {{--  search product  --}}
     $(document).ready(function () {
@@ -349,6 +364,8 @@
         $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
     });
 </script>
+
+{{-- STATUS PRODUCT  --}}
 <script>
     $(document).ready(function(){
         $(document).on('click','#destroyButton',function(){
@@ -382,6 +399,96 @@
                 return oldText === 'Published' ? 'Hidden' : 'Published';
             });
 
+        });
+        $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
+    })
+</script>
+
+{{-- FILTER CATEGORY  --}}
+<script>
+    $(document).ready(function(){
+        $(document).on("click", ".categor-name, #resetProduct", function() {
+            $idCategory = $(this).data('content');
+            $reset = $(this).data('container');
+            // console.log($reset);
+            var token='{{csrf_token()}}';
+            $.ajax({
+                type: 'GET',
+                url: '{{ route('admin.ajax.filterProduct') }}',
+                data: {
+                    _token : token,
+                    'table': 'products',
+                    'id_category': $idCategory,
+                    'reset': $reset
+                },
+                success:function(data){
+                    let output = ``;
+                    let value = '';
+                    let href = window.location.href;
+                    function formarDate($date){
+                        let d = new Date($date);
+                        const year = d.getFullYear();
+                        const monthIndex = d.getMonth();
+                        const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+                        const monthName = months[monthIndex]
+                        const date = d.getDate();
+                        return `${monthName} ${date}, ${year}`;
+                    }
+
+                    let jsonData = data.data;
+                    jsonData.forEach(function(value){
+                        output += `
+                        <div class="card border-0 mb-1 item-product">
+                            <div class="form-check form-switch position-absolute top-0 end-0 py-3 px-3 d-none d-md-block form-status" style="z-index: 11">
+                                <div class="text-right">
+                                    <input class="form-check-input" type="checkbox" id="Published${ value.id }" name="status" value="${ value.status }" data-id="${ value.id }" ${ value.status ==1 ? "checked=''" : "" }>
+                                    <label class="form-check-label" for="Published${ value.id }">${ value.status ==1 ? 'Published' :'Hidden' }</label>
+                                </div>
+                                <div class="btn-group mt-3" role="group"
+                                    aria-label="Basic outlined example">
+                                    <a href="${href}/update/${value.id}" title=""
+                                        class="btn btn-outline-secondary" id="editCategoryButton" >
+                                        <i class="bx bx-edit-alt"></i></a>
+                                    <button type="button"
+                                        class="btn btn-outline-secondary deleterow" id="destroyButton"
+                                        data-bs-toggle="modal" data-url="${href}/destroy/${value.id}"
+                                        data-content="${ value.name }"
+                                        data-bs-target="#IdDestroyModal">
+                                        <i class="ri ri-delete-bin-6-line"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body d-flex align-items-center flex-column flex-md-row">
+                                <a href="${href}/${value.id}/show">
+                                    <img class="w120 rounded img-fluid" src="${ value.images ? value.images : ''}" alt="">
+                                </a>
+                                <div class="ms-md-4 m-0 mt-4 mt-md-0 text-md-start text-center w-100">
+                                    <a href="${href}/${value.id}/show"><h6 class="mb-3 fw-bold name-product">${ value.name }  <span class="text-muted small fw-light d-block">Reference 1204</span></h6></a>
+                                        <div class="d-flex flex-row flex-wrap align-items-center justify-content-center justify-content-md-start">
+                                            <div class="pe-xl-5 pe-md-4 ps-md-0 px-3 mb-2">
+                                                <div class="text-muted small">Special priceends</div>
+                                                <strong> ${formarDate(value.created_at)} </strong>
+                                            </div>
+                                            <div class="pe-xl-5 pe-md-4 ps-md-0 px-3 mb-2">
+                                                <div class="text-muted small">Price</div>
+                                                <strong>$${ value.price }</strong>
+                                            </div>
+                                            <div class="pe-xl-5 pe-md-4 ps-md-0 px-3 mb-2 box-status">
+                                                <div class="text-muted small">Status</div>
+                                                <strong>${ value.status == 1 ? 'Published' : 'Hidden'}</strong>
+                                            </div>
+                                            <div class="pe-xl-5 pe-md-4 ps-md-0 px-3 mb-2">
+                                                <div class="text-muted small">Category</div>
+                                                <strong>${ value.category_name }</strong>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>`
+                    }, this)
+                    $('#box-product').html(output);
+                }
+            });
         });
         $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
     })

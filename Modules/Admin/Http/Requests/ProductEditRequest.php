@@ -16,7 +16,7 @@ class ProductEditRequest extends FormRequest
         return [
                 'name' => 'required|min:4',
                 'price' => 'required|numeric',
-                'number_sale'=> 'numeric',
+                'number_sale'=> 'nullable|numeric',
                 'contents' =>'required',
                 'images' =>'mimes:jpeg,jpg,png,gif|max:10000',
         ];

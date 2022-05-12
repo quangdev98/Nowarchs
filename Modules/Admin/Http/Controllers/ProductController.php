@@ -29,7 +29,7 @@ class ProductController extends Controller
     public function index()
     {
         try {
-            $data['categories'] = $this->categoryServices->index();
+            $data['categories'] = $this->productServices->getCategory();
             $data['index'] = $this->productServices->index(['paginate' => 10]);
             return view('admin::products.index', compact(['data']));
         } catch (\Exception $e) {

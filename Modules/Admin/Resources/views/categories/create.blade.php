@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="{{ asset('manager/css/dropify.min.css') }}">
 @endsection
 @section('content')
-    <div class="body d-flex py-3">
+    <div class="body d-flex">
         <div class="container-fluid">
             <form name="post" action="{{ route('admin.categories.store') }}" method="POST" id="createCategories">
                 @csrf

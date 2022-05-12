@@ -76,5 +76,10 @@
         {
             return $this->productRepository->show($id);
         }
+
+        public function getCategory()
+        {
+            return $this->productRepository->getCategory();
+        }
     }
 ?>

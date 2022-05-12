@@ -25,4 +25,24 @@ $(document).ready(function(){
     $("#file").change(function() {
         readURL(this);
       });
+
+
+      function setWidthText() {
+		let showChar = 150;
+		var ellipsestext = "...";
+		var data = ['content-show-lest>div'];
+		data.forEach(function (value) {
+
+			$('.' + value).each(function () {
+				var content = $(this).html();
+				if (content.length > showChar) {
+					var c = content.substr(0, showChar);
+					var html = c + '<span class="moreellipses">' + ellipsestext + '&nbsp';
+					$(this).html(html);
+				}
+
+			});
+		});
+	}
+	setWidthText();
 })

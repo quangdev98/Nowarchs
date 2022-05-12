@@ -104,6 +104,35 @@ form .drop-file .b-drop button{margin: 0 0 0 10px; border: 1px solid #43AFFF; co
     min-width: 69px;
     text-align: left;
 }
-
-
+.card-header.py-3{
+    padding-bottom: 0!important;
+}
+.navbar-header, .header-item{
+    height: 52px;
+}
+.app-search {
+    padding: calc(15px / 2) 0;
+}
+.page-content{
+    padding-top: calc(40px + 1.5rem);
+}
+.tox-notifications-container, .tox-notifications-container *{
+    display: none!important;
+}
+.font-bold{
+    font-weight: 700;
+}
+.modal .modal-header, .modal .modal-footer{
+    border: none!important
+}
+.modal .modal-footer{
+    align-items: center;
+    justify-items: center;
+    justify-content: space-between;
+}
+.modal .modal-footer .btn{
+    margin-left: 0;
+    margin-right: 0;
+    width: calc(50% - 10px);
+}
 
