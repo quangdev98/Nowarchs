@@ -82,7 +82,28 @@ form .drop-file .b-drop button{margin: 0 0 0 10px; border: 1px solid #43AFFF; co
     margin-bottom: 25px;
 }
 
+.box-search.filter-search{
+    position: relative;
+}
+.box-search.filter-search button{
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    background: var(--primary-color);
+    border-radius: 0;
+}
 
+.box-search.filter-search button i{
+    color: #FFF;
+}
+.box-search.filter-search input{
+    padding-left: 46px;
+}
+.box-status strong, .form-status>div>label.form-check-label{
+    display: inline-block;
+    min-width: 69px;
+    text-align: left;
+}
 
 
 

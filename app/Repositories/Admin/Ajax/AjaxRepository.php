@@ -29,7 +29,7 @@ class AjaxRepository implements AjaxRepositoryInterface
         }
     }
 
-    public function filterPrice($_data)
+    public function filterProduct($_data)
     {
         // dd($_data);
         if (request()->ajax()) {
@@ -40,10 +40,14 @@ class AjaxRepository implements AjaxRepositoryInterface
             if(isset($_data['this_ajax']) && isset($_data['price_min']) && isset($_data['price_max']))
             {
                 $db = $db->where('products.price', '>=', $_data['price_min'])
-                ->where('products.price', '<=', $_data['price_max'])->paginate(10);
+                ->where('products.price', '<=', $_data['price_max']);
             }
-            // dd($db);
-            return $db;
+            if(isset($_data['this_ajax']) && isset($_data['search']))
+            {
+                $db->where('products.name', 'LIKE', '%'.$_data['search'].'%')
+                ->orWhere('categories.name', 'LIKE', '%'.$_data['search'].'%');
+            }
+            return $db->paginate(10);
         }
     }
 }

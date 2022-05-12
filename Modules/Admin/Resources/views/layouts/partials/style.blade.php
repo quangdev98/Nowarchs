@@ -6,5 +6,5 @@
 <link href="{{ asset('manager/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('manager/css/app.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('manager/css/custom.min.css') }}" rel="stylesheet" type="text/css" />
-<link href="{{ asset('manager/css/custom_admin.css') }}" rel="stylesheet" type="text/css" />
 @yield('style')
+<link href="{{ asset('manager/css/custom_admin.css') }}" rel="stylesheet" type="text/css" />

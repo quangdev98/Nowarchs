@@ -27,17 +27,13 @@ class AjaxController extends Controller
         }
     }
 
-    // fiter price 
-    public function filterPrice()
+    public function filterProduct()
     {
         try {
             $data = request()->all();
-            // $dataResult = $this->ajaxServices->filterPrice($data);
-            // $data['index'] =  view('admin::products.index', compact($dataResult))->render();
-            // dd(response()->json(array('success' => true, 'html'=>$data)));
-            return response()->json($this->ajaxServices->filterPrice($data));
+            return response()->json($this->ajaxServices->filterProduct($data));
         } catch (\Exception $e) {
-            dd($e);
+            // dd($e);
             abort('500');
         }
     }

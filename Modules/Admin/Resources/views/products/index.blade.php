@@ -2,7 +2,7 @@
 @section('style')
 <link rel="stylesheet" href="{{ asset('manager/css/common.css') }}">
 <link rel="stylesheet" href="{{ asset('manager/css/style_product.css') }}">
- <link rel="stylesheet" href="{{ asset('manager/css/ranger.css') }}"> 
+ <link rel="stylesheet" href="{{ asset('manager/css/ranger.css') }}">
 @endsection
 @section('content')
 @php
@@ -25,12 +25,17 @@
             <div class="col-md-12 col-lg-4 col-xl-3">
                 <div class="sticky-lg-top">
                     <div class="card mb-3">
-                        <div class="reset-block">
+                        <div class="reset-block flex-column align-items-start">
                             <div class="filter-title">
-                                <h4 class="title">Filter</h4>
+                                <h4 class="title">Search</h4>
                             </div>
-                            <div class="filter-btn">
-                                <a class="btn btn-primary" href="#">Reset</a>
+                            <div class="filter-btn w-100">
+                                <div class="filter-search box-search">
+                                    {{--  <form action="#">  --}}
+                                        <input type="text" placeholder="Search Name or category name" id="searchName" class="form-control">
+                                        <button type="button" class="btn btn-blue"><i class="ri ri-search-line"></i></button>
+                                    {{--  </form>  --}}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -44,12 +49,6 @@
                                     <ul class="category-list">
                                         @foreach ($category as $cate)
                                             <li><a href="#">{{ $cate->name }}</a>
-                                                {{--  <ul id="collapseOne" class="sub-category collapse" data-parent="#category" style="">
-                                                    <li><a href="#">PlayStation 4</a></li>
-                                                    <li><a href="#">Oculus VR</a></li>
-                                                    <li><a href="#">Remote</a></li>
-                                                    <li><a href="#">Lighting Keyborad</a></li>
-                                                </ul>  --}}
                                             </li>
                                         @endforeach
                                     </ul>
@@ -63,30 +62,6 @@
                                 <a class="title" data-bs-toggle="collapse" href="#pricingTwo" role="button" aria-expanded="false">Pricing Range</a>
                             </div>
                             <div class="collapse show" id="pricingTwo">
-                                {{-- <div class="price-range">
-                                    <div class="price-amount flex-wrap">
-                                        <div class="amount-input mt-1">
-                                            <label class="fw-bold">Minimum Price</label>
-                                            <span>$</span>
-                                            <span id="range1">
-                                                0
-                                            </span>
-                                        </div>
-                                        <div class="amount-input mt-1">
-                                            <label class="fw-bold">Maximum Price</label>
-                                            <span>$</span>
-                                            <span id="range2">
-                                                0
-                                              </span>
-                                        </div>
-                                    </div>
-                                    <div class="container-ranger">
-                                        <div class="slider-track"></div>
-                                        <input type="range" min="5" max="1000" value="200" id="slider-1" oninput="slideOne()">
-                                        <input type="range" min="5" max="1000" value="500" id="slider-2" oninput="slideTwo()">
-                                      </div>
-                                      
-                                </div> --}}
 
                                 <div class="price-range ds_progress_rangeslider Range_slider">
                                     <div class="price-amount flex-wrap">
@@ -173,55 +148,8 @@
 @include('admin::components.ModalDelete')
 @endsection
 @section('scripts')
-{{-- <script src="{{ asset('manager/js/magnific-popup.min.js') }}"></script> --}}
 <script src="{{ asset('manager/js/isotope.min.js') }}"></script>
-{{-- <script src="{{ asset('manager/js/nice-select.min.js') }}"></script> --}}
 <script src="{{ asset('manager/js/ranger.js') }}"></script>
-<script>
-    $(document).ready(function(){
-        $(document).on('click','#destroyButton',function(){
-            const url = $(this).data('url');
-            const value = $(this).data('content');
-            $("#destroyModal").attr("action", url);
-            $("#contentModal").html(value);
-        });
-        // $(document).on('input', '#slider-1', function() {
-            // $valueMin = 
-            // console.log($(this).val());
-            let min = $('#range1').text();
-            let max = $("#slider-2").prop('max');
-            console.log(min);
-        // });
-
-        $('.form-status input').click(function(){
-            $value = $(this).val();
-            $id = $(this).data('id');
-            console.log($value);
-            var token='{{csrf_token()}}';
-            $.ajax({
-                type: 'post',
-                url: '{{ route('admin.ajax.status') }}',
-                data: {
-                    //_method: 'POST',
-                    _token : token,
-                    'table': 'products',
-                    'id': $id,
-                    'status': $value
-                },
-                dataType: 'JSON',
-
-            });
-            $(this).siblings('.form-check-label').text(function(i, oldText){
-                return oldText === 'Published' ? 'Hidden' : 'Published';
-            });
-            $(this).parents('.item-product').find('.box-status strong').text(function(i, oldText){
-                return oldText === 'Published' ? 'Hidden' : 'Published';
-            });
-
-        });
-        $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
-    })
-</script>
 <script>
     $(function() {    // <== doc ready
         $( ".slider-range-page-product" ).slider({
@@ -232,7 +160,10 @@
                 var token='{{csrf_token()}}';
                 $.ajax({
                     method: 'GET',
-                    url: '{{ route('admin.ajax.filterPrice') }}',
+                    headers: {
+                        'Accept': 'application/json',
+                    },
+                    url: '{{ route('admin.ajax.filterProduct') }}',
                     data: {
                         //_method: 'POST',
                         _token : token,
@@ -245,19 +176,18 @@
                         let output = ``;
                         let value = '';
                         let href = window.location.href;
-                        
-                        data.forEach(function(value){
-                            console.log(value);
-                            // output += `<tr align='center'>
-                            // <td>${value.id}</td>
-                            // <td><img class="image-table" src="${value.image}" alt="${value.slug}"></td>
-                            // <td><div class='textContentTitle'>${value.title}</div> </td>
-                            // <td> ${value.categoryName} </td>
-                            // <td> ${value.author} </td>
-                            // <td> ${value.status == 1 ? 'Bản nháp' : (value.status == 2 ? 'Chờ duyệt' : 'Đã xuất bản')} </td>
-                            // <td class="center"><a href="#" data-toggle="modal" data-url="${href}/destroy/${value.id}" data-target="#delete-modal" class="destroyForm"><i class="fad fa-trash-alt"></i></a></td>
-                            // <td class="center"><a href="${href}/update/${value.id}"><i class="fad fa-pencil"></i></a></td>
-                            // </tr>`;
+                        function formarDate($date){
+                            let d = new Date($date);
+                            const year = d.getFullYear();
+                            const monthIndex = d.getMonth();
+                            const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+                            const monthName = months[monthIndex]
+                            const date = d.getDate();
+                            return `${monthName} ${date}, ${year}`;
+                        }
+
+                        let jsonData = data.data;
+                        jsonData.forEach(function(value){
                             output += `
                             <div class="card border-0 mb-1 item-product">
                                 <div class="form-check form-switch position-absolute top-0 end-0 py-3 px-3 d-none d-md-block form-status" style="z-index: 11">
@@ -288,7 +218,7 @@
                                             <div class="d-flex flex-row flex-wrap align-items-center justify-content-center justify-content-md-start">
                                                 <div class="pe-xl-5 pe-md-4 ps-md-0 px-3 mb-2">
                                                     <div class="text-muted small">Special priceends</div>
-                                                    <strong>${ value.created_at }</strong>
+                                                    <strong> ${formarDate(value.created_at)} </strong>
                                                 </div>
                                                 <div class="pe-xl-5 pe-md-4 ps-md-0 px-3 mb-2">
                                                     <div class="text-muted small">Price</div>
@@ -311,10 +241,150 @@
                     }
                 });
 
-                
+
             }
         });
 
     });
 </script>
+<script>
+    {{--  search product  --}}
+    $(document).ready(function () {
+        //set keyup time
+        function delay(callback, ms) {
+            var timer = 0;
+            return function() {
+              var context = this, args = arguments;
+              clearTimeout(timer);
+              timer = setTimeout(function () {
+                callback.apply(context, args);
+              }, ms || 0);
+            };
+        }
+
+        $('#searchName').keyup(delay(function(){
+            $value = $(this).val();
+            let this_ajax= true;
+            var token='{{csrf_token()}}';
+            $.ajax({
+                type: 'GET',
+                url: '{{ route('admin.ajax.filterProduct') }}',
+                data: {
+                    _token : token,
+                    this_ajax: this_ajax,
+                    'table': 'products',
+                    'search': $value
+                },
+                success:function(data){
+                    let output = ``;
+                    let value = '';
+                    let href = window.location.href;
+
+                    function formarDate($date){
+                        let d = new Date($date);
+                        const year = d.getFullYear();
+                        const monthIndex = d.getMonth();
+                        const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+                        const monthName = months[monthIndex]
+                        const date = d.getDate();
+                        return `${monthName} ${date}, ${year}`;
+                    }
+
+
+                    let jsonData = data.data;
+                    jsonData.forEach(function(value){
+                        output += `
+                        <div class="card border-0 mb-1 item-product">
+                            <div class="form-check form-switch position-absolute top-0 end-0 py-3 px-3 d-none d-md-block form-status" style="z-index: 11">
+                                <div class="text-right">
+                                    <input class="form-check-input" type="checkbox" id="Published${ value.id }" name="status" value="${ value.status }" data-id="${ value.id }" ${ value.status ==1 ? "checked=''" : "" }>
+                                    <label class="form-check-label" for="Published${ value.id }">${ value.status ==1 ? 'Published' :'Hidden' }</label>
+                                </div>
+                                <div class="btn-group mt-3" role="group"
+                                    aria-label="Basic outlined example">
+                                    <a href="${href}/update/${value.id}" title=""
+                                        class="btn btn-outline-secondary" id="editCategoryButton" >
+                                        <i class="bx bx-edit-alt"></i></a>
+                                    <button type="button"
+                                        class="btn btn-outline-secondary deleterow" id="destroyButton"
+                                        data-bs-toggle="modal" data-url="${href}/destroy/${value.id}"
+                                        data-content="${ value.name }"
+                                        data-bs-target="#IdDestroyModal">
+                                        <i class="ri ri-delete-bin-6-line"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body d-flex align-items-center flex-column flex-md-row">
+                                <a href="product-detail.html">
+                                    <img class="w120 rounded img-fluid" src="${ value.images ? value.images : ''}" alt="">
+                                </a>
+                                <div class="ms-md-4 m-0 mt-4 mt-md-0 text-md-start text-center w-100">
+                                    <a href="product-detail.html"><h6 class="mb-3 fw-bold name-product">${ value.name }  <span class="text-muted small fw-light d-block">Reference 1204</span></h6></a>
+                                        <div class="d-flex flex-row flex-wrap align-items-center justify-content-center justify-content-md-start">
+                                            <div class="pe-xl-5 pe-md-4 ps-md-0 px-3 mb-2">
+                                                <div class="text-muted small">Special priceends</div>
+                                                <strong> ${formarDate(value.created_at)} </strong>
+                                            </div>
+                                            <div class="pe-xl-5 pe-md-4 ps-md-0 px-3 mb-2">
+                                                <div class="text-muted small">Price</div>
+                                                <strong>$${ value.price }</strong>
+                                            </div>
+                                            <div class="pe-xl-5 pe-md-4 ps-md-0 px-3 mb-2 box-status">
+                                                <div class="text-muted small">Status</div>
+                                                <strong>${ value.status == 1 ? 'Published' : 'Hidden'}</strong>
+                                            </div>
+                                            <div class="pe-xl-5 pe-md-4 ps-md-0 px-3 mb-2">
+                                                <div class="text-muted small">Category</div>
+                                                <strong>${ value.category_name }</strong>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>`
+                    }, this)
+                    $('#box-product').html(output);
+                }
+            });
+        }, 400))
+        $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
+    });
+</script>
+<script>
+    $(document).ready(function(){
+        $(document).on('click','#destroyButton',function(){
+            const url = $(this).data('url');
+            const value = $(this).data('content');
+            $("#destroyModal").attr("action", url);
+            $("#contentModal").html(value);
+        });
+
+        $(document).on("click", ".form-status input", function() {
+            $value = $(this).val();
+            $id = $(this).data('id');
+            var token='{{csrf_token()}}';
+            $.ajax({
+                type: 'post',
+                url: '{{ route('admin.ajax.status') }}',
+                data: {
+                    //_method: 'POST',
+                    _token : token,
+                    'table': 'products',
+                    'id': $id,
+                    'status': $value
+                },
+                dataType: 'JSON',
+
+            });
+            $(this).siblings('.form-check-label').text(function(i, oldText){
+                return oldText === 'Published' ? 'Hidden' : 'Published';
+            });
+            $(this).parents('.item-product').find('.box-status strong').text(function(i, oldText){
+                return oldText === 'Published' ? 'Hidden' : 'Published';
+            });
+
+        });
+        $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
+    })
+</script>
+
 @endsection
