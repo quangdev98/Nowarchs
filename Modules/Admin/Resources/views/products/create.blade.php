@@ -2,6 +2,7 @@
 @section('style')
     <link rel="stylesheet" href="{{ asset('manager/css/style_product.css') }}">
     <link rel="stylesheet" href="{{ asset('manager/css/dropify.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('manager/css/bootstrap-tagsinput.css') }}">
 @endsection
 @section('content')
     @php
@@ -94,6 +95,20 @@
                                             <option value="{{ $c->id }}">{{ $c->name }}</option>
                                         @endforeach
                                     </select>
+                                    <div class="row g-3 align-items-center">
+                                        <div class="col-md-12">
+                                            <label class="form-label">Tags</label>
+                                            <input type="text" data-role="tagsinput" class="form-control">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">Product Price</label>
+                                            <input type="text" class="form-control" name="price">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">Product Sale</label>
+                                            <input type="text" class="form-control" name="number_sale" placeholder="5%, 10%, %15%">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -110,30 +125,8 @@
                                             <label class="form-label">Name</label>
                                             <input type="text" name="name" class="form-control">
                                         </div>
-                                        {{-- <div class="col-md-12">
-                                        <label class="form-label">Tags</label>
-                                        <input type="text" class="form-control">
-                                    </div> --}}
                                     </div>
                                 </form>
-                            </div>
-                        </div>
-                        <div class="card mb-3">
-                            <div
-                                class="card-header py-3 d-flex justify-content-between align-items-center bg-transparent border-bottom-0">
-                                <h6 class="m-0 fw-bold">Pricing Info</h6>
-                            </div>
-                            <div class="card-body">
-                                <div class="row g-3 align-items-center">
-                                    <div class="col-md-6">
-                                        <label class="form-label">Product Price</label>
-                                        <input type="text" class="form-control" name="price">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="form-label">Product Sale</label>
-                                        <input type="text" class="form-control" name="number_sale" placeholder="5%, 10%, %15%">
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <div class="card mb-3">
@@ -157,6 +150,8 @@
     </div>
 @endsection
 @section('scripts')
+<script type="text/javascript" src="{{ asset('manager/js/bootstrap-tagsinput.min.js') }}"></script>
+
     <script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js') }}"></script>
     {!! JsValidator::formRequest('Modules\Admin\Http\Requests\ProductCreateRequest', '#formAddProduct') !!}
 @endsection
