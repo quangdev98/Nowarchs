@@ -59,7 +59,7 @@
                                     <ul class="category-list">
                                         @foreach ($category as $cate)
                                             <li class="d-flex justify-content-between align-items-center">
-                                                <a href="#" class="categor-name" data-content="{{ $cate->id }}">{{ $cate->name }}</a>
+                                                <a href="" onclick="event.preventDefault();" class="categor-name" data-content="{{ $cate->id }}">{{ $cate->name }}</a>
                                                 <span class="number-count">{{ $cate->count_number }}</span>
                                             </li>
                                         @endforeach

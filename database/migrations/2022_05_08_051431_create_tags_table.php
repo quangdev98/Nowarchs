@@ -16,7 +16,7 @@ class CreateTagsTable extends Migration
     {
         Schema::create('tags', function (Blueprint $table) {
             $table->bigIncrements('id')->index();
-            $table->string('name');
+            $table->longText('name');
             $table->unsignedBigInteger('product_id')->nullable();
             $table->unsignedBigInteger('blog_id')->nullable();
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
