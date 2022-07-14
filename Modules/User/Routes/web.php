@@ -27,3 +27,5 @@ Route::prefix('blogs')->group(function () {
 });
 Route::get('/contact', 'ContactController@index')->name('user.contact');
 // });
+Route::get('test-email', 'JobController@processQueue');
+
